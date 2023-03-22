@@ -1,0 +1,65 @@
+@media screen and (min-width: 1200px) {
+  .doctor_card {
+    width: 100%;
+    border: 2.3px solid rgba(0, 0, 0, 0.225);
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  .doctor_card_img {
+    height: 280px;
+    /* padding: 10px; */
+  }
+
+  .doctor_card_img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
+
+  .doctor_card_details {
+    padding: 10px;
+  }
+
+  .doctor_card_row {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .doctor_card_row h3 {
+    font-family: gelion_bold;
+    color: var(--red);
+    font-size: 21px;
+  }
+
+  .doctor_card_row p {
+    font-size: 17px;
+    color: var(--hover-black);
+    font-family: gelion_reg;
+  }
+
+  .doctor_card_row i {
+    color: var(--red);
+  }
+
+  .doctor_card_btn button {
+    width: 100%;
+    padding: 6px;
+    font-family: gelion_bold;
+    background-color: var(--black);
+    font-size: 17px;
+    border: none;
+    border-radius: 8px;
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .doctor_card_btn button:hover {
+    background-color: var(--hover-black);
+  }
+}

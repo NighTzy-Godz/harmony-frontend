@@ -19,6 +19,8 @@
   --white: #f6f6f6;
   --red: #ff9494;
   --black: #67657e;
+
+  --hover-peach: #f5d9d9;
   --hover-black: #353441;
 }
 
@@ -41,4 +43,8 @@ li {
 a {
   text-decoration: none;
   color: blue;
+}
+
+.justify-between {
+  justify-content: space-between;
 }

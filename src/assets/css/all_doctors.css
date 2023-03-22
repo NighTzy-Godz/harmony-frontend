@@ -1,0 +1,25 @@
+@media screen and (min-width: 1200px) {
+  .all_doctors {
+    padding: 60px 0px;
+  }
+
+  .all_doctors .container {
+    display: flex;
+    gap: 40px;
+  }
+  .all_doctors_left {
+    flex: 0.2 1;
+    /* width: 318px; */
+    background-color: antiquewhite;
+  }
+
+  .all_doctors_right {
+    flex: 0.8 1;
+  }
+
+  .all_doctors_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}

@@ -30,7 +30,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/alldoctors"
+                to="/all-doctors"
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
                 Doctors
