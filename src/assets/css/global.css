@@ -1,0 +1,35 @@
+@font-face {
+  font-family: gelion-light;
+  src: url("../fonts/Gelion\ Light.ttf");
+}
+
+@font-face {
+  font-family: gelion-reg;
+  src: url("../fonts/Gelion\ Regular.ttf");
+}
+
+@font-face {
+  font-family: gelion-bold;
+  src: url("../fonts/Gelion\ Bold.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1600px;
+  width: 85vw;
+  margin: 0 auto;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
