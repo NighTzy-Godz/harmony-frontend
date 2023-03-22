@@ -1,0 +1,51 @@
+@media screen and (min-width: 500px) {
+  .mainNav {
+    background-color: var(--peach);
+    padding: 13px 0px;
+  }
+
+  .mainNav .logo a {
+    font-family: gelion_bold;
+    font-size: 37px;
+    color: var(--red);
+  }
+
+  .mainNav_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mainNav ul {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .mainNav li a {
+    font-family: gelion_reg;
+    color: var(--black);
+    font-size: 19px;
+  }
+
+  .mainNav li a.active {
+    color: var(--red);
+  }
+
+  .nav_auth a {
+    display: block;
+    font-family: gelion_reg;
+    color: var(--white);
+    font-size: 18px;
+    border-radius: 8px;
+    text-align: center;
+    width: 95px;
+    padding: 5px;
+    background-color: var(--black);
+    transition: all 0.3s;
+  }
+
+  .nav_auth a:hover {
+    background-color: var(--hover-black);
+  }
+}
