@@ -12,6 +12,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="all-doctors" element={<AllDoctors />} />
         </Route>
+        <Route path="*" element={<h1>Page not found</h1>} />
       </Routes>
     </BrowserRouter>
   );

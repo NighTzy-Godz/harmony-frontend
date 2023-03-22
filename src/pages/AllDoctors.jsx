@@ -1,10 +1,12 @@
 import "../assets/css/all_doctors.css";
 import DoctorCard from "../components/ui/Card/DoctorCard";
+import useAllDoctors from "../hooks/useAllDoctors";
 
 const AllDoctors = () => {
-  const arr = [1, 2, 3, 4, 5, , 6, 7, 8, 8, 8, 88, 8, 88, 8, 8, 8, 88];
-  const renderDoctorCard = arr.map((item) => {
-    return <DoctorCard />;
+  const { allDoctors } = useAllDoctors();
+
+  const renderDoctorCard = allDoctors.map((item) => {
+    return <DoctorCard data={item} />;
   });
 
   return (

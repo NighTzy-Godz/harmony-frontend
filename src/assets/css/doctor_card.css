@@ -32,18 +32,22 @@
 
   .doctor_card_row h3 {
     font-family: gelion_bold;
-    color: var(--red);
+    color: var(--black);
     font-size: 21px;
   }
 
   .doctor_card_row p {
-    font-size: 17px;
-    color: var(--hover-black);
     font-family: gelion_reg;
+    font-size: 17px;
+    color: var(--black);
+  }
+
+  .doctor_card_row:first-child p {
+    color: var(--red);
   }
 
   .doctor_card_row i {
-    color: var(--red);
+    color: var(--black);
   }
 
   .doctor_card_btn button {
