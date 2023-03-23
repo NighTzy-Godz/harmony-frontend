@@ -8,7 +8,7 @@ import Form from "../../../components/common/Form";
 import FormInput from "../../../components/common/FormInput";
 import { loginPatient } from "../../../services/patientDataServices";
 
-const style = {
+const form_left_style = {
   backgroundImage: `url(${auth_img})`,
 };
 
@@ -24,7 +24,7 @@ const PatientLogin = () => {
 
   return (
     <Form className="form" submitEvent={submitEvent} dataValues={dataValues}>
-      <div className="form_left" style={style} />
+      <div className="form_left" style={form_left_style} />
       <div className="form_right">
         <div className="form_right_container">
           <div className="form_header">
@@ -46,7 +46,7 @@ const PatientLogin = () => {
             <p>
               Don't have an account?
               <span>
-                <Link to="/">Sign Up</Link>
+                <Link to="/patient/register">Sign Up</Link>
               </span>
             </p>
           </div>
