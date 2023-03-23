@@ -1,3 +1,4 @@
+import React from "react";
 import "../assets/css/all_doctors.css";
 import Filter from "../components/common/Filter";
 import DoctorCard from "../components/ui/Card/DoctorCard";
@@ -7,7 +8,11 @@ const AllDoctors = () => {
   const { allDoctors } = useAllDoctors();
 
   const renderDoctorCard = allDoctors.map((item) => {
-    return <DoctorCard data={item} />;
+    return (
+      <React.Fragment key={item._id}>
+        <DoctorCard data={item} />
+      </React.Fragment>
+    );
   });
 
   return (

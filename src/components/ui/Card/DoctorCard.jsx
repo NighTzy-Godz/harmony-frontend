@@ -2,7 +2,6 @@ import Button from "../Button/Button";
 import "../../../assets/css/doctor_card.css";
 
 const DoctorCard = ({ data }) => {
-  console.log(data);
   return (
     <div className="doctor_card">
       <div className="doctor_card_img">

@@ -8,8 +8,10 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PatientLogin from "./features/Patient/components/PatientLogin";
 import PatientRegister from "./features/Patient/components/PatientRegister";
+import { getUser } from "./utils/auth";
 
 function App() {
+  console.log(getUser());
   return (
     <BrowserRouter>
       <ToastContainer />
