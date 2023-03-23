@@ -1,0 +1,91 @@
+@media screen and (min-width: 1200px) {
+  .filter {
+    background-color: var(--black);
+    height: 500px;
+    padding: 15px 20px;
+  }
+
+  .filter_header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--white);
+  }
+
+  .filter_header h1 {
+    font-family: gelion_bold;
+    color: var(--pink);
+    font-size: 25px;
+  }
+
+  .filter_categories {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--white);
+  }
+
+  .filter_categories h3 {
+    font-family: gelion_bold;
+    color: var(--pink);
+    margin-bottom: 5px;
+    font-size: 21px;
+  }
+
+  .filter_categories li {
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-family: gelion_reg;
+    color: var(--white);
+    font-size: 17px;
+  }
+
+  .filter_gender h3 {
+    font-family: gelion_bold;
+    color: var(--pink);
+    margin-bottom: 5px;
+    font-size: 21px;
+  }
+
+  .filter_gender_container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  .filter_gender input {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .filter_gender label {
+    font-size: 17px;
+    color: var(--white);
+    cursor: pointer;
+    font-family: gelion_reg;
+  }
+
+  input[type="radio"]:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: var(--white);
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+  }
+
+  input[type="radio"]:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: var(--red);
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+  }
+}
