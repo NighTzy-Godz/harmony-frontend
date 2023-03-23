@@ -4,9 +4,13 @@ import AllDoctors from "./pages/AllDoctors";
 import Home from "./pages/Home";
 import HomeLayout from "./page_layout/HomeLayout";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   return (
     <BrowserRouter>
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<HomeLayout />}>
           <Route index element={<Home />} />

@@ -1,6 +1,6 @@
 @media screen and (min-width: 500px) {
   .mainNav {
-    background-color: var(--peach);
+    background-color: var(--black);
     padding: 13px 0px;
   }
 
@@ -24,7 +24,7 @@
 
   .mainNav li a {
     font-family: gelion_reg;
-    color: var(--black);
+    color: var(--white);
     font-size: 19px;
   }
 
@@ -35,17 +35,18 @@
   .nav_auth a {
     display: block;
     font-family: gelion_reg;
-    color: var(--white);
+    color: var(--black);
     font-size: 18px;
     border-radius: 8px;
     text-align: center;
     width: 95px;
     padding: 5px;
-    background-color: var(--black);
+    background-color: var(--white);
     transition: all 0.3s;
   }
 
   .nav_auth a:hover {
     background-color: var(--hover-black);
+    color: var(--white);
   }
 }

@@ -7,6 +7,7 @@ const DoctorCard = ({ data }) => {
     <div className="doctor_card">
       <div className="doctor_card_img">
         <img
+          loading="lazy"
           src="https://ahaliagroup.com/ahm/wp-content/uploads/2020/05/default_dr.jpg"
           alt=""
         />
