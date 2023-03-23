@@ -47,7 +47,7 @@ const Navbar = () => {
           </ul>
 
           <div className="nav_auth">
-            <LinkButton label="Sign In" />
+            <LinkButton label="Sign In" path="/patient/login" />
           </div>
         </div>
       </div>

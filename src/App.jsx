@@ -6,6 +6,7 @@ import HomeLayout from "./page_layout/HomeLayout";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import PatientLogin from "./features/Patient/components/PatientLogin";
 
 function App() {
   return (
@@ -15,6 +16,10 @@ function App() {
         <Route path="/" element={<HomeLayout />}>
           <Route index element={<Home />} />
           <Route path="all-doctors" element={<AllDoctors />} />
+
+          {/* PATIENT ROUTE */}
+
+          <Route path="/patient/login" element={<PatientLogin />} />
         </Route>
         <Route path="*" element={<h1>Page not found</h1>} />
       </Routes>
