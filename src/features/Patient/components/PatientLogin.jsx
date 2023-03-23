@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { toast } from "react-toastify";
 import Button from "../../../components/ui/Button/Button";
 import "../../../assets/css/auth_form.css";
 import auth_img from "../../../assets/img/login_img.jpg";
+import Form from "../../../components/common/Form";
+import FormInput from "../../../components/common/FormInput";
+import { loginPatient } from "../../../services/patientDataServices";
 
 const style = {
   backgroundImage: `url(${auth_img})`,
 };
 
 const PatientLogin = () => {
+  const [dataValues] = useState({
+    email: "",
+    password: "",
+  });
+
+  const submitEvent = async (data) => {
+    await loginPatient(data);
+  };
+
   return (
-    <div className="form">
+    <Form className="form" submitEvent={submitEvent} dataValues={dataValues}>
       <div className="form_left" style={style} />
       <div className="form_right">
         <div className="form_right_container">
@@ -21,24 +33,10 @@ const PatientLogin = () => {
           </div>
 
           <div className="form_input_container">
-            <label htmlFor="email">E-Mail</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              className="email"
-              placeholder="Type Here ..."
-            />
+            <FormInput label="Email" name="email" type="email" />
           </div>
           <div className="form_input_container">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              className="password"
-              placeholder="Type Here ..."
-            />
+            <FormInput label="Password" name="password" type="password" />
           </div>
           <div className="form_btn">
             <Button label="Login" />
@@ -58,20 +56,20 @@ const PatientLogin = () => {
           <div className="form_auth_choices">
             <div className="form_auth_choices_container">
               <Link to="/">
-                <i class="fa-solid fa-user-doctor"></i>
+                <i className="fa-solid fa-user-doctor"></i>
               </Link>
               <p>Doctor</p>
             </div>
             <div className="form_auth_choices_container">
               <Link to="/">
-                <i class="fa-solid fa-gear"></i>
+                <i className="fa-solid fa-gear"></i>
               </Link>
               <p>Admin</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Form>
   );
 };
 
