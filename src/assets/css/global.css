@@ -14,7 +14,7 @@
 }
 
 :root {
-  --pink: #ffc7c7;
+  --pink: #f8bcbc;
   --peach: #ffe2e2;
   --white: #f6f6f6;
   --red: #ff9494;
@@ -23,6 +23,8 @@
   --hover-peach: #f5d9d9;
   --hover-black: #353441;
   --hover-red: #f16f6f;
+
+  --light-red: #f7aaaabd;
 }
 
 * {

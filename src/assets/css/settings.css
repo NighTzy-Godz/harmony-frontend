@@ -1,0 +1,29 @@
+@media screen and (min-width: 1200px) {
+  .settings {
+    padding: 40px 0;
+  }
+
+  .settings .container {
+    display: flex;
+    gap: 30px;
+  }
+
+  .settings_left {
+    flex: 0.2 1;
+    position: relative;
+    /* background-color: antiquewhite; */
+  }
+  .settings_left::after {
+    content: "";
+    height: 100%;
+    padding: 0.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--light-red);
+  }
+
+  .settings_right {
+    flex: 0.8 1;
+  }
+}

@@ -1,0 +1,56 @@
+@media screen and (min-width: 1200px) {
+  .profile_bar {
+    height: 700px;
+    padding: 50px 20px;
+  }
+
+  .profile_bar_img {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .profile_bar_img img {
+    height: 100px;
+    object-fit: cover;
+    width: 100px;
+    border-radius: 50%;
+  }
+
+  .profile_bar_user_details {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  .profile_bar_user_details h1 {
+    font-size: 25px;
+    font-family: gelion_bold;
+    color: var(--red);
+  }
+
+  .profile_bar_user_details p {
+    font-size: 15px;
+    font-family: gelion_reg;
+    color: var(--pink);
+  }
+
+  .profile_bar li {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    color: var(--black);
+    font-family: gelion_reg;
+    font-size: 17px;
+    cursor: pointer;
+  }
+
+  .profile_bar li a {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    color: var(--black);
+  }
+
+  .profile_bar li.active {
+    color: var(--red);
+  }
+}

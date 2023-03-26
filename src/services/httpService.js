@@ -3,6 +3,8 @@ import { toast } from "react-toastify";
 const unexpectedErr = "Unexpected Err";
 const errMsg = "errMsg";
 
+axios.defaults.headers.common["x-auth-token"] = localStorage.getItem("token");
+
 const customErrorMsg = (err) => {
   if (err.response.status === 500) return "Server is Currently Down";
 };

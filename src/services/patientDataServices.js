@@ -2,6 +2,18 @@ import http from "./httpService";
 const BASE_URL = "http://localhost:8080/patient";
 import { toast } from "react-toastify";
 
+export function getPatientData() {
+  return http
+    .get(`${BASE_URL}/me`)
+    .then((user) => {
+      return user;
+    })
+    .catch((err) => {
+      toast.error(err.response.data, { autoClose: 2000 });
+      return err;
+    });
+}
+
 export function loginPatient(data) {
   return http
     .post(`${BASE_URL}/login`, data)

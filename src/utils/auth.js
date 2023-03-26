@@ -4,5 +4,7 @@ export function getUser() {
   try {
     const jwt = localStorage.getItem("token");
     return jwtDecode(jwt);
-  } catch (error) {}
+  } catch (error) {
+    return null;
+  }
 }

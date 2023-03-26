@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import "../../../assets/css/navbar.css";
 import LinkButton from "../Button/LinkButton";
 
-const Navbar = () => {
+const Navbar = ({ currUser }) => {
   return (
     <nav className="mainNav">
       <div className="container">
@@ -47,7 +47,11 @@ const Navbar = () => {
           </ul>
 
           <div className="nav_auth">
-            <LinkButton label="Sign In" path="/patient/login" />
+            {!currUser ? (
+              <LinkButton label="Sign In" path="/patient/login" />
+            ) : (
+              <LinkButton label="Profile" path="/patient/settings" />
+            )}
           </div>
         </div>
       </div>
