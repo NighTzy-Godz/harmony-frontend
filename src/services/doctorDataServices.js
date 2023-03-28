@@ -15,6 +15,18 @@ export function loginDoctor(data) {
     });
 }
 
+export function registerDoctor(data) {
+  return http
+    .post(`${BASE_URL}/register`, data)
+    .then((user) => {
+      return user;
+    })
+    .catch((err) => {
+      toast.error(err.response.data, { autoClose: 2000 });
+      return err;
+    });
+}
+
 export function getAllDoctors() {
   return http.get(`${BASE_URL}/all-doctors`);
 }

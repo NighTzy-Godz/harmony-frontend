@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 export const FormContext = React.createContext({
   data: {},
+  handleChange: () => {},
 });
 
 const Form = (props) => {

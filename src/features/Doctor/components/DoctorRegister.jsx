@@ -1,23 +1,28 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "../../../assets/css/auth_form.css";
 import Form from "../../../components/common/Form";
 import FormInput from "../../../components/common/FormInput";
 import Button from "../../../components/ui/Button/Button";
-
 import auth_img from "../../../assets/img/login_img.jpg";
-import "../../../assets/css/auth_form.css";
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import { registerPatient } from "../../../services/patientDataServices";
+import DropDown from "../../../components/ui/DropDown";
+import gender from "../utils/gender";
+import specialties from "../../../utils/specialties";
+import specialtiesDropDown from "../utils/specialtiesDropDown";
+import { registerDoctor } from "../../../services/doctorDataServices";
+import { toast } from "react-toastify";
 
 const form_left_style = {
   backgroundImage: `url(${auth_img})`,
 };
 
-const PatientRegister = () => {
+const DoctorRegister = () => {
   const navigate = useNavigate();
 
   const [dataValues] = useState({
     first_name: "",
     last_name: "",
+    specialty: "",
     email: "",
     contact: "",
     password: "",
@@ -25,9 +30,14 @@ const PatientRegister = () => {
   });
 
   const submitEvent = async (formData) => {
-    const { data } = await registerPatient(formData);
-    if (data) {
-      return navigate("/patient/login");
+    const result = await registerDoctor(formData);
+    if (result.status === 200) {
+      console.log(result);
+      toast.success(
+        `Successfully Created the Account for ${result.data.full_name}`,
+        { autoClose: 2000 }
+      );
+      return navigate("/doctor/login");
     }
   };
 
@@ -40,23 +50,28 @@ const PatientRegister = () => {
             <h1>Patient Register</h1>
             <p>Register To Have an Account</p>
           </div>
-
           <div className="form_input_container">
             <FormInput label="First Name" name="first_name" />
           </div>
-
           <div className="form_input_container">
             <FormInput label="Last Name" name="last_name" />
+          </div>{" "}
+          <div className="form_input_container">
+            <DropDown label="Gender" name="gender" data={gender} />
           </div>
-
+          <div className="form_input_container">
+            <DropDown
+              label="Specialty"
+              name="specialty"
+              data={specialtiesDropDown}
+            />
+          </div>
           <div className="form_input_container">
             <FormInput label="Contact" name="contact" />
           </div>
-
           <div className="form_input_container">
             <FormInput label="Email" name="email" type="email" />
           </div>
-
           <div className="form_input_container">
             <FormInput
               label="Confirm Password"
@@ -64,14 +79,12 @@ const PatientRegister = () => {
               type="password"
             />
           </div>
-
           <div className="form_input_container">
             <FormInput label="Password" name="password" type="password" />
           </div>
           <div className="form_btn">
             <Button label="Register" />
           </div>
-
           <div className="form_question">
             <p>
               Already have an account?
@@ -86,4 +99,4 @@ const PatientRegister = () => {
   );
 };
 
-export default PatientRegister;
+export default DoctorRegister;
