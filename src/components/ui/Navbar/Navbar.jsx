@@ -3,6 +3,11 @@ import "../../../assets/css/navbar.css";
 import LinkButton from "../Button/LinkButton";
 
 const Navbar = ({ currUser }) => {
+  const getProfileLink = () => {
+    if (currUser.role === "Patient") return "patient";
+    return "doctor";
+  };
+
   return (
     <nav className="mainNav">
       <div className="container">
@@ -53,7 +58,10 @@ const Navbar = ({ currUser }) => {
             {!currUser ? (
               <LinkButton label="Sign In" path="/patient/login" />
             ) : (
-              <LinkButton label="Profile" path="/patient/settings" />
+              <LinkButton
+                label="Profile"
+                path={`/${getProfileLink()}/settings`}
+              />
             )}
           </div>
         </div>
