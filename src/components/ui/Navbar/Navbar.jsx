@@ -36,14 +36,17 @@ const Navbar = ({ currUser }) => {
                 Doctors
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/appoit"
-                className={({ isActive }) => (isActive ? "active" : "")}
-              >
-                Create Appointment
-              </NavLink>
-            </li>
+
+            {currUser && (
+              <li>
+                <NavLink
+                  to="/appoit"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  Create Appointment
+                </NavLink>
+              </li>
+            )}
           </ul>
 
           <div className="nav_auth">

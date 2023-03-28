@@ -4,7 +4,6 @@ import "../../assets/css/profile_bar.css";
 
 const ProfileBar = ({ currLinkId, profile_links, user, onLinkChange }) => {
   const { profile_pic, full_name, email } = user;
-  console.log(currLinkId);
   const renderProfileLinks = profile_links.map((item) => {
     return (
       <li
@@ -31,8 +30,7 @@ const ProfileBar = ({ currLinkId, profile_links, user, onLinkChange }) => {
         {renderProfileLinks}
 
         <li>
-          {" "}
-          <Link to="/user/logout">
+          <Link to="/logout">
             <i className="fa-solid fa-right-from-bracket"></i>Logout
           </Link>
         </li>

@@ -7,7 +7,7 @@ import auth_img from "../../../assets/img/login_img.jpg";
 import Form from "../../../components/common/Form";
 import FormInput from "../../../components/common/FormInput";
 import { loginPatient } from "../../../services/patientDataServices";
-import setStorage from "../../../utils/storage";
+import { setStorage } from "../../../utils/storage";
 
 const form_left_style = {
   backgroundImage: `url(${auth_img})`,

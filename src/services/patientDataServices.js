@@ -14,6 +14,18 @@ export function getPatientData() {
     });
 }
 
+export function getPatientAppts() {
+  return http
+    .get(`${BASE_URL}/getAppointments`)
+    .then((data) => {
+      return data;
+    })
+    .catch((err) => {
+      toast.error(err.response.data, { autoClose: 2000 });
+      return err;
+    });
+}
+
 export function loginPatient(data) {
   return http
     .post(`${BASE_URL}/login`, data)

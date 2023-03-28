@@ -1,0 +1,87 @@
+@media screen and (min-width: 1200px) {
+  .user_greet {
+    margin-bottom: 40px;
+  }
+
+  .user_greet h2 {
+    font-family: gelion_bold;
+    color: var(--hover-black);
+    font-size: 25px;
+  }
+
+  .user_greet p {
+    font-family: gelion_reg;
+    color: var(--black);
+    text-transform: capitalize;
+  }
+
+  .user_health_status {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .user_table {
+    padding: 20px;
+    box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+
+  .user_tab ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 15px;
+
+    /* gap: 20px; */
+  }
+
+  .user_tab li {
+    width: 100%;
+    text-align: center;
+    font-family: gelion_reg;
+    font-size: 18px;
+    color: var(--black);
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+    padding-bottom: 15px;
+    border-bottom: 2px solid white;
+  }
+
+  .user_tab li:hover {
+    border-bottom: 2px solid rgb(202, 202, 202);
+    color: var(--red);
+  }
+
+  .user_tab li.active {
+    border-bottom: 2px solid var(--red);
+    color: var(--red);
+  }
+
+  /* =============== */
+  .health_status_box {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    padding: 10px 0px;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  .health_status_box img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+  }
+
+  .health_status_box h3 {
+    font-size: 20px;
+    font-family: gelion_bold;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+
+  .health_status_box p {
+    font-size: 16px;
+    font-family: gelion_reg;
+    color: var(--hover-black);
+  }
+}

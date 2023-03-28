@@ -3,9 +3,12 @@
     padding: 40px 0;
   }
 
-  .settings .container {
+  .settings .settings_container {
     display: flex;
     gap: 30px;
+    padding: 0px 50px;
+    max-width: 1600px;
+    margin: 0 auto;
   }
 
   .settings_left {
@@ -13,7 +16,7 @@
     position: relative;
     /* background-color: antiquewhite; */
   }
-  .settings_left::after {
+  /* .settings_left::after {
     content: "";
     height: 100%;
     padding: 0.5px;
@@ -21,7 +24,7 @@
     top: 0;
     right: 0;
     background-color: var(--light-red);
-  }
+  } */
 
   .settings_right {
     flex: 0.8 1;

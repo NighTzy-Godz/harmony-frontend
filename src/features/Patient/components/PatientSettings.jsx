@@ -39,14 +39,14 @@ const PatientSettings = () => {
 
   const renderContent = () => {
     const { currLinkId } = state;
-    if (currLinkId === 0) return <PatientDashboard />;
+    if (currLinkId === 0) return <PatientDashboard user={user} />;
     if (currLinkId === 1) return <PatientChangePass />;
     if (currLinkId === 2) return <PatientAccount />;
   };
 
   return (
     <div className="settings">
-      <div className="container">
+      <div className="settings_container">
         <div className="settings_left">
           <ProfileBar
             currLinkId={state.currLinkId}

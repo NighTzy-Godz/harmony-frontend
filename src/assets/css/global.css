@@ -18,10 +18,10 @@
   --peach: #ffe2e2;
   --white: #f6f6f6;
   --red: #ff9494;
-  --black: #67657e;
+  --black: #696781;
 
   --hover-peach: #f5d9d9;
-  --hover-black: #353441;
+  --hover-black: #3d3c4b;
   --hover-red: #f16f6f;
 
   --light-red: #f7aaaabd;
@@ -50,4 +50,8 @@ a {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
 }

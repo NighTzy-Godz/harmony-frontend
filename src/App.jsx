@@ -11,6 +11,7 @@ import PatientRegister from "./features/Patient/components/PatientRegister";
 import { getUser } from "./utils/auth";
 import PatientSettings from "./features/Patient/components/PatientSettings";
 import useGetUser from "./hooks/useGetUser";
+import Logout from "./components/common/Logout";
 
 function App() {
   const { currUser } = useGetUser();
@@ -29,6 +30,7 @@ function App() {
           <Route path="patient/settings" element={<PatientSettings />} />
         </Route>
 
+        <Route path="/logout" element={<Logout />} />
         <Route path="*" element={<h1>Page not found</h1>} />
       </Routes>
     </BrowserRouter>

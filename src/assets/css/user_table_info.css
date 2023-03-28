@@ -1,0 +1,25 @@
+@media screen and (min-width: 1200px) {
+  .info_container {
+    display: flex;
+    gap: 20px;
+  }
+
+  .info_container img {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .info_container .info_details h3 {
+    font-size: 18px;
+    font-family: gelion_bold;
+    color: var(--red);
+  }
+
+  .info_container .info_details p {
+    font-family: gelion_reg;
+    font-size: 14px;
+    color: var(--black);
+  }
+}
