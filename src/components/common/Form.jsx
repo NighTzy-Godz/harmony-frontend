@@ -6,7 +6,7 @@ export const FormContext = React.createContext({
 });
 
 const Form = (props) => {
-  const { dataValues, className, submitEvent, children } = props;
+  const { dataValues, className = "", submitEvent, id = "", children } = props;
   const [data, setData] = useState(dataValues);
   //   const { propData = data } = props;
 
@@ -28,7 +28,7 @@ const Form = (props) => {
   };
   return (
     <React.Fragment>
-      <form action="" onSubmit={handleSubmit} className={className}>
+      <form action="" onSubmit={handleSubmit} id={id} className={className}>
         <FormContext.Provider value={{ data, handleChange }}>
           {children}
         </FormContext.Provider>

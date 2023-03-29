@@ -10,7 +10,7 @@ const useIncomingAppts = () => {
       setAppts(data);
     };
     getData();
-  }, []);
+  }, [appts, getIncomingAppointments]);
 
   return { appts };
 };

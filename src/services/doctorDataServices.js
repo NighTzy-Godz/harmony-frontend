@@ -5,6 +5,7 @@ const BASE_URL = "http://localhost:8080/doctor";
 
 export function getAllDoctors() {
   return http.get(`${BASE_URL}/all-doctors`).catch((err) => {
+    if (err.response && err.response.status >= 500) return;
     toast.error(err.response.data, { autoClose: 2000 });
     return err;
   });
@@ -12,6 +13,7 @@ export function getAllDoctors() {
 
 export function getCurrentDoctorData() {
   return http.get(`${BASE_URL}/me`).catch((err) => {
+    if (err.response && err.response.status >= 500) return;
     toast.error(err.response.data, { autoClose: 2000 });
     return err;
   });
@@ -19,6 +21,7 @@ export function getCurrentDoctorData() {
 
 export function getRequestAppointments() {
   return http.get(`${BASE_URL}/req-appts`).catch((err) => {
+    if (err.response && err.response.status >= 500) return;
     toast.error(err.response.data, { autoClose: 2000 });
     return err;
   });
@@ -26,9 +29,24 @@ export function getRequestAppointments() {
 
 export function getIncomingAppointments() {
   return http.get(`${BASE_URL}/incoming-appts`).catch((err) => {
+    if (err.response && err.response.status >= 500) return;
     toast.error(err.response.data, { autoClose: 2000 });
     return err;
   });
+}
+
+export function doctorPostAppt(data) {
+  return http
+    .post(`${BASE_URL}/post-appt`, data)
+    .then((appt) => {
+      toast.success("Successfully given the prescription", { autoClose: 2000 });
+      return appt;
+    })
+    .catch((err) => {
+      if (err.response && err.response.status >= 500) return;
+      toast.error(err.response.data, { autoClose: 2000 });
+      return err;
+    });
 }
 
 export function doctorDecideAppt(data) {
@@ -42,6 +60,7 @@ export function doctorDecideAppt(data) {
       return appt;
     })
     .catch((err) => {
+      if (err.response && err.response.status >= 500) return;
       toast.error(err.response.data, { autoClose: 2000 });
       return err;
     });
@@ -54,6 +73,7 @@ export function loginDoctor(data) {
       return user;
     })
     .catch((err) => {
+      if (err.response && err.response.status >= 500) return;
       toast.error(err.response.data, { autoClose: 2000 });
       return err;
     });
@@ -66,6 +86,7 @@ export function registerDoctor(data) {
       return user;
     })
     .catch((err) => {
+      if (err.response && err.response.status >= 500) return;
       toast.error(err.response.data, { autoClose: 2000 });
       return err;
     });

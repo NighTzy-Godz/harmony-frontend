@@ -9,6 +9,7 @@ export function getPatientData() {
       return user;
     })
     .catch((err) => {
+      if (err.response && err.response.status >= 500) return;
       toast.error(err.response.data, { autoClose: 2000 });
       return err;
     });
@@ -21,6 +22,7 @@ export function getPatientAppts() {
       return data;
     })
     .catch((err) => {
+      if (err.response && err.response.status >= 500) return;
       toast.error(err.response.data, { autoClose: 2000 });
       return err;
     });
