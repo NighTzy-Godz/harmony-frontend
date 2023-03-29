@@ -1,9 +1,12 @@
 import _ from "lodash";
 import React from "react";
 import UserTableInfo from "../../../components/common/UserTableInfo";
+import TableHeader from "../../../components/ui/Table/TableHeader";
+
 import "../../../assets/css/table.css";
 
 import useGetAppointments from "../hooks/useGetAppointments";
+import TableBody from "../../../components/ui/Table/TableBody";
 
 const PatientAppointments = () => {
   const { appts } = useGetAppointments();
@@ -25,47 +28,11 @@ const PatientAppointments = () => {
     { id: 4, label: "Status", path: "status", className: "table-width-210" },
   ];
 
-  const renderCell = (data, column) => {
-    if (column.xtraContent) return column.xtraContent(data);
-
-    return (
-      <p
-        className={`text-center ${
-          column.path === "status"
-            ? "status " + _.get(data, column.path).toLowerCase()
-            : ""
-        }`}
-      >
-        {column.path === "amount" ? "₱" : ""} {_.get(data, column.path)}
-      </p>
-    );
-  };
-
   return (
     <div className="table_wrapper">
       <table>
-        <thead>
-          <tr>
-            {columns.map((item) => {
-              return <th key={item.id}>{item.label}</th>;
-            })}
-          </tr>
-        </thead>
-        <tbody>
-          {appts.map((items) => {
-            return (
-              <tr key={items._id}>
-                {columns.map((column) => {
-                  return (
-                    <td key={column.id} className={column.className}>
-                      {renderCell(items, column)}
-                    </td>
-                  );
-                })}
-              </tr>
-            );
-          })}
-        </tbody>
+        <TableHeader columns={columns} />
+        <TableBody data={appts} columns={columns} />
       </table>
     </div>
   );

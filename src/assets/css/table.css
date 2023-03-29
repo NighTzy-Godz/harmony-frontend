@@ -33,11 +33,13 @@
 
     color: var(--black);
   }
-
-  /* .table-width-210 {
-    min-width: 200px;
+  /* 
+  .table-width-210 {
+    min-width: 210px;
+    background: #000;
   }
   .table-width-240 {
+    background: #000;
     min-width: 240px;
   } */
 

@@ -1,13 +1,13 @@
-import ProfileBar from "../../../components/common/ProfileBar";
-import "../../../assets/css/settings.css";
-import usePatientData from "../../../hooks/usePatientData";
 import { useState } from "react";
-import PatientChangePass from "./PatientChangePass";
-import PatientAccount from "./PatientAccount";
-import PatientDashboard from "./PatientDashboard";
+import useDoctorData from "../hooks/useDoctorData";
+import "../../../assets/css/settings.css";
+import ProfileBar from "../../../components/common/ProfileBar";
+import DoctorDashboard from "./DoctorDashboard";
+import DoctorChangePass from "./DoctorChangePass";
+import DoctorAccount from "./DoctorAccount";
 
-const PatientSettings = () => {
-  const { patient: user } = usePatientData();
+const DoctorSettings = () => {
+  const { doc: user } = useDoctorData();
 
   const [state, setState] = useState({
     currLinkId: 0,
@@ -37,9 +37,9 @@ const PatientSettings = () => {
 
   const renderContent = () => {
     const { currLinkId } = state;
-    if (currLinkId === 0) return <PatientDashboard user={user} />;
-    if (currLinkId === 1) return <PatientChangePass />;
-    if (currLinkId === 2) return <PatientAccount />;
+    if (currLinkId === 0) return <DoctorDashboard user={user} />;
+    if (currLinkId === 1) return <DoctorChangePass />;
+    return <DoctorAccount />;
   };
 
   return (
@@ -59,4 +59,4 @@ const PatientSettings = () => {
   );
 };
 
-export default PatientSettings;
+export default DoctorSettings;

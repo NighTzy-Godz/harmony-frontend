@@ -14,6 +14,7 @@ import useGetUser from "./hooks/useGetUser";
 import Logout from "./components/common/Logout";
 import DoctorLogin from "./features/Doctor/components/DoctorLogin";
 import DoctorRegister from "./features/Doctor/components/DoctorRegister";
+import DoctorSettings from "./features/Doctor/components/DoctorSettings";
 
 function App() {
   const { currUser } = useGetUser();
@@ -35,6 +36,7 @@ function App() {
 
           <Route path="doctor/login" element={<DoctorLogin />} />
           <Route path="doctor/register" element={<DoctorRegister />} />
+          <Route path="doctor/settings" element={<DoctorSettings />} />
         </Route>
 
         <Route path="/logout" element={<Logout />} />

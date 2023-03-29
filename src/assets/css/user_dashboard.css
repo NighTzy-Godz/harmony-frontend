@@ -15,7 +15,7 @@
     text-transform: capitalize;
   }
 
-  .user_health_status {
+  .user_short_status {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
@@ -84,4 +84,5 @@
     font-family: gelion_reg;
     color: var(--hover-black);
   }
+  /* =============== */
 }

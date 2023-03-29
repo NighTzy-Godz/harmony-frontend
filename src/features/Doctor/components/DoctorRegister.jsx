@@ -32,7 +32,6 @@ const DoctorRegister = () => {
   const submitEvent = async (formData) => {
     const result = await registerDoctor(formData);
     if (result.status === 200) {
-      console.log(result);
       toast.success(
         `Successfully Created the Account for ${result.data.full_name}`,
         { autoClose: 2000 }

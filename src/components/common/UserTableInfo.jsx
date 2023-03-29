@@ -3,16 +3,20 @@ import { getUser } from "../../utils/auth";
 
 const UserTableInfo = ({ user }) => {
   const currUser = getUser();
-  console.log(currUser);
 
   const getUserPicture = () => {
     if (currUser.role === "Patient") return user.doctor.profile_pic;
     return user.patient.profile_pic;
   };
 
-  const getUserDetail = () => {
+  const getUserDetailHead = () => {
     if (currUser.role === "Patient") return user.doctor.full_name;
-    return user.patient.profile_pic;
+    return user.patient.full_name;
+  };
+
+  const getUserRole = () => {
+    if (currUser.role === "Patient") return user.doctor.specialty;
+    return "Patient";
   };
 
   return (
@@ -21,8 +25,8 @@ const UserTableInfo = ({ user }) => {
         <img src={getUserPicture()} alt="" />
       </div>
       <div className="info_details">
-        <h3>{getUserDetail()}</h3>
-        <p>Patient</p>
+        <h3>{getUserDetailHead()}</h3>
+        <p>{getUserRole()}</p>
       </div>
     </div>
   );

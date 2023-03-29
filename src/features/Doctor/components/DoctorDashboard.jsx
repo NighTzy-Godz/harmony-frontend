@@ -1,31 +1,25 @@
-import "../../../assets/css/user_dashboard.css";
-
-import HealthStatusBox from "./HealthStatusBox";
 import React, { useEffect, useState } from "react";
-import health_data from "../utils/health_status";
-import PatientAppointments from "./PatientAppointmens";
-import PatientPrescriptions from "./PatientPrescriptions";
-import PatientMedicalRecord from "./PatientMedicalRecords";
+import docShortStatus from "../utils/doc_short_status";
 
-const PatientDashboard = ({ user }) => {
-  const { first_name } = user;
+import DocIncomingAppts from "./DocIncomingAppts";
+import DocRequestAppts from "./DocRequestAppts";
+import DocShortStatus from "./DocShortStatus";
+
+const DoctorDashboard = ({ user }) => {
+  const { first_name, specialty } = user;
   const [currContent, setCurrContent] = useState({});
+  const doc_short_status = docShortStatus(specialty);
 
   const table_tabs = [
     {
       id: 0,
-      name: "Appointments",
-      content: <PatientAppointments />,
+      name: "Request Appointments",
+      content: <DocRequestAppts />,
     },
     {
       id: 1,
-      name: "Prescriptions",
-      content: <PatientPrescriptions />,
-    },
-    {
-      id: 2,
-      name: "Medical Records",
-      content: <PatientMedicalRecord />,
+      name: "Incoming Appointments",
+      content: <DocIncomingAppts />,
     },
   ];
 
@@ -33,10 +27,10 @@ const PatientDashboard = ({ user }) => {
     setCurrContent(table_tabs[0]);
   }, []);
 
-  const renderHealthStatus = health_data.map((item) => {
+  const render_doc_status = doc_short_status.map((item) => {
     return (
       <React.Fragment key={item.id}>
-        <HealthStatusBox data={item} />
+        <DocShortStatus data={item} />
       </React.Fragment>
     );
   });
@@ -53,9 +47,9 @@ const PatientDashboard = ({ user }) => {
     <div className="user_dashboard">
       <div className="user_greet">
         <h2>Hello, {first_name}</h2>
-        <p>Check the current status of your health and your dashboard.</p>
+        <p>Check the current status of your patients and your dashboard.</p>
       </div>
-      <div className="user_short_status">{renderHealthStatus}</div>
+      <div className="user_short_status">{render_doc_status}</div>
       <div className="user_table">
         <div className="user_tab">
           <ul>
@@ -79,4 +73,4 @@ const PatientDashboard = ({ user }) => {
   );
 };
 
-export default PatientDashboard;
+export default DoctorDashboard;

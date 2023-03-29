@@ -48,8 +48,16 @@ a {
   color: blue;
 }
 
+.d-flex {
+  display: flex;
+}
+
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
 }
 
 .text-center {

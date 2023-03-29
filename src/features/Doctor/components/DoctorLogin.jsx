@@ -26,7 +26,7 @@ const DoctorLogin = () => {
     if (result.status === 200) {
       try {
         setStorage("token", result.headers["x-auth-token"]);
-        return (window.location = "/");
+        return (window.location = "/doctor/settings");
       } catch (error) {}
     }
   };

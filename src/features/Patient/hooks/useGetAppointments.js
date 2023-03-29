@@ -11,7 +11,7 @@ const useGetAppointments = () => {
     };
 
     getData();
-  }, []);
+  }, [appts, getPatientAppts]);
 
   return { appts };
 };
