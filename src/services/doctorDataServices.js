@@ -24,6 +24,13 @@ export function getRequestAppointments() {
   });
 }
 
+export function getIncomingAppointments() {
+  return http.get(`${BASE_URL}/incoming-appts`).catch((err) => {
+    toast.error(err.response.data, { autoClose: 2000 });
+    return err;
+  });
+}
+
 export function doctorDecideAppt(data) {
   return http
     .post(`${BASE_URL}/decide-appt`, data)
