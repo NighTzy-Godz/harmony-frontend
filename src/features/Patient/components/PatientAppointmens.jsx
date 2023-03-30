@@ -44,18 +44,20 @@ const PatientAppointments = () => {
     const newData = paginate(pageSize, appts, currPage);
 
     return (
-      <div className="table_wrapper">
-        <table>
-          <TableHeader columns={columns} />
-          <TableBody data={newData} columns={columns} />
-        </table>
+      <React.Fragment>
+        <div className="table_wrapper">
+          <table>
+            <TableHeader columns={columns} />
+            <TableBody data={newData} columns={columns} />
+          </table>
+        </div>
         <Paginate
           itemCount={appts.length}
           pageSize={pageSize}
           currPage={currPage}
           onPageChange={handlePageChange}
         />
-      </div>
+      </React.Fragment>
     );
   };
 
