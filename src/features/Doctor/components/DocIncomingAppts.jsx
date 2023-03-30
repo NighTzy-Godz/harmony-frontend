@@ -5,7 +5,6 @@ import TableBody from "../../../components/ui/Table/TableBody";
 import TableHeader from "../../../components/ui/Table/TableHeader";
 import useIncomingAppts from "../hooks/useIncomingAppts";
 import DocPostAppt from "./DocPostAppt";
-import DoctorDecideAppt from "./DoctorDecideAppt";
 
 const DocIncomingAppts = () => {
   const { appts } = useIncomingAppts();
@@ -39,7 +38,7 @@ const DocIncomingAppts = () => {
   ];
 
   const renderContent = () => {
-    if (appts.length === 0) return <h1>No Data Yet</h1>;
+    if (appts.length === 0) return <h1 className="text-center">No Data Yet</h1>;
     return (
       <div className="table_wrapper">
         <table>
