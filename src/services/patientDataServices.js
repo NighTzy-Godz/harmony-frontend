@@ -15,6 +15,14 @@ export function getPatientData() {
     });
 }
 
+export function getPatientPrescription() {
+  return http.get(`${BASE_URL}/prescription`).catch((err) => {
+    if (err.response && err.response.status >= 500) return;
+    toast.error(err.response.data, { autoClose: 2000 });
+    return err;
+  });
+}
+
 export function getPatientAppts() {
   return http
     .get(`${BASE_URL}/getAppointments`)

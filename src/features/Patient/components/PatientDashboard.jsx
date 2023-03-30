@@ -73,7 +73,7 @@ const PatientDashboard = ({ user }) => {
           </ul>
         </div>
 
-        <div className="user_tab_content">{renderContent()}</div>
+        {renderContent()}
       </div>
     </div>
   );

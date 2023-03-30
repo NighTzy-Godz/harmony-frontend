@@ -43,6 +43,8 @@ const PatientAppointments = () => {
     const { pageSize, currPage } = state;
     const newData = paginate(pageSize, appts, currPage);
 
+    if (appts.length === 0) return <h1 className="text-center">No Data</h1>;
+
     return (
       <React.Fragment>
         <div className="table_wrapper">

@@ -3,6 +3,9 @@ import "../../assets/css/paginate.css";
 
 const Paginate = ({ currPage, itemCount, pageSize, onPageChange }) => {
   const pageCount = itemCount / pageSize;
+
+  if (pageCount === 1) return null;
+
   const pages = _.range(1, pageCount + 1);
 
   return (
