@@ -1,0 +1,23 @@
+@media screen and (min-width: 1200px) {
+  .paginate {
+    margin-top: 10px;
+    padding-left: 15px;
+  }
+  .paginate ul {
+    display: flex;
+    gap: 10px;
+  }
+
+  .paginate ul li {
+    padding: 5px 10px;
+    font-family: gelion_reg;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 8px;
+    border: 1px solid var(--red);
+  }
+
+  .paginate ul li.active {
+    background: var(--red);
+  }
+}
