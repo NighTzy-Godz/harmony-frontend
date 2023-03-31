@@ -1,9 +1,11 @@
 import React from "react";
 
-const Button = ({ label, btnEvent = () => {} }) => {
+const Button = ({ color, label, btnEvent = () => {} }) => {
   return (
     <React.Fragment>
-      <button onClick={btnEvent}>{label}</button>
+      <button style={{ backgroundColor: color }} onClick={btnEvent}>
+        {label}
+      </button>
     </React.Fragment>
   );
 };

@@ -39,7 +39,7 @@ const PatientAppointments = () => {
       label: "",
       xtraContent: (item) => (
         <React.Fragment>
-          <PatientDoneAppt appt={item} />
+          <PatientDoneAppt label="Delete" appt={item} />
         </React.Fragment>
       ),
       className: "table-width-240",

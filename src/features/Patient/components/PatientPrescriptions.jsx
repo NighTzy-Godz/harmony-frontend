@@ -8,7 +8,12 @@ import TableHeader from "../../../components/ui/Table/TableHeader";
 import TableBody from "../../../components/ui/Table/TableBody";
 
 import useGetPrescriptions from "../hooks/useGetPrescriptions";
+import PatientDoneAppt from "./PatientDoneAppt";
 
+import {
+  deleteAppt,
+  donePrescription,
+} from "../../../services/patientDataServices";
 const PatientPrescriptions = () => {
   const { prescript } = useGetPrescriptions();
 
@@ -29,7 +34,7 @@ const PatientPrescriptions = () => {
       className: "table-width-240",
     },
     { id: 1, label: "Date", path: "date", className: "table-width-210" },
-    { id: 2, label: "Time", path: "time", className: "table-width-210" },
+
     {
       id: 3,
       label: "Prescription",
@@ -41,6 +46,22 @@ const PatientPrescriptions = () => {
       label: "Findings",
       path: "findings",
       className: "table-width-210",
+    },
+
+    {
+      id: 5,
+      label: "",
+      xtraContent: (item) => (
+        <React.Fragment>
+          <PatientDoneAppt
+            funcEvent={donePrescription}
+            appt={item}
+            color="var(--green)"
+            label="Done"
+          />
+        </React.Fragment>
+      ),
+      className: "table-width-240",
     },
   ];
 

@@ -67,4 +67,9 @@
     background-color: #0fb76b1f !important;
     color: #26af48 !important;
   }
+
+  table .done {
+    background-color: #33b5e5;
+    color: var(--white);
+  }
 }

@@ -36,12 +36,27 @@ export function getPatientAppts() {
     });
 }
 
-export function deleteAppt(data) {
+export function getMedicalRecords() {
   return http
-    .delete(`${BASE_URL}/post-appt/${data.appt_id}`)
+    .get(`${BASE_URL}/medical-records`)
+    .then((data) => {
+      return data;
+    })
+    .catch((err) => {
+      if (err.response && err.response.status >= 500) return;
+      toast.error(err.response.data, { autoClose: 2000 });
+      return err;
+    });
+}
+
+export function donePrescription(data) {
+  return http
+    .post(`${BASE_URL}/post-prescription`, data)
     .then((appt) => {
-      console.log(appt);
-      toast.success("Successfully Deleted!");
+      toast.success(
+        "This appointment is going to Medical Records Tab. You can check it.",
+        { autoClose: 2000 }
+      );
       return appt;
     })
     .catch((err) => {
@@ -76,6 +91,21 @@ export function registerPatient(data) {
     })
     .catch((err) => {
       console.log(err);
+      if (err.response && err.response.status >= 500) return;
+      toast.error(err.response.data, { autoClose: 2000 });
+      return err;
+    });
+}
+
+export function deleteAppt(data) {
+  return http
+    .delete(`${BASE_URL}/post-appt/${data.appt_id}`)
+    .then((appt) => {
+      console.log(appt);
+      toast.success("Successfully Deleted!");
+      return appt;
+    })
+    .catch((err) => {
       if (err.response && err.response.status >= 500) return;
       toast.error(err.response.data, { autoClose: 2000 });
       return err;

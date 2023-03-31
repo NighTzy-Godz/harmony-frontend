@@ -3,6 +3,7 @@ import { getPatientAppts } from "../../../services/patientDataServices";
 
 const useGetAppointments = () => {
   const [appts, setAppts] = useState([]);
+
   useEffect(() => {
     const getData = async () => {
       const { data } = await getPatientAppts();
