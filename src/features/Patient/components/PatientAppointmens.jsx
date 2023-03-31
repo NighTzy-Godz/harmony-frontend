@@ -9,6 +9,7 @@ import useGetAppointments from "../hooks/useGetAppointments";
 import TableBody from "../../../components/ui/Table/TableBody";
 import Paginate from "../../../components/common/Paginate";
 import paginate from "../../../utils/paginate";
+import PatientDoneAppt from "./PatientDoneAppt";
 
 const PatientAppointments = () => {
   const { appts } = useGetAppointments();
@@ -33,6 +34,16 @@ const PatientAppointments = () => {
     { id: 2, label: "Time", path: "time", className: "table-width-210" },
     { id: 3, label: "Amount", path: "amount", className: "table-width-210" },
     { id: 4, label: "Status", path: "status", className: "table-width-210" },
+    {
+      id: 5,
+      label: "",
+      xtraContent: (item) => (
+        <React.Fragment>
+          <PatientDoneAppt appt={item} />
+        </React.Fragment>
+      ),
+      className: "table-width-240",
+    },
   ];
 
   const handlePageChange = (page) => {

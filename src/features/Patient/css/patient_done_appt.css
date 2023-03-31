@@ -1,0 +1,19 @@
+@media screen and (min-width: 1200px) {
+  .patient_done_appt button {
+    padding: 3px 0px;
+    font-family: gelion_reg;
+    border-radius: 5px;
+    background-color: var(--red);
+    color: white !important;
+    width: 100%;
+    border: 1px solid var(--red);
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center !important;
+    transition: all 0.2s;
+  }
+
+  .patient_done_appt button:hover {
+    background-color: var(--hover-red);
+  }
+}

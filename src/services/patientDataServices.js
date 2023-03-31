@@ -36,6 +36,21 @@ export function getPatientAppts() {
     });
 }
 
+export function deleteAppt(data) {
+  return http
+    .delete(`${BASE_URL}/post-appt/${data.appt_id}`)
+    .then((appt) => {
+      console.log(appt);
+      toast.success("Successfully Deleted!");
+      return appt;
+    })
+    .catch((err) => {
+      if (err.response && err.response.status >= 500) return;
+      toast.error(err.response.data, { autoClose: 2000 });
+      return err;
+    });
+}
+
 export function loginPatient(data) {
   return http
     .post(`${BASE_URL}/login`, data)
