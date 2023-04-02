@@ -4,6 +4,7 @@ import UserTableInfo from "../../../components/common/UserTableInfo";
 import TableBody from "../../../components/ui/Table/TableBody";
 import TableHeader from "../../../components/ui/Table/TableHeader";
 import DoctorDecideAppt from "./DoctorDecideAppt";
+import NoData from "../../../components/common/NoData";
 
 const DocRequestAppts = () => {
   const { appts } = useReqAppts();
@@ -36,7 +37,10 @@ const DocRequestAppts = () => {
     },
   ];
   const renderContent = () => {
-    if (appts.length === 0) return <h1 className="text-center">No Data Yet</h1>;
+    if (appts.length === 0)
+      return (
+        <NoData label="No Request Appointments at this moment. Please Comeback Later." />
+      );
     return (
       <div className="table_wrapper">
         <table>

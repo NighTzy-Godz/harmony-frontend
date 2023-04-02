@@ -1,5 +1,6 @@
 import React from "react";
 import "../../../assets/css/table.css";
+import NoData from "../../../components/common/NoData";
 import UserTableInfo from "../../../components/common/UserTableInfo";
 import TableBody from "../../../components/ui/Table/TableBody";
 import TableHeader from "../../../components/ui/Table/TableHeader";
@@ -38,7 +39,10 @@ const DocIncomingAppts = () => {
   ];
 
   const renderContent = () => {
-    if (appts.length === 0) return <h1 className="text-center">No Data Yet</h1>;
+    if (appts.length === 0)
+      return (
+        <NoData label="No Incoming Appointments at this time. Maybe You did not accept an appointment or there's no appointment available this time. " />
+      );
     return (
       <div className="table_wrapper">
         <table>
