@@ -15,6 +15,7 @@ import Logout from "./components/common/Logout";
 import DoctorLogin from "./features/Doctor/components/DoctorLogin";
 import DoctorRegister from "./features/Doctor/components/DoctorRegister";
 import DoctorSettings from "./features/Doctor/components/DoctorSettings";
+import PatientCreateAppt from "./features/Patient/components/PatientCreateAppt";
 
 function App() {
   const { currUser } = useGetUser();
@@ -29,8 +30,11 @@ function App() {
           {/* PATIENT ROUTE */}
           <Route path="patient/login" element={<PatientLogin />} />
           <Route path="patient/register" element={<PatientRegister />} />
-
           <Route path="patient/settings" element={<PatientSettings />} />
+          <Route
+            path="patient/create-appointment"
+            element={<PatientCreateAppt />}
+          />
 
           {/* DOCTOR ROUTE */}
 

@@ -1,7 +1,27 @@
 import Button from "../Button/Button";
 import "../../../assets/css/doctor_card.css";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useContext } from "react";
+import { FormContext } from "../../common/Form";
 
-const DoctorCard = ({ data }) => {
+const DoctorCard = ({ data, user, step, onStepChange, onDocIdChange }) => {
+  const navigate = useNavigate();
+  const formContext = useContext(FormContext);
+  const { data: formData } = formContext;
+
+  const btnEvent = () => {
+    if (!user) {
+      toast.info(`You need to login first to book Dr. ${data.first_name}`, {
+        autoClose: 2000,
+      });
+      return navigate("/patient/login");
+    }
+
+    formData.doc_id = data._id;
+    onStepChange(step + 1);
+  };
+
   return (
     <div className="doctor_card">
       <div className="doctor_card_img">
@@ -26,7 +46,7 @@ const DoctorCard = ({ data }) => {
           <p className="font_reg rate">P{data.rate}</p>
         </div>
         <div className="doctor_card_btn">
-          <Button label="Book Me" />
+          <p onClick={btnEvent}>{!user ? "Book Me" : "Select Me"}</p>
         </div>
       </div>
     </div>

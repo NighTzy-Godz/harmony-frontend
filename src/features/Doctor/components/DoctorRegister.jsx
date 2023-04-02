@@ -54,16 +54,17 @@ const DoctorRegister = () => {
           </div>
           <div className="form_input_container">
             <FormInput label="Last Name" name="last_name" />
-          </div>{" "}
-          <div className="form_input_container">
-            <DropDown label="Gender" name="gender" data={gender} />
           </div>
+
           <div className="form_input_container">
             <DropDown
               label="Specialty"
               name="specialty"
               data={specialtiesDropDown}
             />
+          </div>
+          <div className="form_input_container">
+            <DropDown label="Gender" name="gender" data={gender} />
           </div>
           <div className="form_input_container">
             <FormInput label="Contact" name="contact" />

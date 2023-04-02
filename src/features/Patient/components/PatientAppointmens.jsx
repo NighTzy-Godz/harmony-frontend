@@ -34,13 +34,19 @@ const PatientAppointments = () => {
     { id: 1, label: "Date", path: "date", className: "table-width-210" },
     { id: 2, label: "Time", path: "time", className: "table-width-210" },
     { id: 3, label: "Amount", path: "amount", className: "table-width-210" },
-    { id: 4, label: "Status", path: "status", className: "table-width-210" },
     {
-      id: 5,
+      id: 4,
+      label: "Mode",
+      path: "mode_of_consult",
+      className: "table-width-210",
+    },
+    { id: 5, label: "Status", path: "status", className: "table-width-210" },
+    {
+      id: 6,
       label: "",
       xtraContent: (item) => (
         <React.Fragment>
-          <PatientDoneAppt label="Delete" appt={item} />
+          <PatientDoneAppt label="Cancel" appt={item} />
         </React.Fragment>
       ),
       className: "table-width-240",

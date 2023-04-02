@@ -45,7 +45,7 @@ const Navbar = ({ currUser }) => {
             {currUser && (
               <li>
                 <NavLink
-                  to="/appoit"
+                  to="/patient/create-appointment"
                   className={({ isActive }) => (isActive ? "active" : "")}
                 >
                   Create Appointment
