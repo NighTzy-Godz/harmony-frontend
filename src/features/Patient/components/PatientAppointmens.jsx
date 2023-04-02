@@ -10,6 +10,7 @@ import TableBody from "../../../components/ui/Table/TableBody";
 import Paginate from "../../../components/common/Paginate";
 import paginate from "../../../utils/paginate";
 import PatientDoneAppt from "./PatientDoneAppt";
+import NoData from "../../../components/common/NoData";
 
 const PatientAppointments = () => {
   const { appts } = useGetAppointments();
@@ -54,7 +55,10 @@ const PatientAppointments = () => {
     const { pageSize, currPage } = state;
     const newData = paginate(pageSize, appts, currPage);
 
-    if (appts.length === 0) return <h1 className="text-center">No Data</h1>;
+    if (appts.length === 0)
+      return (
+        <NoData label="No Appointments Found. Kindly Check Your Medical Records or Create an Appointment." />
+      );
 
     return (
       <React.Fragment>

@@ -11,6 +11,7 @@ import paginate from "../../../utils/paginate";
 import PatientDoneAppt from "./PatientDoneAppt";
 import { deleteAppt } from "../../../services/patientDataServices";
 import useGetMedicalRecs from "../hooks/useGetMedicalRecs";
+import NoData from "../../../components/common/NoData";
 
 const PatientMedicalRecords = () => {
   const { records } = useGetMedicalRecs();
@@ -55,7 +56,10 @@ const PatientMedicalRecords = () => {
     const { pageSize, currPage } = state;
     const newData = paginate(pageSize, records, currPage);
 
-    if (records.length === 0) return <h1 className="text-center">No Data</h1>;
+    if (records.length === 0)
+      return (
+        <NoData label="No Medical Records was found. Either you dont have an appointment or just kindly complete your prescriptions first and the records of you appointments will appear here." />
+      );
 
     return (
       <React.Fragment>

@@ -14,6 +14,7 @@ import {
   deleteAppt,
   donePrescription,
 } from "../../../services/patientDataServices";
+import NoData from "../../../components/common/NoData";
 const PatientPrescriptions = () => {
   const { prescript } = useGetPrescriptions();
 
@@ -73,7 +74,10 @@ const PatientPrescriptions = () => {
     const { pageSize, currPage } = state;
     const newData = paginate(pageSize, prescript, currPage);
 
-    if (prescript.length === 0) return <h1 className="text-center">No Data</h1>;
+    if (prescript.length === 0)
+      return (
+        <NoData label="No Prescriptions was found at this moment. Kindly wait for the prescription of your Doctor." />
+      );
 
     return (
       <React.Fragment>

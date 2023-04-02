@@ -1,0 +1,7 @@
+@media screen and (min-width: 1200px) {
+  .no_data h3 {
+    text-align: center;
+    font-family: gelion_reg;
+    color: var(--black);
+  }
+}
