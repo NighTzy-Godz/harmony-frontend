@@ -10,6 +10,7 @@ import paginate from "../utils/paginate";
 import Paginate from "../components/common/Paginate";
 import specialties from "../utils/specialties";
 import gender from "../utils/gender";
+import filterDoc from "../utils/filterDoc";
 
 const AllDoctors = ({ step = 1, onStepChange = () => {} }) => {
   const [state, setState] = useState({
@@ -48,24 +49,10 @@ const AllDoctors = ({ step = 1, onStepChange = () => {} }) => {
 
   if (search) {
     doctors = searchedDoc;
-  } else if (
-    currSpecialty &&
-    currSpecialty !== "All Specialties" &&
-    currGender &&
-    currGender !== "All Gender"
-  ) {
-    doctors = allDoctors.filter((item) => {
-      return item.specialty === currSpecialty && item.gender === currGender;
-    });
-  } else if (currSpecialty && currSpecialty !== "All Specialties") {
-    doctors = allDoctors.filter((item) => {
-      return item.specialty === currSpecialty;
-    });
-  } else if (currGender && currGender !== "All Gender") {
-    doctors = allDoctors.filter((item) => {
-      return item.gender === currGender;
-    });
+  } else {
+    doctors = filterDoc(allDoctors, currGender, currSpecialty);
   }
+
   const paginatedDoctors = paginate(pageSize, doctors, currPage);
 
   const handleSearch = (e) => {
@@ -74,6 +61,7 @@ const AllDoctors = ({ step = 1, onStepChange = () => {} }) => {
       search: e.currentTarget.value,
       currGender: "All Gender",
       currSpecialty: "All Specialties",
+      currPage: 1,
     });
   };
 
@@ -82,11 +70,21 @@ const AllDoctors = ({ step = 1, onStepChange = () => {} }) => {
   };
 
   const handleGenderChange = (e) => {
-    setState({ ...state, currGender: e.currentTarget.value });
+    setState({
+      ...state,
+      currGender: e.currentTarget.value,
+      search: "",
+      currPage: 1,
+    });
   };
 
   const handleSpecialtyChange = (e) => {
-    setState({ ...state, currSpecialty: e.currentTarget.value });
+    setState({
+      ...state,
+      currSpecialty: e.currentTarget.value,
+      search: "",
+      currPage: 1,
+    });
   };
 
   const renderDoctorCard = paginatedDoctors.map((item) => {
@@ -101,8 +99,7 @@ const AllDoctors = ({ step = 1, onStepChange = () => {} }) => {
       </React.Fragment>
     );
   });
-  console.log(doctors);
-  console.log(state);
+
   return (
     <div className="all_doctors">
       <div className="container">
