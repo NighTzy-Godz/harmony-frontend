@@ -1,0 +1,23 @@
+@media screen and (min-width: 1200px) {
+  .search_bar {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .search_bar label {
+    font-family: gelion_reg;
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: var(--red);
+  }
+
+  .search_bar input {
+    padding: 8px;
+    font-family: gelion_reg;
+    font-size: 17px;
+    border-radius: 5px;
+    color: var(--black);
+    border: 1px solid rgba(0, 0, 0, 0.415);
+  }
+}

@@ -8,8 +8,6 @@ const Navbar = ({ currUser }) => {
     return "doctor";
   };
 
-  console.log(currUser);
-
   return (
     <nav className="mainNav">
       <div className="container">

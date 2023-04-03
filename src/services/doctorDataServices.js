@@ -3,6 +3,10 @@ import http from "./httpService";
 
 const BASE_URL = "http://localhost:8080/doctor";
 
+export function searchDoctor(name) {
+  return http.get(`${BASE_URL}/search_doc/${name}`);
+}
+
 export function getAllDoctors() {
   return http.get(`${BASE_URL}/all-doctors`).catch((err) => {
     if (err.response && err.response.status >= 500) return;

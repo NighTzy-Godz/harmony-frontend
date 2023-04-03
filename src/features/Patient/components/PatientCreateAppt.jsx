@@ -54,9 +54,6 @@ const PatientCreateAppt = () => {
 
     console.log(data);
     const result = await createAppointment(data);
-    try {
-      if (result.response.status === 400) return alert("Error");
-    } catch (error) {}
 
     if (result.status === 200) return navigate("/patient/settings");
     return;
