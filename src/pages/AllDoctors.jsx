@@ -7,9 +7,18 @@ import { getUser } from "../utils/auth";
 import SearchBar from "../components/common/SearchBar";
 import { searchDoctor } from "../services/doctorDataServices";
 import useSearchDoctor from "../hooks/useSearchDoctor";
+import paginate from "../utils/paginate";
+import Paginate from "../components/common/Paginate";
 
 const AllDoctors = ({ step = 1, onStepChange = () => {} }) => {
-  const [search, setSearch] = useState("");
+  const [state, setState] = useState({
+    search: "",
+    pageSize: 6,
+    currPage: 1,
+  });
+
+  const { search, pageSize, currPage } = state;
+
   const user = getUser();
   let doctors;
   const { allDoctors } = useAllDoctors();
@@ -18,11 +27,9 @@ const AllDoctors = ({ step = 1, onStepChange = () => {} }) => {
   if (!search) doctors = allDoctors;
   else doctors = searchedDoc;
 
-  const handleSearch = (e) => {
-    setSearch(e.currentTarget.value);
-  };
+  const paginatedDoctors = paginate(pageSize, doctors, currPage);
 
-  const renderDoctorCard = doctors.map((item) => {
+  const renderDoctorCard = paginatedDoctors.map((item) => {
     return (
       <React.Fragment key={item._id}>
         <DoctorCard
@@ -35,7 +42,13 @@ const AllDoctors = ({ step = 1, onStepChange = () => {} }) => {
     );
   });
 
-  // const doctors = allDoctors;
+  const handleSearch = (e) => {
+    setState({ ...state, search: e.currentTarget.value });
+  };
+
+  const handlePageChange = (page) => {
+    setState({ ...state, currPage: page });
+  };
 
   return (
     <div className="all_doctors">
@@ -46,6 +59,12 @@ const AllDoctors = ({ step = 1, onStepChange = () => {} }) => {
         <div className="all_doctors_right">
           <SearchBar search={search} onSearchChange={handleSearch} />
           <div className="all_doctors_grid">{renderDoctorCard}</div>
+          <Paginate
+            itemCount={doctors.length}
+            currPage={currPage}
+            pageSize={pageSize}
+            onPageChange={handlePageChange}
+          />
         </div>
       </div>
     </div>
