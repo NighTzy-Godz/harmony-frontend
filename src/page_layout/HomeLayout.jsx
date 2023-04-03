@@ -1,12 +1,13 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/ui/Navbar/Navbar";
+import React from "react";
 
 const HomeLayout = ({ currUser }) => {
   return (
-    <div className="">
+    <React.Fragment>
       <Navbar currUser={currUser} />
       <Outlet />
-    </div>
+    </React.Fragment>
   );
 };
 

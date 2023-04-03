@@ -1,3 +1,5 @@
+import formatDate from "../utils/formatDate";
+import formatTime from "../utils/formatTime";
 import http from "./httpService";
 const BASE_URL = "http://localhost:8080/patient";
 import { toast } from "react-toastify";
@@ -41,6 +43,22 @@ export function getMedicalRecords() {
     .get(`${BASE_URL}/medical-records`)
     .then((data) => {
       return data;
+    })
+    .catch((err) => {
+      if (err.response && err.response.status >= 500) return;
+      toast.error(err.response.data, { autoClose: 2000 });
+      return err;
+    });
+}
+
+export function cancelAppointment(data) {
+  return http
+    .post(`${BASE_URL}/cancel-appt`, data)
+    .then((appt) => {
+      toast.success("Appointment was succesfully cancelled", {
+        autoClose: 2000,
+      });
+      return appt;
     })
     .catch((err) => {
       if (err.response && err.response.status >= 500) return;

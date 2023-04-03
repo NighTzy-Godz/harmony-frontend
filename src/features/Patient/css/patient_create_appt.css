@@ -1,2 +1,76 @@
 @media screen and (min-width: 1200px) {
+  .patient_create_appt {
+    display: grid;
+
+    place-items: center;
+    height: 90vh;
+  }
+  .patient_appt_details {
+    border-radius: 8px;
+    width: 850px;
+    margin: 0 auto;
+    background: var(--red);
+
+    padding: 20px 40px;
+  }
+
+  .patient_appt_details_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .patient_appt_details p {
+    width: 100px;
+    text-align: center;
+    padding: 3.5px 0px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: gelion_reg;
+    color: var(--white);
+    background-color: var(--black);
+    border: 1px solid var(--black);
+    transition: all 0.3s;
+  }
+  .patient_appt_details p:hover {
+    background-color: var(--hover-black);
+    border: 1px solid var(--hover-black);
+  }
+
+  .patient_appt_details h3 {
+    font-family: gelion_bold;
+    font-size: 30px;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+  .patient_appt_details select {
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #f5f6fa;
+    border: 1px solid #e6e9f4;
+    font-family: gelion_reg;
+    font-size: 15px;
+    color: var(--black);
+  }
+
+  .patient_appt_details button {
+    /* margin-top: 10px; */
+    width: 100%;
+    padding: 8px;
+    font-family: gelion_reg;
+    background-color: var(--black);
+    border: 1px solid var(--black);
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--white);
+    transition: all 0.3s;
+  }
+
+  .patient_appt_details button:hover {
+    background-color: var(--hover-black);
+    border: 1px solid var(--hover-black);
+    /* color: var(--black); */
+  }
 }

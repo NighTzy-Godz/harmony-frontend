@@ -8,6 +8,8 @@ const Navbar = ({ currUser }) => {
     return "doctor";
   };
 
+  console.log(currUser);
+
   return (
     <nav className="mainNav">
       <div className="container">
@@ -33,16 +35,19 @@ const Navbar = ({ currUser }) => {
                 About
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/all-doctors"
-                className={({ isActive }) => (isActive ? "active" : "")}
-              >
-                Doctors
-              </NavLink>
-            </li>
 
-            {currUser && (
+            {!currUser && (
+              <li>
+                <NavLink
+                  to="/all-doctors"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  Doctors
+                </NavLink>
+              </li>
+            )}
+
+            {currUser && currUser.role === "Patient" && (
               <li>
                 <NavLink
                   to="/patient/create-appointment"

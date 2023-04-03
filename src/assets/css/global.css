@@ -13,6 +13,11 @@
   src: url("../fonts/Gelion Bold.ttf");
 }
 
+html,
+body,
+#root {
+  height: 100%;
+}
 :root {
   --pink: #f8bcbc;
   --peach: #ffe2e2;

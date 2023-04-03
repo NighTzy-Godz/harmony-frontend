@@ -2,14 +2,17 @@ import React, { useContext } from "react";
 import DropDown from "../../../components/ui/DropDown";
 import mode_of_consult from "../utils/mode_of_consult";
 import { FormContext } from "../../../components/common/Form";
+import FormInput from "../../../components/common/FormInput";
 
-const PatientApptDetails = () => {
-  const formContext = useContext(FormContext);
-  const { handleChange } = formContext;
-
+const PatientApptDetails = ({ step, onStepChange }) => {
   return (
-    <React.Fragment>
-      <div className="">
+    <div className="patient_appt_details">
+      <div className="patient_appt_details_container">
+        <h3>More Details</h3>
+        <p onClick={() => onStepChange(step - 1)}>Go Back</p>
+      </div>
+
+      <div className="form_input_container">
         <DropDown
           label="Mode of Consultation"
           name="mode_of_consult"
@@ -18,10 +21,14 @@ const PatientApptDetails = () => {
         />
       </div>
 
-      <input type="date" name="date" onChange={handleChange} />
-      <input type="time" name="time" id="" onChange={handleChange} />
+      <div className="form_input_container">
+        <FormInput label="Date" name="date" type="date" />
+      </div>
+      <div className="form_input_container">
+        <FormInput label="Time" name="time" type="time" />
+      </div>
       <button>Submit</button>
-    </React.Fragment>
+    </div>
   );
 };
 

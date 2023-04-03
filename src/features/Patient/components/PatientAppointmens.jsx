@@ -11,6 +11,7 @@ import Paginate from "../../../components/common/Paginate";
 import paginate from "../../../utils/paginate";
 import PatientDoneAppt from "./PatientDoneAppt";
 import NoData from "../../../components/common/NoData";
+import { cancelAppointment } from "../../../services/patientDataServices";
 
 const PatientAppointments = () => {
   const { appts } = useGetAppointments();
@@ -46,7 +47,11 @@ const PatientAppointments = () => {
       label: "",
       xtraContent: (item) => (
         <React.Fragment>
-          <PatientDoneAppt label="Cancel" appt={item} />
+          <PatientDoneAppt
+            funcEvent={cancelAppointment}
+            label="Cancel"
+            appt={item}
+          />
         </React.Fragment>
       ),
       className: "table-width-240",

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AllDoctors from "./pages/AllDoctors";
 import Home from "./pages/Home";
@@ -8,7 +8,6 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PatientLogin from "./features/Patient/components/PatientLogin";
 import PatientRegister from "./features/Patient/components/PatientRegister";
-import { getUser } from "./utils/auth";
 import PatientSettings from "./features/Patient/components/PatientSettings";
 import useGetUser from "./hooks/useGetUser";
 import Logout from "./components/common/Logout";
@@ -19,6 +18,7 @@ import PatientCreateAppt from "./features/Patient/components/PatientCreateAppt";
 
 function App() {
   const { currUser } = useGetUser();
+
   return (
     <BrowserRouter>
       <ToastContainer />
