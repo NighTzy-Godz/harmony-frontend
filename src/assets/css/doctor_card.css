@@ -47,7 +47,18 @@
   }
 
   .doctor_card_row i {
+    /* font-size: 20px; */
     color: var(--black);
+  }
+
+  .doctor_card .gender i {
+    font-size: 25px;
+    color: var(--black);
+    margin-bottom: 10px;
+  }
+
+  .doctor_card .gender p {
+    margin-top: -5px;
   }
 
   .doctor_card_btn p {

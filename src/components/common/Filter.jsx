@@ -1,9 +1,27 @@
 import "../../assets/css/filter.css";
-import specialties from "../../utils/specialties";
 
-const Filter = () => {
-  const renderFilter = specialties.map((item) => {
-    return <li key={item.id}>{item.name}</li>;
+const Filter = ({
+  currGender,
+  currSpecialty,
+  specialtyFilter,
+  genderFilter,
+  onGenderChange,
+  onSpecialtyChange,
+}) => {
+  const renderFilter = specialtyFilter.map((item) => {
+    return (
+      <div className="filter_radio_container" key={item.id}>
+        <input
+          type="radio"
+          name="filter_categories"
+          id={item.name}
+          value={item.name}
+          checked={item.name === currSpecialty}
+          onChange={onSpecialtyChange}
+        />
+        <label htmlFor={item.name}>{item.name}</label>
+      </div>
+    );
   });
   return (
     <div className="filter">
@@ -12,20 +30,26 @@ const Filter = () => {
       </div>
       <div className="filter_categories">
         <h3>Select Categories</h3>
-        <ul>{renderFilter}</ul>
+        {renderFilter}
       </div>
       <div className="filter_gender">
         <h3>Gender</h3>
 
-        <div className="filter_gender_container">
-          <input type="radio" name="filter_gender" id="filter_male" />
-          <label htmlFor="filter_male">Male</label>
-        </div>
-
-        <div className="filter_gender_container">
-          <input type="radio" name="filter_gender" id="filter_female" />
-          <label htmlFor="filter_female">Female</label>
-        </div>
+        {genderFilter.map((item) => {
+          return (
+            <div className="filter_radio_container" key={item.id}>
+              <input
+                type="radio"
+                name="filter_gender"
+                id={item.name}
+                checked={item.name === currGender}
+                onChange={onGenderChange}
+                value={item.name}
+              />
+              <label htmlFor={item.name}>{item.name}</label>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

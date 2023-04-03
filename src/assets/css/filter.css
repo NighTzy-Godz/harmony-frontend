@@ -28,14 +28,6 @@
     font-size: 21px;
   }
 
-  .filter_categories li {
-    margin-bottom: 5px;
-    cursor: pointer;
-    font-family: gelion_reg;
-    color: var(--white);
-    font-size: 17px;
-  }
-
   .filter_gender h3 {
     font-family: gelion_bold;
     color: var(--pink);
@@ -43,18 +35,18 @@
     font-size: 21px;
   }
 
-  .filter_gender_container {
+  .filter_radio_container {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
   }
 
-  .filter_gender input {
+  .filter_radio_container input {
     margin-right: 10px;
     cursor: pointer;
   }
 
-  .filter_gender label {
+  .filter_radio_container label {
     font-size: 17px;
     color: var(--white);
     cursor: pointer;

@@ -5,29 +5,89 @@ import DoctorCard from "../components/ui/Card/DoctorCard";
 import useAllDoctors from "../hooks/useAllDoctors";
 import { getUser } from "../utils/auth";
 import SearchBar from "../components/common/SearchBar";
-import { searchDoctor } from "../services/doctorDataServices";
 import useSearchDoctor from "../hooks/useSearchDoctor";
 import paginate from "../utils/paginate";
 import Paginate from "../components/common/Paginate";
+import specialties from "../utils/specialties";
+import gender from "../utils/gender";
 
 const AllDoctors = ({ step = 1, onStepChange = () => {} }) => {
   const [state, setState] = useState({
     search: "",
     pageSize: 6,
     currPage: 1,
+    currGender: "",
+    currSpecialty: "",
+    genderFilter: gender,
+    specialtyFilter: specialties,
   });
 
-  const { search, pageSize, currPage } = state;
+  const {
+    currGender,
+    currSpecialty,
+    genderFilter,
+    specialtyFilter,
+    search,
+    pageSize,
+    currPage,
+  } = state;
 
-  const user = getUser();
-  let doctors;
+  useEffect(() => {
+    setState({
+      ...state,
+      genderFilter: [{ name: "All Gender" }, ...gender],
+      specialtyFilter: [{ name: "All Specialties" }, ...specialties],
+      currGender: "All Gender",
+      currSpecialty: "All Specialties",
+    });
+  }, []);
   const { allDoctors } = useAllDoctors();
   const { searchedDoc } = useSearchDoctor(search);
+  const user = getUser();
+  let doctors = allDoctors;
 
-  if (!search) doctors = allDoctors;
-  else doctors = searchedDoc;
-
+  if (search) {
+    doctors = searchedDoc;
+  } else if (
+    currSpecialty &&
+    currSpecialty !== "All Specialties" &&
+    currGender &&
+    currGender !== "All Gender"
+  ) {
+    doctors = allDoctors.filter((item) => {
+      return item.specialty === currSpecialty && item.gender === currGender;
+    });
+  } else if (currSpecialty && currSpecialty !== "All Specialties") {
+    doctors = allDoctors.filter((item) => {
+      return item.specialty === currSpecialty;
+    });
+  } else if (currGender && currGender !== "All Gender") {
+    doctors = allDoctors.filter((item) => {
+      return item.gender === currGender;
+    });
+  }
   const paginatedDoctors = paginate(pageSize, doctors, currPage);
+
+  const handleSearch = (e) => {
+    setState({
+      ...state,
+      search: e.currentTarget.value,
+      currGender: "All Gender",
+      currSpecialty: "All Specialties",
+    });
+  };
+
+  const handlePageChange = (page) => {
+    setState({ ...state, currPage: page });
+  };
+
+  const handleGenderChange = (e) => {
+    setState({ ...state, currGender: e.currentTarget.value });
+  };
+
+  const handleSpecialtyChange = (e) => {
+    setState({ ...state, currSpecialty: e.currentTarget.value });
+  };
 
   const renderDoctorCard = paginatedDoctors.map((item) => {
     return (
@@ -41,20 +101,20 @@ const AllDoctors = ({ step = 1, onStepChange = () => {} }) => {
       </React.Fragment>
     );
   });
-
-  const handleSearch = (e) => {
-    setState({ ...state, search: e.currentTarget.value });
-  };
-
-  const handlePageChange = (page) => {
-    setState({ ...state, currPage: page });
-  };
-
+  console.log(doctors);
+  console.log(state);
   return (
     <div className="all_doctors">
       <div className="container">
         <div className="all_doctors_left">
-          <Filter />
+          <Filter
+            currGender={currGender}
+            currSpecialty={currSpecialty}
+            specialtyFilter={specialtyFilter}
+            genderFilter={genderFilter}
+            onGenderChange={handleGenderChange}
+            onSpecialtyChange={handleSpecialtyChange}
+          />
         </div>
         <div className="all_doctors_right">
           <SearchBar search={search} onSearchChange={handleSearch} />

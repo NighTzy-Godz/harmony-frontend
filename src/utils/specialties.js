@@ -1,4 +1,4 @@
-const specialties = [
+let specialties = [
   {
     id: 0,
     name: "Dental",

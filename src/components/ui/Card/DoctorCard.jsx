@@ -1,4 +1,3 @@
-import Button from "../Button/Button";
 import "../../../assets/css/doctor_card.css";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -45,6 +44,15 @@ const DoctorCard = ({ data, user, step, onStepChange, onDocIdChange }) => {
           <i className="fa-solid fa-money-check-dollar"></i>
           <p className="font_reg rate">P{data.rate}</p>
         </div>
+        <div className="gender doctor_card_row">
+          {data.gender === "Male" ? (
+            <i className="fa-solid fa-person" />
+          ) : (
+            <i className="fa-solid fa-person-dress" />
+          )}
+          <p>{data.gender === "Male" ? "Male" : "Female"}</p>
+        </div>
+
         <div className="doctor_card_btn">
           <p onClick={btnEvent}>{!user ? "Book Me" : "Select Me"}</p>
         </div>
