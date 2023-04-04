@@ -5,8 +5,7 @@ export default function filterDoc(
   currSpecialty
 ) {
   let doctors = data;
-  console.log(currSpecialty);
-  console.log(currGender);
+
   if (
     currSpecialty &&
     currSpecialty !== "All Specialties" &&

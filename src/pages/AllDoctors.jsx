@@ -117,6 +117,7 @@ const AllDoctors = ({ step = 1, onStepChange = () => {} }) => {
           <SearchBar search={search} onSearchChange={handleSearch} />
           <div className="all_doctors_grid">{renderDoctorCard}</div>
           <Paginate
+            data={paginatedDoctors.length}
             itemCount={doctors.length}
             currPage={currPage}
             pageSize={pageSize}

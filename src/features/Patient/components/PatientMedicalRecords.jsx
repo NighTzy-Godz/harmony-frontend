@@ -1,5 +1,5 @@
 import _ from "lodash";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import UserTableInfo from "../../../components/common/UserTableInfo";
 import TableHeader from "../../../components/ui/Table/TableHeader";
 
@@ -15,7 +15,6 @@ import NoData from "../../../components/common/NoData";
 
 const PatientMedicalRecords = () => {
   const { records } = useGetMedicalRecs();
-  console.log(records);
   const [state, setState] = useState({
     pageSize: 5,
     currPage: 1,
@@ -53,9 +52,8 @@ const PatientMedicalRecords = () => {
   };
 
   const renderContent = () => {
-    const { pageSize, currPage } = state;
-    const newData = paginate(pageSize, records, currPage);
-
+    const { currPage, pageSize } = state;
+    let newData = paginate(pageSize, records, currPage);
     if (records.length === 0)
       return (
         <NoData label="No Medical Records was found. Either you dont have an appointment or just kindly complete your prescriptions first and the records of you appointments will appear here." />
@@ -70,9 +68,11 @@ const PatientMedicalRecords = () => {
           </table>
         </div>
         <Paginate
+          data={newData}
           itemCount={records.length}
           pageSize={pageSize}
           currPage={currPage}
+          removable={true}
           onPageChange={handlePageChange}
         />
       </React.Fragment>

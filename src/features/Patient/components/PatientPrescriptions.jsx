@@ -88,6 +88,7 @@ const PatientPrescriptions = () => {
           </table>
         </div>
         <Paginate
+          data={newData}
           itemCount={prescript.length}
           pageSize={pageSize}
           currPage={currPage}

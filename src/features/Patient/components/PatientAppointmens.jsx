@@ -80,6 +80,7 @@ const PatientAppointments = () => {
           </table>
         </div>
         <Paginate
+          data={newData.length}
           itemCount={appts.length}
           pageSize={pageSize}
           currPage={currPage}

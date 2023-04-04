@@ -1,10 +1,26 @@
 import _ from "lodash";
 import "../../assets/css/paginate.css";
+import { useEffect } from "react";
 
-const Paginate = ({ currPage, itemCount, pageSize, onPageChange }) => {
+const Paginate = ({
+  data,
+  currPage,
+  itemCount,
+  pageSize,
+  onPageChange,
+  removable = false,
+}) => {
   const pageCount = itemCount / pageSize;
 
-  if (pageCount <= 1) return null;
+  useEffect(() => {
+    if (data.length === 0 && currPage > 1) {
+      return onPageChange(currPage - 1);
+    }
+  }, [currPage, data]);
+
+  if (pageCount <= 1) {
+    return null;
+  }
 
   const pages = _.range(1, pageCount + 1);
 
