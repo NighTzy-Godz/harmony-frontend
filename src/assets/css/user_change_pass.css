@@ -6,10 +6,19 @@
   }
 
   .user_change_pass h1 {
+    font-size: 25px;
     font-family: gelion_bold;
     color: var(--black);
     margin-bottom: 20px;
     display: block;
+  }
+
+  .user_change_pass label {
+    font-size: 17px;
+  }
+
+  .user_change_pass input {
+    font-size: 16px;
   }
 
   .user_change_pass button {

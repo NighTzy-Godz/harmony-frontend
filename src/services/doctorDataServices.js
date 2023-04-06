@@ -70,6 +70,22 @@ export function doctorDecideAppt(data) {
     });
 }
 
+export function doctorUpdatePassword(data) {
+  return http
+    .post(`${BASE_URL}/update-pass`, data)
+    .then((appt) => {
+      toast.success("Password has been successfully changed.", {
+        autoClose: 2000,
+      });
+      return appt;
+    })
+    .catch((err) => {
+      if (err.response && err.response.status >= 500) return;
+      toast.error(err.response.data, { autoClose: 2000 });
+      return err;
+    });
+}
+
 export function loginDoctor(data) {
   return http
     .post(`${BASE_URL}/login`, data)
