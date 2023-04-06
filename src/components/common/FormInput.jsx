@@ -13,6 +13,7 @@ const FormInput = ({
     <React.Fragment>
       <label htmlFor={name}>{label}</label>
       <input
+        autoComplete={name}
         type={type}
         name={name}
         id={name}

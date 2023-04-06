@@ -1,0 +1,32 @@
+@media screen and (min-width: 1200px) {
+  .user_change_pass {
+    border: 1px solid rgba(0, 0, 0, 0.225);
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .user_change_pass h1 {
+    font-family: gelion_bold;
+    color: var(--black);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .user_change_pass button {
+    background-color: var(--red);
+    padding: 8px;
+    font-family: gelion_reg;
+    font-size: 1rem;
+    color: var(--white);
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    min-width: 100px;
+    width: 20%;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .user_change_pass button:hover {
+    background: var(--hover-red);
+  }
+}

@@ -5,7 +5,7 @@ import Form from "../../../components/common/Form";
 
 const PatientDoneAppt = ({
   appt,
-  color = "var(--red);",
+  color = "var(--red)",
   label = "",
   funcEvent,
 }) => {
