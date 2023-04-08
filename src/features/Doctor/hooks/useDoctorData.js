@@ -12,7 +12,7 @@ const useDoctorData = () => {
     };
 
     getData();
-  }, []);
+  }, [doc]);
 
   return { doc };
 };

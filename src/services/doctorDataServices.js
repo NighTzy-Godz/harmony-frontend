@@ -39,6 +39,20 @@ export function getIncomingAppointments() {
   });
 }
 
+export function doctorAccountUpdate(data) {
+  return http
+    .post(`${BASE_URL}/update-account`, data)
+    .then((appt) => {
+      toast.success("Successfully Updated the Account!", { autoClose: 2000 });
+      return appt;
+    })
+    .catch((err) => {
+      if (err.response && err.response.status >= 500) return;
+      toast.error(err.response.data, { autoClose: 2000 });
+      return err;
+    });
+}
+
 export function doctorPostAppt(data) {
   return http
     .post(`${BASE_URL}/post-appt`, data)
