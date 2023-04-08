@@ -28,7 +28,13 @@ const Form = (props) => {
   };
   return (
     <React.Fragment>
-      <form action="" onSubmit={handleSubmit} id={id} className={className}>
+      <form
+        action=""
+        onSubmit={handleSubmit}
+        id={id}
+        encType="multipart/form-data"
+        className={className}
+      >
         <FormContext.Provider value={{ data, handleChange }}>
           {children}
         </FormContext.Provider>
