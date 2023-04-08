@@ -63,7 +63,7 @@ const Navbar = ({ currUser }) => {
             ) : (
               <LinkButton
                 label="Profile"
-                path={`/${getProfileLink()}/settings`}
+                path={`/${getProfileLink()}/dashboard`}
               />
             )}
           </div>
