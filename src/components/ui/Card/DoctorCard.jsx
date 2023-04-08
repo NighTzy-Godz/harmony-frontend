@@ -24,11 +24,7 @@ const DoctorCard = ({ data, user, step, onStepChange, onDocIdChange }) => {
   return (
     <div className="doctor_card">
       <div className="doctor_card_img">
-        <img
-          loading="lazy"
-          src="https://ahaliagroup.com/ahm/wp-content/uploads/2020/05/default_dr.jpg"
-          alt=""
-        />
+        <img loading="lazy" src={data.profile_pic} alt="" />
       </div>
       <div className="doctor_card_details">
         <div className="doctor_card_row justify-between">
