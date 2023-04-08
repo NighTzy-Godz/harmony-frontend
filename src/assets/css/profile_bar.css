@@ -50,7 +50,7 @@
     color: var(--black);
   }
 
-  .profile_bar li.active {
+  .profile_bar a.active {
     color: var(--red);
   }
 }

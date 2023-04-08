@@ -18,7 +18,7 @@ const PatientChangePass = () => {
   const submitEvent = async (data) => {
     const result = await patientUpdatePassword(data);
     try {
-      if (result.status === 200) return navigate("/patient/settings");
+      if (result.status === 200) return navigate("/patient/dashboard");
     } catch (error) {
       return;
     }

@@ -25,7 +25,7 @@ const PatientLogin = () => {
       try {
         setStorage("token", result.headers["x-auth-token"]);
 
-        window.location = "/patient/settings";
+        window.location = "/patient/dashboard";
       } catch (err) {}
     }
   };

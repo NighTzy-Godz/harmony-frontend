@@ -8,17 +8,21 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PatientLogin from "./features/Patient/components/PatientLogin";
 import PatientRegister from "./features/Patient/components/PatientRegister";
-import PatientSettings from "./features/Patient/components/PatientSettings";
 import useGetUser from "./hooks/useGetUser";
 import Logout from "./components/common/Logout";
 import DoctorLogin from "./features/Doctor/components/DoctorLogin";
 import DoctorRegister from "./features/Doctor/components/DoctorRegister";
 import DoctorSettings from "./features/Doctor/components/DoctorSettings";
 import PatientCreateAppt from "./features/Patient/components/PatientCreateAppt";
+import PatientProfileLayout from "./features/Patient/components/PatientProfileLayout";
+import PatientDashboard from "./features/Patient/components/PatientDashboard";
+import PatientChangePass from "./features/Patient/components/PatientChangePass";
+import PatientAccount from "./features/Patient/components/PatientAccount";
+import usePatientData from "./hooks/usePatientData";
 
 function App() {
   const { currUser } = useGetUser();
-
+  const { patient } = usePatientData();
   return (
     <BrowserRouter>
       <ToastContainer />
@@ -28,9 +32,17 @@ function App() {
           <Route path="all-doctors" element={<AllDoctors />} />
 
           {/* PATIENT ROUTE */}
+          <Route path="patient" element={<PatientProfileLayout />}>
+            <Route
+              path="dashboard"
+              element={<PatientDashboard user={patient} />}
+            />
+            <Route path="change-pass" element={<PatientChangePass />} />
+            <Route path="update-acc" element={<PatientAccount />} />
+          </Route>
           <Route path="patient/login" element={<PatientLogin />} />
           <Route path="patient/register" element={<PatientRegister />} />
-          <Route path="patient/settings" element={<PatientSettings />} />
+
           <Route
             path="patient/create-appointment"
             element={<PatientCreateAppt />}

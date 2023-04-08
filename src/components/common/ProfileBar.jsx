@@ -2,16 +2,14 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "../../assets/css/profile_bar.css";
 
-const ProfileBar = ({ currLinkId, profile_links, user, onLinkChange }) => {
+const ProfileBar = ({ profile_links, user }) => {
   const { profile_pic, full_name, email } = user;
   const renderProfileLinks = profile_links.map((item) => {
     return (
-      <li
-        className={item.id === currLinkId ? "active" : ""}
-        key={item.id}
-        onClick={() => onLinkChange(item.id)}
-      >
-        <i className={item.icon}></i> {item.name}
+      <li key={item.id}>
+        <NavLink to={item.link}>
+          <i className={item.icon}></i> {item.name}
+        </NavLink>
       </li>
     );
   });
@@ -28,7 +26,6 @@ const ProfileBar = ({ currLinkId, profile_links, user, onLinkChange }) => {
 
       <ul>
         {renderProfileLinks}
-
         <li>
           <Link to="/logout">
             <i className="fa-solid fa-right-from-bracket"></i>Logout

@@ -5,58 +5,44 @@ import { useState } from "react";
 import PatientChangePass from "./PatientChangePass";
 import PatientAccount from "./PatientAccount";
 import PatientDashboard from "./PatientDashboard";
+import { Outlet } from "react-router-dom";
 
-const PatientSettings = () => {
+const PatientProfileLayout = () => {
   const { patient: user } = usePatientData();
-
-  const [state, setState] = useState({
-    currLinkId: 0,
-  });
 
   const profile_links = [
     {
       id: 0,
       icon: "fa-solid fa-table-columns",
       name: "Dashboard",
+      link: "/patient/dashboard",
     },
     {
       id: 1,
       icon: "fa-solid fa-lock",
       name: "Change Password",
+      link: "/patient/change-pass",
     },
     {
       id: 2,
       icon: "fa-solid fa-user",
       name: "Account",
+      link: "/patient/update-acc",
     },
   ];
-
-  const handleLinkChange = (id) => {
-    setState({ ...state, currLinkId: id });
-  };
-
-  const renderContent = () => {
-    const { currLinkId } = state;
-    if (currLinkId === 0) return <PatientDashboard user={user} />;
-    if (currLinkId === 1) return <PatientChangePass />;
-    if (currLinkId === 2) return <PatientAccount />;
-  };
 
   return (
     <div className="settings">
       <div className="settings_container">
         <div className="settings_left">
-          <ProfileBar
-            currLinkId={state.currLinkId}
-            user={user}
-            profile_links={profile_links}
-            onLinkChange={handleLinkChange}
-          />
+          <ProfileBar user={user} profile_links={profile_links} />
         </div>
-        <div className="settings_right">{renderContent()}</div>
+        <div className="settings_right">
+          <Outlet />
+        </div>
       </div>
     </div>
   );
 };
 
-export default PatientSettings;
+export default PatientProfileLayout;
