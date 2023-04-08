@@ -52,10 +52,9 @@ const PatientCreateAppt = () => {
     data.time = setTime;
     data.date = setDate;
 
-    console.log(data);
     const result = await createAppointment(data);
 
-    if (result.status === 200) return navigate("/patient/settings");
+    if (result.status === 200) return navigate("/patient/dashboard");
     return;
   };
 
