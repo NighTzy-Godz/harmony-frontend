@@ -19,10 +19,16 @@ import PatientDashboard from "./features/Patient/components/PatientDashboard";
 import PatientChangePass from "./features/Patient/components/PatientChangePass";
 import PatientAccount from "./features/Patient/components/PatientAccount";
 import usePatientData from "./hooks/usePatientData";
+import DoctorProfileLayout from "./features/Doctor/components/DoctorProfileLayout";
+import useDoctorData from "./features/Doctor/hooks/useDoctorData";
+import DoctorDashboard from "./features/Doctor/components/DoctorDashboard";
+import DoctorChangePass from "./features/Doctor/components/DoctorChangePass";
+import DoctorAccount from "./features/Doctor/components/DoctorAccount";
 
 function App() {
   const { currUser } = useGetUser();
   const { patient } = usePatientData();
+  const { doc } = useDoctorData();
   return (
     <BrowserRouter>
       <ToastContainer />
@@ -49,7 +55,11 @@ function App() {
           />
 
           {/* DOCTOR ROUTE */}
-
+          <Route path="doctor" element={<DoctorProfileLayout />}>
+            <Route path="dashboard" element={<DoctorDashboard user={doc} />} />
+            <Route path="change-pass" element={<DoctorChangePass />} />
+            <Route path="update-acc" element={<DoctorAccount />} />
+          </Route>
           <Route path="doctor/login" element={<DoctorLogin />} />
           <Route path="doctor/register" element={<DoctorRegister />} />
           <Route path="doctor/settings" element={<DoctorSettings />} />

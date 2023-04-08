@@ -12,7 +12,6 @@ const useDoctorData = () => {
     };
 
     getData();
-    console.log("useDoctorData");
   }, [doc]);
 
   return { doc };

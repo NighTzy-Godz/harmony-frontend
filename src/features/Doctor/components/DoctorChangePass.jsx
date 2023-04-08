@@ -19,7 +19,7 @@ const DoctorChangePass = () => {
   const submitEvent = async (data) => {
     const result = await doctorUpdatePassword(data);
     try {
-      if (result.status === 200) return navigate("/doctor/settings");
+      if (result.status === 200) return navigate("/doctor/dashboard");
     } catch (error) {
       return;
     }

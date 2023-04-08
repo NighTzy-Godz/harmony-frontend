@@ -1,30 +1,30 @@
 import ProfileBar from "../../../components/common/ProfileBar";
 import "../../../assets/css/settings.css";
-import usePatientData from "../../../hooks/usePatientData";
 
 import { Outlet } from "react-router-dom";
+import useDoctorData from "../hooks/useDoctorData";
 
-const PatientProfileLayout = () => {
-  const { patient: user } = usePatientData();
+const DoctorProfileLayout = () => {
+  const { doc: user } = useDoctorData();
 
   const profile_links = [
     {
       id: 0,
       icon: "fa-solid fa-table-columns",
       name: "Dashboard",
-      link: "/patient/dashboard",
+      link: "/doctor/dashboard",
     },
     {
       id: 1,
       icon: "fa-solid fa-lock",
       name: "Change Password",
-      link: "/patient/change-pass",
+      link: "/doctor/change-pass",
     },
     {
       id: 2,
       icon: "fa-solid fa-user",
       name: "Account",
-      link: "/patient/update-acc",
+      link: "/doctor/update-acc",
     },
   ];
 
@@ -42,4 +42,4 @@ const PatientProfileLayout = () => {
   );
 };
 
-export default PatientProfileLayout;
+export default DoctorProfileLayout;

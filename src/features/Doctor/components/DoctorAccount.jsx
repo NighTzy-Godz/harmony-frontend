@@ -43,14 +43,12 @@ const DoctorAccount = () => {
       formData.append("img", img);
     }
 
-    await doctorAccountUpdate(formData);
-
-    // const result = await patientUpdatePassword(data);
-    // try {
-    //   if (result.status === 200) return navigate("/patient/settings");
-    // } catch (error) {
-    //   return;
-    // }
+    const result = await doctorAccountUpdate(formData);
+    try {
+      if (result.status === 200) return navigate("/doctor/dashboard");
+    } catch (error) {
+      return;
+    }
   };
 
   return (
