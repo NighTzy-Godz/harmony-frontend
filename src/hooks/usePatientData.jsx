@@ -11,7 +11,7 @@ const usePatientData = () => {
     };
 
     getData();
-  }, []);
+  }, [patient]);
 
   return { patient };
 };
