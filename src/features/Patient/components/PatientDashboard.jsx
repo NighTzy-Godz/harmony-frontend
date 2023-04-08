@@ -6,8 +6,10 @@ import health_data from "../utils/health_status";
 import PatientAppointments from "./PatientAppointmens";
 import PatientPrescriptions from "./PatientPrescriptions";
 import PatientMedicalRecord from "./PatientMedicalRecords";
+import usePatientData from "../../../hooks/usePatientData";
 
-const PatientDashboard = ({ user }) => {
+const PatientDashboard = () => {
+  const { patient: user } = usePatientData();
   const { first_name } = user;
   const [currContent, setCurrContent] = useState({});
 

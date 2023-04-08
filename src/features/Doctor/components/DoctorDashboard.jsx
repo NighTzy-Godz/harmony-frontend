@@ -4,9 +4,11 @@ import docShortStatus from "../utils/doc_short_status";
 import DocIncomingAppts from "./DocIncomingAppts";
 import DocRequestAppts from "./DocRequestAppts";
 import DocShortStatus from "./DocShortStatus";
+import useDoctorData from "../hooks/useDoctorData";
 
-const DoctorDashboard = ({ user }) => {
-  const { first_name, specialty } = user;
+const DoctorDashboard = () => {
+  const { doc } = useDoctorData();
+  const { first_name, specialty } = doc;
   const [currContent, setCurrContent] = useState({});
   const doc_short_status = docShortStatus(specialty);
 
