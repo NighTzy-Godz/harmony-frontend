@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AllDoctors from "./pages/AllDoctors";
 import Home from "./pages/Home";
@@ -24,6 +23,9 @@ import DoctorProfileLayout from "./features/Doctor/components/DoctorProfileLayou
 import DoctorDashboard from "./features/Doctor/components/DoctorDashboard";
 import DoctorChangePass from "./features/Doctor/components/DoctorChangePass";
 import DoctorAccount from "./features/Doctor/components/DoctorAccount";
+import ProtectedRoutes from "./components/common/ProtectedRoutes/ProtectedRoutes";
+import PatientProtect from "./components/common/ProtectedRoutes/PatientProtect";
+import DoctorProtect from "./components/common/ProtectedRoutes/DoctorProtect";
 
 function App() {
   const { currUser } = useGetUser();
@@ -37,7 +39,14 @@ function App() {
           <Route path="all-doctors" element={<AllDoctors />} />
 
           {/* PATIENT ROUTE */}
-          <Route path="patient" element={<PatientProfileLayout />}>
+          <Route
+            path="patient"
+            element={
+              <ProtectedRoutes user={currUser}>
+                <PatientProfileLayout />
+              </ProtectedRoutes>
+            }
+          >
             <Route path="dashboard" element={<PatientDashboard />} />
             <Route path="change-pass" element={<PatientChangePass />} />
             <Route path="update-acc" element={<PatientAccount />} />
@@ -51,10 +60,38 @@ function App() {
           />
 
           {/* DOCTOR ROUTE */}
-          <Route path="doctor" element={<DoctorProfileLayout />}>
-            <Route path="dashboard" element={<DoctorDashboard />} />
-            <Route path="change-pass" element={<DoctorChangePass />} />
-            <Route path="update-acc" element={<DoctorAccount />} />
+          <Route
+            path="doctor"
+            element={
+              <ProtectedRoutes user={currUser}>
+                <DoctorProfileLayout />
+              </ProtectedRoutes>
+            }
+          >
+            <Route
+              path="dashboard"
+              element={
+                <DoctorProtect user={currUser}>
+                  <DoctorDashboard />
+                </DoctorProtect>
+              }
+            />
+            <Route
+              path="change-pass"
+              element={
+                <DoctorProtect user={currUser}>
+                  <DoctorChangePass />
+                </DoctorProtect>
+              }
+            />
+            <Route
+              path="update-acc"
+              element={
+                <DoctorProtect user={currUser}>
+                  <DoctorAccount />
+                </DoctorProtect>
+              }
+            />
           </Route>
           <Route path="doctor/login" element={<DoctorLogin />} />
           <Route path="doctor/register" element={<DoctorRegister />} />

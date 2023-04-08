@@ -2,17 +2,10 @@ import ProfileBar from "../../../components/common/ProfileBar";
 import "../../../assets/css/settings.css";
 import usePatientData from "../../../hooks/usePatientData";
 
-import { Outlet, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { Outlet } from "react-router-dom";
 
 const PatientProfileLayout = () => {
   const { patient: user } = usePatientData();
-
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    navigate("/patient/dashboard");
-  }, []);
 
   const profile_links = [
     {

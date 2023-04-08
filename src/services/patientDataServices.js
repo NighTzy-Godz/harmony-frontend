@@ -12,7 +12,7 @@ export function getPatientData() {
     })
     .catch((err) => {
       if (err.response && err.response.status >= 500) return;
-      toast.error(err.response.data, { autoClose: 2000 });
+      toast.error(err.response.data, { autoClose: 2000, toastId: "1" });
       return err;
     });
 }
@@ -33,7 +33,7 @@ export function getPatientAppts() {
     })
     .catch((err) => {
       if (err.response && err.response.status >= 500) return;
-      toast.error(err.response.data, { autoClose: 2000 });
+      toast.error(err.response.data, { autoClose: 2000, toastId: "2" });
       return err;
     });
 }
@@ -46,7 +46,7 @@ export function getMedicalRecords() {
     })
     .catch((err) => {
       if (err.response && err.response.status >= 500) return;
-      toast.error(err.response.data, { autoClose: 2000 });
+      toast.error(err.response.data, { autoClose: 2000, toastId: "3" });
       return err;
     });
 }
@@ -57,12 +57,13 @@ export function cancelAppointment(data) {
     .then((appt) => {
       toast.success("Appointment was succesfully cancelled", {
         autoClose: 2000,
+        toastId: "4",
       });
       return appt;
     })
     .catch((err) => {
       if (err.response && err.response.status >= 500) return;
-      toast.error(err.response.data, { autoClose: 2000 });
+      toast.error(err.response.data, { autoClose: 2000, toastId: "5" });
       return err;
     });
 }
@@ -73,13 +74,13 @@ export function createAppointment(data) {
     .then((appt) => {
       toast.success(
         "Appointment was succesfully requested. Kindly check later for the result.",
-        { autoClose: 2000 }
+        { autoClose: 2000, toastId: "6" }
       );
       return appt;
     })
     .catch((err) => {
       if (err.response && err.response.status >= 500) return;
-      toast.error(err.response.data, { autoClose: 2000 });
+      toast.error(err.response.data, { autoClose: 2000, toastId: "7" });
       return err;
     });
 }
@@ -90,13 +91,13 @@ export function donePrescription(data) {
     .then((appt) => {
       toast.success(
         "This appointment is going to Medical Records Tab. You can check it.",
-        { autoClose: 2000 }
+        { autoClose: 2000, toastId: "8" }
       );
       return appt;
     })
     .catch((err) => {
       if (err.response && err.response.status >= 500) return;
-      toast.error(err.response.data, { autoClose: 2000 });
+      toast.error(err.response.data, { autoClose: 2000, toastId: "9" });
       return err;
     });
 }
@@ -107,12 +108,13 @@ export function patientUpdateAccount(data) {
     .then((appt) => {
       toast.success("Password has been successfully changed.", {
         autoClose: 2000,
+        toastId: "10",
       });
       return appt;
     })
     .catch((err) => {
       if (err.response && err.response.status >= 500) return;
-      toast.error(err.response.data, { autoClose: 2000 });
+      toast.error(err.response.data, { autoClose: 2000, toastId: "11" });
       return err;
     });
 }
