@@ -7,13 +7,14 @@ import { useEffect } from "react";
 
 const DoctorProfileLayout = () => {
   const { doc: user } = useDoctorData();
+
   const navigate = useNavigate();
   useEffect(() => {
-    if (!user.isConfirmed) {
+    if (Object.keys(user).length !== 0 && !user.isConfirmed) {
       return navigate("/doctor/confirmation");
     }
   }, [user]);
-  // console.log(user);
+
   const profile_links = [
     {
       id: 0,

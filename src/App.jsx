@@ -30,7 +30,7 @@ import DoctorWaiting from "./features/Doctor/components/DoctorWaiting";
 
 function App() {
   const { currUser } = useGetUser();
-
+  console.log(currUser);
   return (
     <BrowserRouter>
       <ToastContainer />
@@ -73,8 +73,14 @@ function App() {
               }
             />
           </Route>
-          <Route path="patient/login" element={<PatientLogin />} />
-          <Route path="patient/register" element={<PatientRegister />} />
+          <Route
+            path="patient/login"
+            element={<PatientLogin user={currUser} />}
+          />
+          <Route
+            path="patient/register"
+            element={<PatientRegister user={currUser} />}
+          />
 
           <Route
             path="patient/create-appointment"
@@ -117,9 +123,22 @@ function App() {
             />
           </Route>
 
-          <Route path="doctor/confirmation" element={<DoctorWaiting />} />
-          <Route path="doctor/login" element={<DoctorLogin />} />
-          <Route path="doctor/register" element={<DoctorRegister />} />
+          <Route
+            path="doctor/confirmation"
+            element={
+              <DoctorProtect user={currUser}>
+                <DoctorWaiting />
+              </DoctorProtect>
+            }
+          />
+          <Route
+            path="doctor/login"
+            element={<DoctorLogin user={currUser} />}
+          />
+          <Route
+            path="doctor/register"
+            element={<DoctorRegister user={currUser} />}
+          />
         </Route>
 
         <Route path="/logout" element={<Logout />} />

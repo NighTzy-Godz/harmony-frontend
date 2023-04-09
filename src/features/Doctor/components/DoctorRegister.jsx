@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../../assets/css/auth_form.css";
 import Form from "../../../components/common/Form";
@@ -7,7 +7,6 @@ import Button from "../../../components/ui/Button/Button";
 import auth_img from "../../../assets/img/login_img.jpg";
 import DropDown from "../../../components/ui/DropDown";
 import gender from "../utils/gender";
-import specialties from "../../../utils/specialties";
 import specialtiesDropDown from "../utils/specialtiesDropDown";
 import { registerDoctor } from "../../../services/doctorDataServices";
 import { toast } from "react-toastify";
@@ -16,8 +15,18 @@ const form_left_style = {
   backgroundImage: `url(${auth_img})`,
 };
 
-const DoctorRegister = () => {
+const DoctorRegister = ({ user }) => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user && Object.keys(user).length !== 0) {
+      toast.warning("You are logged in already.", {
+        autoClose: 2000,
+        toastId: "patient_register",
+      });
+      navigate(`/${user.role.toLowerCase()}/dashboard`);
+    }
+  }, [user]);
 
   const [dataValues] = useState({
     first_name: "",

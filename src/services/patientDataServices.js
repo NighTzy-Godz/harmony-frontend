@@ -106,7 +106,7 @@ export function patientUpdateAccount(data) {
   return http
     .post(`${BASE_URL}/update-account`, data)
     .then((appt) => {
-      toast.success("Password has been successfully changed.", {
+      toast.success("Account has been successfully updated.", {
         autoClose: 2000,
         toastId: "10",
       });

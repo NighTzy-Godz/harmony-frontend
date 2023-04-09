@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../../../assets/css/auth_form.css";
 import auth_img from "../../../assets/img/login_img.jpg";
 import Form from "../../../components/common/Form";
@@ -7,12 +7,25 @@ import FormInput from "../../../components/common/FormInput";
 import Button from "../../../components/ui/Button/Button";
 import { loginDoctor } from "../../../services/doctorDataServices";
 import { setStorage } from "../../../utils/storage";
+import { toast } from "react-toastify";
 
 const form_left_style = {
   backgroundImage: `url(${auth_img})`,
 };
 
-const DoctorLogin = () => {
+const DoctorLogin = ({ user }) => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user && Object.keys(user).length !== 0) {
+      toast.warning("You are logged in already.", {
+        autoClose: 2000,
+        toastId: "patient_register",
+      });
+      navigate(`/${user.role.toLowerCase()}/dashboard`);
+    }
+  }, [user]);
+
   const [dataValues] = useState({
     email: "",
     password: "",
