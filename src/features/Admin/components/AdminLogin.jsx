@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../../assets/css/auth_form.css";
-import auth_img from "../../../assets/img/doc_auth_img.jpg";
+import auth_img from "../../../assets/img/admin_auth_img.jpg";
 import Form from "../../../components/common/Form";
 import FormInput from "../../../components/common/FormInput";
 import Button from "../../../components/ui/Button/Button";
 import { loginDoctor } from "../../../services/doctorDataServices";
 import { setStorage } from "../../../utils/storage";
 import { toast } from "react-toastify";
+import { loginAdmin } from "../../../services/adminDataServices";
 
 const form_left_style = {
   backgroundImage: `url(${auth_img})`,
 };
 
-const DoctorLogin = ({ user }) => {
+const AdminLogin = ({ user }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -32,14 +33,14 @@ const DoctorLogin = ({ user }) => {
   });
 
   const submitEvent = async (formData) => {
-    const result = await loginDoctor(formData);
+    const result = await loginAdmin(formData);
 
     if (!result) return;
 
     if (result.status === 200) {
       try {
         setStorage("token", result.headers["x-auth-token"]);
-        return (window.location = "/doctor/dashboard");
+        return (window.location = "/");
       } catch (error) {}
     }
   };
@@ -50,7 +51,7 @@ const DoctorLogin = ({ user }) => {
       <div className="form_right">
         <div className="form_right_container">
           <div className="form_header">
-            <h1>Doctor Login</h1>
+            <h1>AdminLogin</h1>
             <p>Login To Your Account To Continue</p>
           </div>
 
@@ -64,16 +65,7 @@ const DoctorLogin = ({ user }) => {
             <Button label="Login" />
           </div>
 
-          <div className="form_question">
-            <p>
-              Don't have an account?
-              <span>
-                <Link to="/doctor/register">Sign Up</Link>
-              </span>
-            </p>
-          </div>
-
-          <p className="form_other_auth">Not a Doctor? Login with</p>
+          <p className="form_other_auth">Not an Admin? Login with</p>
 
           <div className="form_auth_choices">
             <div className="form_auth_choices_container">
@@ -83,10 +75,10 @@ const DoctorLogin = ({ user }) => {
               <p>Patient</p>
             </div>
             <div className="form_auth_choices_container">
-              <Link to="/admin/login">
-                <i className="fa-solid fa-gear"></i>
+              <Link to="/doctor/login">
+                <i className="fa-solid fa-user-doctor"></i>
               </Link>
-              <p>Admin</p>
+              <p>Doctor</p>
             </div>
           </div>
         </div>
@@ -95,4 +87,4 @@ const DoctorLogin = ({ user }) => {
   );
 };
 
-export default DoctorLogin;
+export default AdminLogin;

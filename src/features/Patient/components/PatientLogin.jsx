@@ -81,7 +81,7 @@ const PatientLogin = ({ user }) => {
               <p>Doctor</p>
             </div>
             <div className="form_auth_choices_container">
-              <Link to="/">
+              <Link to="/admin/login">
                 <i className="fa-solid fa-gear"></i>
               </Link>
               <p>Admin</p>
