@@ -168,7 +168,7 @@ export function registerPatient(data) {
 
 export function deleteAppt(data) {
   return http
-    .delete(`${BASE_URL}/post-appt/${data.appt_id}`)
+    .post(`${BASE_URL}/post-appt/${data.appt_id}`)
     .then((appt) => {
       console.log(appt);
       toast.success("Successfully Deleted!");
