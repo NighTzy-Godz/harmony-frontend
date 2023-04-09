@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Button from "../../../components/ui/Button/Button";
 import "../../../assets/css/auth_form.css";
-import auth_img from "../../../assets/img/login_img.jpg";
+import auth_img from "../../../assets/img/patient_auth_img.jpg";
 import Form from "../../../components/common/Form";
 import FormInput from "../../../components/common/FormInput";
 import { loginPatient } from "../../../services/patientDataServices";

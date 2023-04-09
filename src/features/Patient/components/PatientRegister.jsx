@@ -3,7 +3,7 @@ import Form from "../../../components/common/Form";
 import FormInput from "../../../components/common/FormInput";
 import Button from "../../../components/ui/Button/Button";
 
-import auth_img from "../../../assets/img/login_img.jpg";
+import auth_img from "../../../assets/img/patient_auth_img.jpg";
 import "../../../assets/css/auth_form.css";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { registerPatient } from "../../../services/patientDataServices";

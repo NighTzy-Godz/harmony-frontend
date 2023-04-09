@@ -4,7 +4,7 @@ import "../../../assets/css/auth_form.css";
 import Form from "../../../components/common/Form";
 import FormInput from "../../../components/common/FormInput";
 import Button from "../../../components/ui/Button/Button";
-import auth_img from "../../../assets/img/login_img.jpg";
+import auth_img from "../../../assets/img/doc_auth_img.jpg";
 import DropDown from "../../../components/ui/DropDown";
 import gender from "../utils/gender";
 import specialtiesDropDown from "../utils/specialtiesDropDown";
