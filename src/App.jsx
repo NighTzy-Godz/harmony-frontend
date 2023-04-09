@@ -26,6 +26,7 @@ import DoctorAccount from "./features/Doctor/components/DoctorAccount";
 import ProtectedRoutes from "./components/common/ProtectedRoutes/ProtectedRoutes";
 import PatientProtect from "./components/common/ProtectedRoutes/PatientProtect";
 import DoctorProtect from "./components/common/ProtectedRoutes/DoctorProtect";
+import DoctorWaiting from "./features/Doctor/components/DoctorWaiting";
 
 function App() {
   const { currUser } = useGetUser();
@@ -47,9 +48,30 @@ function App() {
               </ProtectedRoutes>
             }
           >
-            <Route path="dashboard" element={<PatientDashboard />} />
-            <Route path="change-pass" element={<PatientChangePass />} />
-            <Route path="update-acc" element={<PatientAccount />} />
+            <Route
+              path="dashboard"
+              element={
+                <PatientProtect user={currUser}>
+                  <PatientDashboard />
+                </PatientProtect>
+              }
+            />
+            <Route
+              path="change-pass"
+              element={
+                <PatientProtect user={currUser}>
+                  <PatientChangePass />
+                </PatientProtect>
+              }
+            />
+            <Route
+              path="update-acc"
+              element={
+                <PatientProtect user={currUser}>
+                  <PatientAccount />
+                </PatientProtect>
+              }
+            />
           </Route>
           <Route path="patient/login" element={<PatientLogin />} />
           <Route path="patient/register" element={<PatientRegister />} />
@@ -84,6 +106,7 @@ function App() {
                 </DoctorProtect>
               }
             />
+
             <Route
               path="update-acc"
               element={
@@ -93,6 +116,8 @@ function App() {
               }
             />
           </Route>
+
+          <Route path="doctor/confirmation" element={<DoctorWaiting />} />
           <Route path="doctor/login" element={<DoctorLogin />} />
           <Route path="doctor/register" element={<DoctorRegister />} />
         </Route>

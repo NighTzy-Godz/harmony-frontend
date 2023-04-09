@@ -1,10 +1,19 @@
 import ProfileBar from "../../../components/common/ProfileBar";
 import "../../../assets/css/settings.css";
 
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import useDoctorData from "../hooks/useDoctorData";
+import { useEffect } from "react";
 
 const DoctorProfileLayout = () => {
+  const { doc: user } = useDoctorData();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!user.isConfirmed) {
+      return navigate("/doctor/confirmation");
+    }
+  }, [user]);
+  // console.log(user);
   const profile_links = [
     {
       id: 0,

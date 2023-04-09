@@ -1,0 +1,36 @@
+@media screen and (min-width: 1200px) {
+  .doctor_waiting {
+    height: 93vh;
+  }
+
+  .doctor_waiting .doctor_waiting_container {
+    display: grid;
+    width: 70%;
+    margin: 0 auto;
+    place-content: center;
+
+    height: 100%;
+  }
+
+  .doctor_waiting .doctor_waiting_container h1 {
+    font-family: gelion_bold;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 60px;
+    color: var(--black);
+  }
+
+  .doctor_waiting .doctor_waiting_container a {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    font-size: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: var(--red);
+    color: var(--white);
+    padding: 8px;
+    font-family: gelion_bold;
+  }
+}
