@@ -1,0 +1,43 @@
+@media screen and (min-width: 1200px) {
+  .admin_all_appts .header h3 {
+    font-size: 25px;
+    font-family: gelion_bold;
+    color: var(--hover-black);
+    margin-bottom: 40px;
+  }
+
+  .admin_all_appts ul {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .admin_all_appts li {
+    width: 100%;
+    text-align: center;
+    font-family: gelion_reg;
+    font-size: 18px;
+    color: var(--black);
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+    padding-bottom: 15px;
+    border-bottom: 2px solid white;
+  }
+
+  .admin_all_appts li:hover {
+    border-bottom: 2px solid rgb(202, 202, 202);
+    color: var(--red);
+  }
+
+  .admin_all_appts li.active {
+    border-bottom: 2px solid var(--red);
+    color: var(--red);
+  }
+
+  .admin_all_appts .admin_table {
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+}

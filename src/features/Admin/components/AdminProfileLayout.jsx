@@ -16,6 +16,12 @@ const AdminProfileLayout = () => {
       link: "/admin/dashboard",
     },
     {
+      id: 3,
+      icon: "fa-regular fa-calendar",
+      name: "All Appointments",
+      link: "/admin/all-appts",
+    },
+    {
       id: 1,
       icon: "fa-solid fa-lock",
       name: "Change Password",

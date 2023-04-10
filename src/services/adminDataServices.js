@@ -16,6 +16,19 @@ export function getAdminData() {
     });
 }
 
+export function getAdminIncomingAppointments() {
+  return http
+    .get(`${BASE_URL}/incoming-appts`)
+    .then((appts) => {
+      return appts;
+    })
+    .catch((err) => {
+      if (err.response && err.response.status >= 500) return;
+      toast.error(err.response.data, { autoClose: 2000, toastId: "1" });
+      return err;
+    });
+}
+
 export function adminAccountUpdate(data) {
   return http
     .post(`${BASE_URL}/update-account`, data)
