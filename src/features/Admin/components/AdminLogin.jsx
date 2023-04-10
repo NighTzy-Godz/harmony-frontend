@@ -40,7 +40,7 @@ const AdminLogin = ({ user }) => {
     if (result.status === 200) {
       try {
         setStorage("token", result.headers["x-auth-token"]);
-        return (window.location = "/");
+        return (window.location = "/admin/dashboard");
       } catch (error) {}
     }
   };

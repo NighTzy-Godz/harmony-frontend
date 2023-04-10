@@ -5,7 +5,8 @@ import LinkButton from "../Button/LinkButton";
 const Navbar = ({ currUser }) => {
   const getProfileLink = () => {
     if (currUser.role === "Patient") return "patient";
-    return "doctor";
+    if (currUser.role === "Doctor") return "doctor";
+    return "admin";
   };
 
   return (

@@ -28,6 +28,8 @@ import PatientProtect from "./components/common/ProtectedRoutes/PatientProtect";
 import DoctorProtect from "./components/common/ProtectedRoutes/DoctorProtect";
 import DoctorWaiting from "./features/Doctor/components/DoctorWaiting";
 import AdminLogin from "./features/Admin/components/AdminLogin";
+import AdminDashboard from "./features/Admin/components/AdminDashboard";
+import AdminProfileLayout from "./features/Admin/components/AdminProfileLayout";
 
 function App() {
   const { currUser } = useGetUser();
@@ -132,6 +134,7 @@ function App() {
               </DoctorProtect>
             }
           />
+
           <Route
             path="doctor/login"
             element={<DoctorLogin user={currUser} />}
@@ -140,9 +143,11 @@ function App() {
             path="doctor/register"
             element={<DoctorRegister user={currUser} />}
           />
+          {/* ADMIN ROUTE */}
+          <Route path="admin" element={<AdminProfileLayout />}>
+            <Route path="dashboard" element={<AdminDashboard />} />
+          </Route>
         </Route>
-
-        {/* ADMIN ROUTE */}
 
         <Route path="/logout" element={<Logout />} />
         <Route path="*" element={<h1>Page not found</h1>} />
