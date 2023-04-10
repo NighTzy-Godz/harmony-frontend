@@ -31,6 +31,7 @@ import AdminLogin from "./features/Admin/components/AdminLogin";
 import AdminDashboard from "./features/Admin/components/AdminDashboard";
 import AdminProfileLayout from "./features/Admin/components/AdminProfileLayout";
 import AdminChangePass from "./features/Admin/components/AdminChangePass";
+import AdminAccount from "./features/Admin/components/AdminAccount";
 
 function App() {
   const { currUser } = useGetUser();
@@ -148,6 +149,7 @@ function App() {
           <Route path="admin" element={<AdminProfileLayout />}>
             <Route path="dashboard" element={<AdminDashboard />} />
             <Route path="change-pass" element={<AdminChangePass />} />
+            <Route path="update-acc" element={<AdminAccount />} />
           </Route>
         </Route>
 
