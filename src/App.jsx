@@ -30,6 +30,7 @@ import DoctorWaiting from "./features/Doctor/components/DoctorWaiting";
 import AdminLogin from "./features/Admin/components/AdminLogin";
 import AdminDashboard from "./features/Admin/components/AdminDashboard";
 import AdminProfileLayout from "./features/Admin/components/AdminProfileLayout";
+import AdminChangePass from "./features/Admin/components/AdminChangePass";
 
 function App() {
   const { currUser } = useGetUser();
@@ -146,6 +147,7 @@ function App() {
           {/* ADMIN ROUTE */}
           <Route path="admin" element={<AdminProfileLayout />}>
             <Route path="dashboard" element={<AdminDashboard />} />
+            <Route path="change-pass" element={<AdminChangePass />} />
           </Route>
         </Route>
 
