@@ -5,6 +5,13 @@ import "../../assets/css/profile_bar.css";
 const ProfileBar = ({ profile_links, user }) => {
   const { profile_pic, full_name, email } = user;
   const renderProfileLinks = profile_links.map((item) => {
+    if (!item.link)
+      return (
+        <li key={item.id} id="profile_no_link">
+          {item.name}
+        </li>
+      );
+
     return (
       <li key={item.id}>
         <NavLink to={item.link}>

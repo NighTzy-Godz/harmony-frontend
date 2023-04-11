@@ -57,4 +57,20 @@
   .profile_bar a.active {
     color: var(--red);
   }
+
+  #profile_no_link {
+    color: var(--hover-red);
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 15px;
+    cursor: auto;
+  }
+  #profile_no_link::after {
+    width: 100%;
+    content: "";
+    display: block;
+
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.225);
+    margin-top: 5px;
+  }
 }

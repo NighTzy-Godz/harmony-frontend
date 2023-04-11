@@ -10,6 +10,12 @@ const AdminProfileLayout = () => {
 
   const profile_links = [
     {
+      id: 11,
+
+      name: "View",
+    },
+
+    {
       id: 0,
       icon: "fa-solid fa-table-columns",
       name: "Dashboard",
@@ -20,6 +26,16 @@ const AdminProfileLayout = () => {
       icon: "fa-regular fa-calendar",
       name: "All Appointments",
       link: "/admin/all-appts",
+    },
+    {
+      id: 12,
+
+      name: "Manage",
+    },
+    {
+      id: 12,
+
+      name: "Authentication",
     },
     {
       id: 1,
