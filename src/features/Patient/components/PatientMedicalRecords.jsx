@@ -40,7 +40,13 @@ const PatientMedicalRecords = () => {
       label: "",
       xtraContent: (item) => (
         <React.Fragment>
-          <PatientDoneAppt funcEvent={deleteAppt} appt={item} label="Remove" />
+          {item.status === "Pending" ? null : (
+            <PatientDoneAppt
+              funcEvent={deleteAppt}
+              appt={item}
+              label="Remove"
+            />
+          )}
         </React.Fragment>
       ),
       className: "table-width-240",
