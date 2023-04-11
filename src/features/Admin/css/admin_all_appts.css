@@ -7,14 +7,14 @@
     margin-bottom: 40px;
   }
 
-  .admin_all_appts ul {
+  .admin_all_appts .admin_table_ul {
     margin-bottom: 30px;
     display: flex;
     justify-content: space-around;
     align-items: center;
   }
 
-  .admin_all_appts li {
+  .admin_all_appts .admin_table_ul li {
     width: 100%;
     text-align: center;
     font-family: gelion_reg;
@@ -26,12 +26,12 @@
     border-bottom: 2px solid white;
   }
 
-  .admin_all_appts li:hover {
+  .admin_all_appts .admin_table_ul li:hover {
     border-bottom: 2px solid rgb(202, 202, 202);
     color: var(--red);
   }
 
-  .admin_all_appts li.active {
+  .admin_all_appts .admin_table_ul li.active {
     border-bottom: 2px solid var(--red);
     color: var(--red);
   }

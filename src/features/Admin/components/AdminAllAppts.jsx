@@ -47,7 +47,7 @@ const AdminAllAppts = () => {
       </div>
 
       <div className="admin_table">
-        <ul>{renderTabs}</ul>
+        <ul className="admin_table_ul">{renderTabs}</ul>
         {renderContent()}
       </div>
     </div>

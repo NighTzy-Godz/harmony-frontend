@@ -3,11 +3,18 @@ import TableHeader from "../../../components/ui/Table/TableHeader";
 import TableBody from "../../../components/ui/Table/TableBody";
 import "../../../assets/css/table.css";
 import UserTableInfo from "../../../components/common/UserTableInfo";
-import React from "react";
+import React, { useState } from "react";
 import NoData from "../../../components/common/NoData";
+import paginate from "../../../utils/paginate";
+import Paginate from "../../../components/common/Paginate";
 
 const AdminIncomingAppts = () => {
   const { allAppts } = useAdminIncomingAppts();
+
+  const [state, setState] = useState({
+    pageSize: 7,
+    currPage: 1,
+  });
 
   const columns = [
     {
@@ -33,7 +40,15 @@ const AdminIncomingAppts = () => {
     { id: 3, label: "Mode", path: "mode_of_consult" },
     { id: 4, label: "Status", path: "status" },
   ];
+
+  const handlePageChange = (page) => {
+    setState({ ...state, currPage: page });
+  };
+
   const renderContent = () => {
+    const { pageSize, currPage } = state;
+
+    const newData = paginate(pageSize, allAppts, currPage);
     if (allAppts.length === 0)
       return (
         <NoData label="No Incoming Appointments at this moment. Please Comeback Later." />
@@ -43,6 +58,13 @@ const AdminIncomingAppts = () => {
         <table>
           <TableHeader columns={columns} />
           <TableBody data={allAppts} columns={columns} />
+          <Paginate
+            data={newData}
+            itemCount={allAppts.length}
+            pageSize={pageSize}
+            currPage={currPage}
+            onPageChange={handlePageChange}
+          />
         </table>
       </div>
     );

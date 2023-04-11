@@ -3,13 +3,19 @@ import TableHeader from "../../../components/ui/Table/TableHeader";
 import TableBody from "../../../components/ui/Table/TableBody";
 import "../../../assets/css/table.css";
 import UserTableInfo from "../../../components/common/UserTableInfo";
-import React from "react";
+import React, { useState } from "react";
 import useAdminPastAppts from "../hooks/useAdminPastAppts";
 import NoData from "../../../components/common/NoData";
+import Paginate from "../../../components/common/Paginate";
+import paginate from "../../../utils/paginate";
 
 const AdminPastAppts = () => {
   const { allPastAppts } = useAdminPastAppts();
 
+  const [state, setState] = useState({
+    pageSize: 7,
+    currPage: 1,
+  });
   const columns = [
     {
       id: 0,
@@ -35,7 +41,14 @@ const AdminPastAppts = () => {
     { id: 4, label: "Status", path: "status" },
   ];
 
+  const handlePageChange = (page) => {
+    setState({ ...state, currPage: page });
+  };
+
   const renderContent = () => {
+    const { pageSize, currPage } = state;
+
+    const newData = paginate(pageSize, allPastAppts, currPage);
     if (allPastAppts.length === 0)
       return (
         <NoData label="No Past Appointments at this moment. Please Comeback Later." />
@@ -44,8 +57,15 @@ const AdminPastAppts = () => {
       <div className="table_wrapper">
         <table>
           <TableHeader columns={columns} />
-          <TableBody data={allPastAppts} columns={columns} />
+          <TableBody data={newData} columns={columns} />
         </table>
+        <Paginate
+          data={newData}
+          itemCount={allPastAppts.length}
+          pageSize={pageSize}
+          currPage={currPage}
+          onPageChange={handlePageChange}
+        />
       </div>
     );
   };
