@@ -3,6 +3,7 @@
     font-size: 25px;
     font-family: gelion_bold;
     color: var(--hover-black);
+    text-transform: capitalize;
     margin-bottom: 40px;
   }
 

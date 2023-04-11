@@ -24,7 +24,20 @@ export function getAdminIncomingAppointments() {
     })
     .catch((err) => {
       if (err.response && err.response.status >= 500) return;
-      toast.error(err.response.data, { autoClose: 2000, toastId: "1" });
+      toast.error(err.response.data, { autoClose: 2000, toastId: "3" });
+      return err;
+    });
+}
+
+export function getAdminPastAppointments() {
+  return http
+    .get(`${BASE_URL}/past-appts`)
+    .then((appts) => {
+      return appts;
+    })
+    .catch((err) => {
+      if (err.response && err.response.status >= 500) return;
+      toast.error(err.response.data, { autoClose: 2000, toastId: "2" });
       return err;
     });
 }

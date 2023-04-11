@@ -42,8 +42,7 @@ const AdminAllAppts = () => {
     <div className="admin_all_appts">
       <div className="header">
         <h3>
-          Hello Admin, kindly check all the incoming appointmens and past
-          appointments.
+          Hello Admin, kindly check all the incoming and past appointments.
         </h3>
       </div>
 
