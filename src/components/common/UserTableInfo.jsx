@@ -1,11 +1,12 @@
 import "../../assets/css/user_table_info.css";
 import { getUser } from "../../utils/auth";
 
-const UserTableInfo = ({ user, role = "" }) => {
+const UserTableInfo = ({ user, role = "", single = false }) => {
   const currUser = getUser();
 
   const getUserPicture = () => {
     if (currUser.role === "Admin") {
+      if (single) return user.profile_pic;
       if (role === "Patient") return user.patient.profile_pic;
       if (role === "Doctor") return user.doctor.profile_pic;
     }
@@ -15,6 +16,7 @@ const UserTableInfo = ({ user, role = "" }) => {
 
   const getUserDetailHead = () => {
     if (currUser.role === "Admin") {
+      if (single) return user.full_name;
       if (role === "Patient") return user.patient.full_name;
       if (role === "Doctor") return user.doctor.full_name;
     }

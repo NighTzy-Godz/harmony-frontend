@@ -33,12 +33,31 @@ const AdminProfileLayout = () => {
       name: "Manage",
     },
     {
-      id: 12,
+      id: 15,
+      icon: "fa-solid fa-user-group",
+      name: "Patients",
+      link: "/admin/all-patients",
+    },
+
+    {
+      id: 16,
+      icon: "fa-solid fa-user-nurse",
+      name: "Doctors",
+      link: "/admin/all-doctors",
+    },
+    {
+      id: 21,
 
       name: "Authentication",
     },
     {
       id: 1,
+      icon: "fa-solid fa-lock",
+      name: "Change Password",
+      link: "/admin/change-pass",
+    },
+    {
+      id: 111,
       icon: "fa-solid fa-lock",
       name: "Change Password",
       link: "/admin/change-pass",

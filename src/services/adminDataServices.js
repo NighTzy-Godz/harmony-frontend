@@ -42,6 +42,19 @@ export function getAdminPastAppointments() {
     });
 }
 
+export function getAllPatients() {
+  return http
+    .get(`${BASE_URL}/all-patients`)
+    .then((patients) => {
+      return patients;
+    })
+    .catch((err) => {
+      if (err.response && err.response.status >= 500) return;
+      toast.error(err.response.data, { autoClose: 2000, toastId: "2" });
+      return err;
+    });
+}
+
 export function adminAccountUpdate(data) {
   return http
     .post(`${BASE_URL}/update-account`, data)
@@ -75,6 +88,19 @@ export function adminUpdatePassword(data) {
 export function loginAdmin(data) {
   return http
     .post(`${BASE_URL}/login`, data)
+    .then((user) => {
+      return user;
+    })
+    .catch((err) => {
+      if (err.response && err.response.status >= 500) return;
+      toast.error(err.response.data, { autoClose: 2000 });
+      return err;
+    });
+}
+
+export function adminBanPatient(data) {
+  return http
+    .delete(`${BASE_URL}/banUser/patient/${data.user_id}`)
     .then((user) => {
       return user;
     })

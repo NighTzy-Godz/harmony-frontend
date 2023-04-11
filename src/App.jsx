@@ -33,6 +33,7 @@ import AdminProfileLayout from "./features/Admin/components/AdminProfileLayout";
 import AdminChangePass from "./features/Admin/components/AdminChangePass";
 import AdminAccount from "./features/Admin/components/AdminAccount";
 import AdminAllAppts from "./features/Admin/components/AdminAllAppts";
+import AdminAllPatients from "./features/Admin/components/AdminAllPatients";
 
 function App() {
   const { currUser } = useGetUser();
@@ -152,6 +153,7 @@ function App() {
           <Route path="admin" element={<AdminProfileLayout />}>
             <Route path="dashboard" element={<AdminDashboard />} />
             <Route path="all-appts" element={<AdminAllAppts />} />
+            <Route path="all-patients" element={<AdminAllPatients />} />
             <Route path="change-pass" element={<AdminChangePass />} />
             <Route path="update-acc" element={<AdminAccount />} />
           </Route>

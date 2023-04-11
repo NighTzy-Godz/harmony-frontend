@@ -1,0 +1,25 @@
+@media screen and (min-width: 1200px) {
+  .admin_all_patients .header {
+    margin-bottom: 40px;
+  }
+
+  .admin_all_patients .header h3 {
+    font-size: 25px;
+    font-family: gelion_bold;
+    color: var(--hover-black);
+    text-transform: capitalize;
+  }
+
+  .admin_all_patients .header p {
+    font-family: gelion_reg;
+    color: var(--black);
+    text-transform: capitalize;
+  }
+
+  .admin_all_patients .admin_table {
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+}
