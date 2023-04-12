@@ -33,12 +33,12 @@ const AdminProfileLayout = () => {
       name: "Manage",
     },
     {
-      id: 15,
-      icon: "fa-solid fa-user-group",
-      name: "Patients",
-      link: "/admin/all-patients",
-    },
+      id: 24,
 
+      icon: "fa-solid fa-users",
+      name: "Pending Doctors",
+      link: "/admin/pending-doctors",
+    },
     {
       id: 16,
       icon: "fa-solid fa-user-nurse",
@@ -46,12 +46,12 @@ const AdminProfileLayout = () => {
       link: "/admin/all-doctors",
     },
     {
-      id: 24,
-
-      icon: "fa-solid fa-users",
-      name: "Pending Doctors",
-      link: "/admin/pending-doctors",
+      id: 15,
+      icon: "fa-solid fa-user-group",
+      name: "Patients",
+      link: "/admin/all-patients",
     },
+
     {
       id: 21,
 

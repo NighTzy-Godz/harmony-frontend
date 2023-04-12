@@ -36,6 +36,7 @@ import AdminAllAppts from "./features/Admin/components/AdminAllAppts";
 import AdminAllPatients from "./features/Admin/components/AdminAllPatients";
 import AdminAllDoctors from "./features/Admin/components/AdminAllDoctors";
 import AdminPendingDoctors from "./features/Admin/components/AdminPendingDoctors";
+import AdminProtect from "./components/common/ProtectedRoutes/AdminProtect";
 
 function App() {
   const { currUser } = useGetUser();
@@ -152,14 +153,70 @@ function App() {
           />
 
           {/* ADMIN ROUTE */}
-          <Route path="admin" element={<AdminProfileLayout />}>
-            <Route path="dashboard" element={<AdminDashboard />} />
-            <Route path="all-appts" element={<AdminAllAppts />} />
-            <Route path="all-patients" element={<AdminAllPatients />} />
-            <Route path="all-doctors" element={<AdminAllDoctors />} />
-            <Route path="pending-doctors" element={<AdminPendingDoctors />} />
-            <Route path="change-pass" element={<AdminChangePass />} />
-            <Route path="update-acc" element={<AdminAccount />} />
+          <Route
+            path="admin"
+            element={
+              <ProtectedRoutes user={currUser}>
+                <AdminProfileLayout user={currUser} />
+              </ProtectedRoutes>
+            }
+          >
+            <Route
+              path="dashboard"
+              element={
+                <AdminProtect user={currUser}>
+                  <AdminDashboard />
+                </AdminProtect>
+              }
+            />
+            <Route
+              path="all-patients"
+              element={
+                <AdminProtect user={currUser}>
+                  <AdminAllPatients />
+                </AdminProtect>
+              }
+            />
+            <Route
+              path="all-appts"
+              element={
+                <AdminProtect user={currUser}>
+                  <AdminAllAppts />
+                </AdminProtect>
+              }
+            />
+            <Route
+              path="all-doctors"
+              element={
+                <AdminProtect user={currUser}>
+                  <AdminAllDoctors />
+                </AdminProtect>
+              }
+            />
+            <Route
+              path="pending-doctors"
+              element={
+                <AdminProtect user={currUser}>
+                  <AdminPendingDoctors />
+                </AdminProtect>
+              }
+            />
+            <Route
+              path="change-pass"
+              element={
+                <AdminProtect user={currUser}>
+                  <AdminChangePass />
+                </AdminProtect>
+              }
+            />
+            <Route
+              path="update-acc"
+              element={
+                <AdminProtect user={currUser}>
+                  <AdminAccount />
+                </AdminProtect>
+              }
+            />
           </Route>
         </Route>
 

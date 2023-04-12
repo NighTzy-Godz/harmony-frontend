@@ -50,6 +50,10 @@
     color: var(--black);
   }
 
+  .profile_bar li i {
+    width: 15px;
+  }
+
   .profile_bar li a:hover {
     color: var(--pink);
   }
