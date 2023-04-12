@@ -2,7 +2,11 @@ import { useState } from "react";
 import "../../../assets/css/ban_user.css";
 import Form from "../../../components/common/Form";
 import Button from "../../../components/ui/Button/Button";
-import { adminBanPatient } from "../../../services/adminDataServices";
+import {
+  adminAcceptDoctor,
+  adminBanDoctor,
+  adminBanPatient,
+} from "../../../services/adminDataServices";
 
 const AdminBanUser = ({ data: user, ban }) => {
   const [dataValues] = useState({
@@ -12,6 +16,7 @@ const AdminBanUser = ({ data: user, ban }) => {
     data.document_id = user._id;
 
     if (ban === "patient") return await adminBanPatient(data);
+    return await adminBanDoctor(data);
   };
 
   return (

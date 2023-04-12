@@ -41,7 +41,7 @@ const AdminAllDoctors = () => {
       label: "Action",
       xtraContent: (item) => (
         <React.Fragment>
-          <AdminBanUser data={item} ban="patient" />
+          <AdminBanUser data={item} ban="doctor" />
         </React.Fragment>
       ),
     },

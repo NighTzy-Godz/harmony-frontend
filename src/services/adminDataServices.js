@@ -111,6 +111,24 @@ export function loginAdmin(data) {
     });
 }
 
+export function adminAcceptDoctor(data) {
+  return http
+    .post(`${BASE_URL}/acceptDoctor`, data)
+    .then((user) => {
+      toast.success(
+        "Successfully Accepted the Doctor. Kindly Check the All Doctors Tab.",
+        {
+          autoClose: 2000,
+        }
+      );
+      return user;
+    })
+    .catch((err) => {
+      if (err.response && err.response.status >= 500) return;
+      toast.error(err.response.data, { autoClose: 2000 });
+      return err;
+    });
+}
 export function adminBanPatient(data) {
   return http
     .delete(`${BASE_URL}/banPatient/${data.document_id}`)
@@ -127,16 +145,13 @@ export function adminBanPatient(data) {
     });
 }
 
-export function adminAcceptDoctor(data) {
+export function adminBanDoctor(data) {
   return http
-    .post(`${BASE_URL}/acceptDoctor`, data)
+    .delete(`${BASE_URL}/banDoctor/${data.document_id}`)
     .then((user) => {
-      toast.success(
-        "Successfully Accepted the Doctor. Kindly Check the All Doctors Tab.",
-        {
-          autoClose: 2000,
-        }
-      );
+      toast.success("Successfully Ban / Removed the Doctor.", {
+        autoClose: 2000,
+      });
       return user;
     })
     .catch((err) => {
