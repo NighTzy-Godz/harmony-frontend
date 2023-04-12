@@ -2,16 +2,16 @@ import { useState } from "react";
 import "../../../assets/css/ban_user.css";
 import Form from "../../../components/common/Form";
 import Button from "../../../components/ui/Button/Button";
-import { adminBanUser } from "../../../services/adminDataServices";
+import { adminBanPatient } from "../../../services/adminDataServices";
 
-const AdminBanUser = ({ data: user }) => {
+const AdminBanUser = ({ data: user, ban }) => {
   const [dataValues] = useState({
-    user_id: "",
+    document_id: "",
   });
   const submitEvent = async (data) => {
-    data.user_id = user._id;
+    data.document_id = user._id;
 
-    await adminBanUser(data);
+    if (ban === "patient") return await adminBanPatient(data);
   };
 
   return (

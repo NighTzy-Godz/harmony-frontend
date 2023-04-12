@@ -9,7 +9,7 @@ const useGetAllPatients = () => {
       setPatients(data);
     };
     getData();
-  }, []);
+  }, [patients]);
 
   return { patients };
 };

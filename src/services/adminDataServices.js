@@ -100,8 +100,11 @@ export function loginAdmin(data) {
 
 export function adminBanPatient(data) {
   return http
-    .delete(`${BASE_URL}/banUser/patient/${data.user_id}`)
+    .delete(`${BASE_URL}/banPatient/${data.document_id}`)
     .then((user) => {
+      toast.success("Successfully Ban / Removed the Patient.", {
+        autoClose: 2000,
+      });
       return user;
     })
     .catch((err) => {
