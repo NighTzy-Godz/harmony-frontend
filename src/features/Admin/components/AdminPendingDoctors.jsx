@@ -8,11 +8,12 @@ import NoData from "../../../components/common/NoData";
 import paginate from "../../../utils/paginate";
 import Paginate from "../../../components/common/Paginate";
 import "../css/admin_all_users.css";
-import AdminBanUser from "./AdminBanUser";
-import useAllDoctors from "../../../hooks/useAllDoctors";
+import PatientDoneAppt from "../../Patient/components/PatientDoneAppt";
+import { adminAcceptDoctor } from "../../../services/adminDataServices";
+import useUnconfirmedDoctors from "../hooks/useAllUncofirmedDocs";
 
-const AdminAllDoctors = () => {
-  const { allDoctors } = useAllDoctors();
+const AdminPendingDoctors = () => {
+  const { unconfirmedDocs } = useUnconfirmedDoctors();
 
   const [state, setState] = useState({
     pageSize: 7,
@@ -33,15 +34,19 @@ const AdminAllDoctors = () => {
     { id: 1, label: "E-mail", path: "email" },
 
     { id: 2, label: "Contact", path: "contact" },
-    { id: 8, label: "Specialty", path: "specialty" },
-    { id: 5, label: "Current Rate", path: "rate" },
+    { id: 5, label: "Specialty", path: "specialty" },
 
     {
       id: 4,
       label: "Action",
       xtraContent: (item) => (
         <React.Fragment>
-          <AdminBanUser data={item} ban="patient" />
+          <PatientDoneAppt
+            appt={item}
+            color="var(--green)"
+            label="Accept Doctor"
+            funcEvent={adminAcceptDoctor}
+          />
         </React.Fragment>
       ),
     },
@@ -54,10 +59,10 @@ const AdminAllDoctors = () => {
   const renderContent = () => {
     const { pageSize, currPage } = state;
 
-    const newData = paginate(pageSize, allDoctors, currPage);
-    if (allDoctors.length === 0)
+    const newData = paginate(pageSize, unconfirmedDocs, currPage);
+    if (unconfirmedDocs.length === 0)
       return (
-        <NoData label="No Current Doctor at this moment. Please Comeback Later." />
+        <NoData label="No Pending Doctor at this moment. Please Comeback Later." />
       );
     return (
       <div className="table_wrapper">
@@ -67,7 +72,7 @@ const AdminAllDoctors = () => {
         </table>
         <Paginate
           data={newData}
-          itemCount={allDoctors.length}
+          itemCount={unconfirmedDocs.length}
           pageSize={pageSize}
           currPage={currPage}
           onPageChange={handlePageChange}
@@ -78,10 +83,10 @@ const AdminAllDoctors = () => {
   return (
     <div className="admin_all_patients">
       <div className="header">
-        <h3>All Doctors</h3>
+        <h3>All Pending Doctors</h3>
         <p>
-          Check the current Doctors for the hospital. You can see basic
-          information and can ban them if they disobey rules.
+          Check all the current Pending Doctors. You can see basic information
+          and wait for the HR to tell you that they are accepted.
         </p>
       </div>
       <div className="admin_table">{renderContent()}</div>
@@ -89,4 +94,4 @@ const AdminAllDoctors = () => {
   );
 };
 
-export default AdminAllDoctors;
+export default AdminPendingDoctors;

@@ -54,7 +54,7 @@ const AdminAllPatients = () => {
     const newData = paginate(pageSize, patients, currPage);
     if (patients.length === 0)
       return (
-        <NoData label="No Incoming Appointments at this moment. Please Comeback Later." />
+        <NoData label="No Patients at this moment. Please Comeback Later." />
       );
     return (
       <div className="table_wrapper">

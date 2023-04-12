@@ -55,6 +55,19 @@ export function getAllPatients() {
     });
 }
 
+export function getUnconfirmedDocs() {
+  return http
+    .get(`${BASE_URL}/unconfirmedDoctors`)
+    .then((docs) => {
+      return docs;
+    })
+    .catch((err) => {
+      if (err.response && err.response.status >= 500) return;
+      toast.error(err.response.data, { autoClose: 2000, toastId: "2" });
+      return err;
+    });
+}
+
 export function adminAccountUpdate(data) {
   return http
     .post(`${BASE_URL}/update-account`, data)
@@ -105,6 +118,25 @@ export function adminBanPatient(data) {
       toast.success("Successfully Ban / Removed the Patient.", {
         autoClose: 2000,
       });
+      return user;
+    })
+    .catch((err) => {
+      if (err.response && err.response.status >= 500) return;
+      toast.error(err.response.data, { autoClose: 2000 });
+      return err;
+    });
+}
+
+export function adminAcceptDoctor(data) {
+  return http
+    .post(`${BASE_URL}/acceptDoctor`, data)
+    .then((user) => {
+      toast.success(
+        "Successfully Accepted the Doctor. Kindly Check the All Doctors Tab.",
+        {
+          autoClose: 2000,
+        }
+      );
       return user;
     })
     .catch((err) => {

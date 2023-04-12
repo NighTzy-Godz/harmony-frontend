@@ -10,7 +10,7 @@ const PatientDoneAppt = ({
   funcEvent,
 }) => {
   const [dataValues] = useState({
-    appt_id: "",
+    document_id: "",
   });
 
   const submitEvent = async (data) => {

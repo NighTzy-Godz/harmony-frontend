@@ -46,6 +46,13 @@ const AdminProfileLayout = () => {
       link: "/admin/all-doctors",
     },
     {
+      id: 24,
+
+      icon: "fa-solid fa-users",
+      name: "Pending Doctors",
+      link: "/admin/pending-doctors",
+    },
+    {
       id: 21,
 
       name: "Authentication",
