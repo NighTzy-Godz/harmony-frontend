@@ -14,7 +14,7 @@ const PatientDoneAppt = ({
   });
 
   const submitEvent = async (data) => {
-    data.appt_id = appt._id;
+    data.document_id = appt._id;
     await funcEvent(data);
   };
 

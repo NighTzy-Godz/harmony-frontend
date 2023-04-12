@@ -7,11 +7,12 @@ const useAllDoctors = () => {
   useEffect(() => {
     const getData = async () => {
       const { data } = await getAllDoctors();
+
       setAllDoctors(data);
     };
 
     getData();
-  }, []);
+  }, [allDoctors]);
 
   return { allDoctors };
 };

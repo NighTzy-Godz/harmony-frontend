@@ -50,12 +50,7 @@ const AdminProfileLayout = () => {
 
       name: "Authentication",
     },
-    {
-      id: 1,
-      icon: "fa-solid fa-lock",
-      name: "Change Password",
-      link: "/admin/change-pass",
-    },
+
     {
       id: 111,
       icon: "fa-solid fa-lock",

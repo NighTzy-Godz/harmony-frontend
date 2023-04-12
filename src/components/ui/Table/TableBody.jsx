@@ -13,7 +13,8 @@ const TableBody = ({ data, columns }) => {
             : ""
         }`}
       >
-        {column.path === "amount" ? "₱" : ""} {_.get(data, column.path)}
+        {column.path === "amount" || column.path === "rate" ? "₱" : ""}{" "}
+        {_.get(data, column.path)}
       </p>
     );
   };

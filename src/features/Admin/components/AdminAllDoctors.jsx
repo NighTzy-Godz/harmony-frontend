@@ -10,9 +10,10 @@ import Paginate from "../../../components/common/Paginate";
 import "../css/admin_all_users.css";
 import useGetAllPatients from "../hooks/useGetAllPatients";
 import AdminBanUser from "./AdminBanUser";
+import useAllDoctors from "../../../hooks/useAllDoctors";
 
-const AdminAllPatients = () => {
-  const { patients } = useGetAllPatients();
+const AdminAllDoctors = () => {
+  const { allDoctors } = useAllDoctors();
 
   const [state, setState] = useState({
     pageSize: 7,
@@ -25,13 +26,15 @@ const AdminAllPatients = () => {
       label: "Patient",
       xtraContent: (item) => (
         <React.Fragment>
-          <UserTableInfo user={item} role="Patient" single={true} />
+          <UserTableInfo user={item} role="Doctor" single={true} />
         </React.Fragment>
       ),
     },
 
     { id: 1, label: "E-mail", path: "email" },
+
     { id: 2, label: "Contact", path: "contact" },
+    { id: 5, label: "Current Rate", path: "rate" },
 
     {
       id: 4,
@@ -51,8 +54,8 @@ const AdminAllPatients = () => {
   const renderContent = () => {
     const { pageSize, currPage } = state;
 
-    const newData = paginate(pageSize, patients, currPage);
-    if (patients.length === 0)
+    const newData = paginate(pageSize, allDoctors, currPage);
+    if (allDoctors.length === 0)
       return (
         <NoData label="No Incoming Appointments at this moment. Please Comeback Later." />
       );
@@ -64,7 +67,7 @@ const AdminAllPatients = () => {
         </table>
         <Paginate
           data={newData}
-          itemCount={patients.length}
+          itemCount={allDoctors.length}
           pageSize={pageSize}
           currPage={currPage}
           onPageChange={handlePageChange}
@@ -85,4 +88,4 @@ const AdminAllPatients = () => {
   );
 };
 
-export default AdminAllPatients;
+export default AdminAllDoctors;
