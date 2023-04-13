@@ -1,12 +1,13 @@
 import "../../../assets/css/user_dashboard.css";
 
-import HealthStatusBox from "./HealthStatusBox";
 import React, { useEffect, useState } from "react";
 import health_data from "../utils/health_status";
 import PatientAppointments from "./PatientAppointmens";
 import PatientPrescriptions from "./PatientPrescriptions";
 import PatientMedicalRecord from "./PatientMedicalRecords";
 import usePatientData from "../../../hooks/usePatientData";
+import BoxShadowCard from "../../../components/ui/Card/BoxShadowCard";
+import DashboardStatusBox from "../../../components/ui/Card/DashboardStatusBox";
 
 const PatientDashboard = () => {
   const { patient: user } = usePatientData();
@@ -38,7 +39,7 @@ const PatientDashboard = () => {
   const renderHealthStatus = health_data.map((item) => {
     return (
       <React.Fragment key={item.id}>
-        <HealthStatusBox data={item} />
+        <DashboardStatusBox data={item} />
       </React.Fragment>
     );
   });
@@ -58,7 +59,7 @@ const PatientDashboard = () => {
         <p>Check the current status of your health and your dashboard.</p>
       </div>
       <div className="user_short_status">{renderHealthStatus}</div>
-      <div className="user_table">
+      <BoxShadowCard>
         <div className="user_tab">
           <ul>
             {table_tabs.map((item) => {
@@ -76,7 +77,7 @@ const PatientDashboard = () => {
         </div>
 
         {renderContent()}
-      </div>
+      </BoxShadowCard>
     </div>
   );
 };

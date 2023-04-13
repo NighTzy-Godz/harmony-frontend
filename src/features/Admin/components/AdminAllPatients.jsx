@@ -10,6 +10,7 @@ import Paginate from "../../../components/common/Paginate";
 import "../css/admin_all_users.css";
 import useGetAllPatients from "../hooks/useGetAllPatients";
 import AdminBanUser from "./AdminBanUser";
+import BoxShadowCard from "../../../components/ui/Card/BoxShadowCard";
 
 const AdminAllPatients = () => {
   const { patients } = useGetAllPatients();
@@ -80,7 +81,7 @@ const AdminAllPatients = () => {
           Check the all of the Patients. You can control them by banning them.
         </p>
       </div>
-      <div className="admin_table">{renderContent()}</div>
+      <BoxShadowCard>{renderContent()}</BoxShadowCard>
     </div>
   );
 };

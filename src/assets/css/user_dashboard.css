@@ -22,12 +22,6 @@
     margin-bottom: 40px;
   }
 
-  .user_table {
-    padding: 20px;
-    position: relative;
-    box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  }
-
   .user_tab ul {
     display: flex;
     justify-content: space-around;
@@ -58,32 +52,4 @@
     border-bottom: 2px solid var(--red);
     color: var(--red);
   }
-
-  /* =============== */
-  .health_status_box {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    padding: 10px 0px;
-    text-align: center;
-    border-radius: 8px;
-  }
-
-  .health_status_box img {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 10px;
-  }
-
-  .health_status_box h3 {
-    font-size: 20px;
-    font-family: gelion_bold;
-    color: var(--red);
-    margin-bottom: 10px;
-  }
-
-  .health_status_box p {
-    font-size: 16px;
-    font-family: gelion_reg;
-    color: var(--hover-black);
-  }
-  /* =============== */
 }

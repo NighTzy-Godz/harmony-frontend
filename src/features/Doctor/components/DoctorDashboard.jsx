@@ -3,8 +3,10 @@ import docShortStatus from "../utils/doc_short_status";
 
 import DocIncomingAppts from "./DocIncomingAppts";
 import DocRequestAppts from "./DocRequestAppts";
-import DocShortStatus from "./DocShortStatus";
+
 import useDoctorData from "../hooks/useDoctorData";
+import DashboardStatusBox from "../../../components/ui/Card/DashboardStatusBox";
+import BoxShadowCard from "../../../components/ui/Card/BoxShadowCard";
 
 const DoctorDashboard = () => {
   const { doc } = useDoctorData();
@@ -32,7 +34,7 @@ const DoctorDashboard = () => {
   const render_doc_status = doc_short_status.map((item) => {
     return (
       <React.Fragment key={item.id}>
-        <DocShortStatus data={item} />
+        <DashboardStatusBox data={item} />
       </React.Fragment>
     );
   });
@@ -52,7 +54,7 @@ const DoctorDashboard = () => {
         <p>Check the current status of your patients and your dashboard.</p>
       </div>
       <div className="user_short_status">{render_doc_status}</div>
-      <div className="user_table">
+      <BoxShadowCard>
         <div className="user_tab">
           <ul>
             {table_tabs.map((item) => {
@@ -70,7 +72,7 @@ const DoctorDashboard = () => {
         </div>
 
         <div className="user_tab_content">{renderContent()}</div>
-      </div>
+      </BoxShadowCard>
     </div>
   );
 };

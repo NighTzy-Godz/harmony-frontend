@@ -11,6 +11,7 @@ import "../css/admin_all_users.css";
 import PatientDoneAppt from "../../Patient/components/PatientDoneAppt";
 import { adminAcceptDoctor } from "../../../services/adminDataServices";
 import useUnconfirmedDoctors from "../hooks/useAllUncofirmedDocs";
+import BoxShadowCard from "../../../components/ui/Card/BoxShadowCard";
 
 const AdminPendingDoctors = () => {
   const { unconfirmedDocs } = useUnconfirmedDoctors();
@@ -89,7 +90,7 @@ const AdminPendingDoctors = () => {
           and wait for the HR to tell you that they are accepted.
         </p>
       </div>
-      <div className="admin_table">{renderContent()}</div>
+      <BoxShadowCard>{renderContent()}</BoxShadowCard>
     </div>
   );
 };

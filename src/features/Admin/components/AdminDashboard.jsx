@@ -3,7 +3,7 @@ import "../../../assets/css/user_dashboard.css";
 import React, { useEffect, useState } from "react";
 import getAdminStatus from "../utils/admin_status";
 
-import HealthStatusBox from "../../Patient/components/HealthStatusBox";
+import HealthStatusBox from "../../../components/ui/Card/DashboardStatusBox";
 import useAdminData from "../hooks/useAdminData";
 
 const AdminDashboard = () => {

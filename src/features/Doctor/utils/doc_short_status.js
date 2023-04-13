@@ -3,25 +3,25 @@ function docShortStatus(specialty) {
     {
       id: 0,
       name: "Total Patients",
-      data: "49 Patients",
+      info: "49 Patients",
     },
 
     {
       id: 1,
       name: "Appointments",
-      data: "12 Appointments",
+      info: "12 Appointments",
     },
 
     {
       id: 2,
       name: "Revenue",
-      data: "56,000 Pesos",
+      info: "56,000 Pesos",
     },
 
     {
       id: 3,
       name: "Current Specialty",
-      data: specialty,
+      info: specialty,
     },
   ];
 }

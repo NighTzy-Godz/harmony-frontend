@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import AdminIncomingAppts from "./AdminIncomingAppts";
 import AdminPastAppts from "./AdminPastAppts";
 import "../css/admin_all_appts.css";
+import BoxShadowCard from "../../../components/ui/Card/BoxShadowCard";
 
 const AdminAllAppts = () => {
   const [currContent, setCurrContent] = useState({});
@@ -46,10 +47,10 @@ const AdminAllAppts = () => {
         </h3>
       </div>
 
-      <div className="admin_table">
+      <BoxShadowCard>
         <ul className="admin_table_ul">{renderTabs}</ul>
         {renderContent()}
-      </div>
+      </BoxShadowCard>
     </div>
   );
 };

@@ -10,6 +10,7 @@ import Paginate from "../../../components/common/Paginate";
 import "../css/admin_all_users.css";
 import AdminBanUser from "./AdminBanUser";
 import useAllDoctors from "../../../hooks/useAllDoctors";
+import BoxShadowCard from "../../../components/ui/Card/BoxShadowCard";
 
 const AdminAllDoctors = () => {
   const { allDoctors } = useAllDoctors();
@@ -84,7 +85,7 @@ const AdminAllDoctors = () => {
           information and can ban them if they disobey rules.
         </p>
       </div>
-      <div className="admin_table">{renderContent()}</div>
+      <BoxShadowCard>{renderContent()}</BoxShadowCard>
     </div>
   );
 };
