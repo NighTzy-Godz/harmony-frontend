@@ -2,8 +2,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AllDoctors from "./pages/AllDoctors";
 import Home from "./pages/Home";
 import HomeLayout from "./page_layout/HomeLayout";
+import dc from "./assets/img/503.png";
 
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PatientLogin from "./features/Patient/components/PatientLogin";
 import PatientRegister from "./features/Patient/components/PatientRegister";
@@ -45,33 +46,31 @@ import ServiceUnavailable from "./components/common/ServiceUnavailable";
 function App() {
   const { currUser } = useGetUser();
 
-  const [isOnline, setIsOnline] = useState(true);
+  const [isConnected, setIsConnected] = useState(true);
 
   useEffect(() => {
-    window.addEventListener("online", handleConnectionChange);
-    window.addEventListener("offline", handleConnectionChange);
+    const handleOnline = () => {
+      toast.success("Connection was Restored");
+      setIsConnected(true);
+    };
+    const handleOffline = () => {
+      toast.error("You Lost Your Network Connection");
+      setIsConnected(false);
+    };
+
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline", handleOffline);
 
     return () => {
-      window.removeEventListener("online", handleConnectionChange);
-      window.removeEventListener("offline", handleConnectionChange);
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline);
     };
   }, []);
-
-  const handleConnectionChange = () => {
-    const { online } = navigator;
-    if (online) {
-      setIsOnline(true);
-      toast.success("Connection was Restored!", {});
-    } else {
-      setIsOnline(false);
-      toast.warning("Connection was Lost!", {});
-    }
-  };
 
   return (
     <BrowserRouter>
       <ToastContainer />
-      {isOnline ? (
+      {isConnected ? (
         <Routes>
           <Route path="/" element={<HomeLayout currUser={currUser} />}>
             <Route index element={<Home />} />

@@ -1,6 +1,9 @@
 @media screen and (min-width: 1200px) {
   .service_unavailable {
     text-align: center;
+    height: 100%;
+    display: grid;
+    place-items: center;
   }
   .service_unavailable img {
     max-width: 100%;
@@ -12,10 +15,10 @@
   }
 
   .service_unavailable .text h1 {
-    width: 55%;
+    width: 85%;
     margin: 0 auto;
     font-family: gelion_bold;
-    font-size: 45px;
+    font-size: 75px;
     color: var(--black);
     margin-bottom: 20px;
   }
