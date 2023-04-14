@@ -37,6 +37,7 @@ import AdminAllPatients from "./features/Admin/components/AdminAllPatients";
 import AdminAllDoctors from "./features/Admin/components/AdminAllDoctors";
 import AdminPendingDoctors from "./features/Admin/components/AdminPendingDoctors";
 import AdminProtect from "./components/common/ProtectedRoutes/AdminProtect";
+import About from "./pages/About";
 
 function App() {
   const { currUser } = useGetUser();
@@ -47,6 +48,9 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeLayout currUser={currUser} />}>
           <Route index element={<Home />} />
+
+          <Route path="about" element={<About />} />
+
           <Route path="all-doctors" element={<AllDoctors />} />
           <Route path="admin/login" element={<AdminLogin />} />
           {/* PATIENT ROUTE */}

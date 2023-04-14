@@ -1,0 +1,82 @@
+@media screen and (min-width: 1200px) {
+  .about {
+    padding: 80px 0px;
+  }
+
+  .about .content {
+    width: 510px;
+  }
+
+  .about .content h1 {
+    font-family: gelion_bold;
+    color: var(--white);
+    font-size: 55px;
+    margin-bottom: 30px;
+  }
+
+  .about .content h1::before {
+    content: "";
+    height: 40px;
+    padding: 4px;
+    margin-right: 15px;
+    background: var(--red);
+  }
+
+  .about .content p {
+    color: var(--white);
+    font-family: gelion_reg;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  .mission_vision {
+    padding: 70px 0px;
+  }
+
+  .mission_vision .header {
+    text-align: center;
+  }
+
+  .mission_vision .header h1 {
+    font-size: 55px;
+    font-family: gelion_bold;
+    color: var(--black);
+    position: relative;
+  }
+
+  .mission_vision .header h1::before {
+    content: "";
+    width: 30%;
+    position: absolute;
+    padding: 1px;
+    background-color: var(--pink);
+    left: 0;
+    top: 35px;
+  }
+
+  .mission_vision .header h1::after {
+    content: "";
+    width: 30%;
+    position: absolute;
+    padding: 1px;
+    background-color: var(--pink);
+    right: 0;
+    top: 35px;
+  }
+
+  .mission_vision .content {
+    margin-bottom: 40px;
+  }
+
+  .mission_vision .content h1 {
+    font-size: 45px;
+    font-family: gelion_bold;
+    color: var(--red);
+  }
+
+  .mission_vision .content p {
+    font-size: 20px;
+    font-family: gelion_reg;
+    color: var(--black);
+  }
+}
