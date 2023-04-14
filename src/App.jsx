@@ -38,195 +38,224 @@ import AdminAllDoctors from "./features/Admin/components/AdminAllDoctors";
 import AdminPendingDoctors from "./features/Admin/components/AdminPendingDoctors";
 import AdminProtect from "./components/common/ProtectedRoutes/AdminProtect";
 import About from "./pages/About";
+import PageNotFOund from "./components/common/PageNotFound";
+import { useEffect, useState } from "react";
+import ServiceUnavailable from "./components/common/ServiceUnavailable";
 
 function App() {
   const { currUser } = useGetUser();
-  console.log(currUser);
+
+  const [isOnline, setIsOnline] = useState(true);
+
+  useEffect(() => {
+    const handleOnline = () => setIsOnline(true);
+    window.addEventListener("online", handleOnline);
+    return () => {
+      window.removeEventListener("online", handleOnline);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline", handleOffline);
+    return () => {
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline);
+    };
+  }, []);
+
   return (
     <BrowserRouter>
       <ToastContainer />
-      <Routes>
-        <Route path="/" element={<HomeLayout currUser={currUser} />}>
-          <Route index element={<Home />} />
+      {isOnline ? (
+        <Routes>
+          <Route path="/" element={<HomeLayout currUser={currUser} />}>
+            <Route index element={<Home />} />
 
-          <Route path="about" element={<About />} />
+            <Route path="about" element={<About />} />
 
-          <Route path="all-doctors" element={<AllDoctors />} />
-          <Route path="admin/login" element={<AdminLogin />} />
-          {/* PATIENT ROUTE */}
-          <Route
-            path="patient"
-            element={
-              <ProtectedRoutes user={currUser}>
-                <PatientProfileLayout />
-              </ProtectedRoutes>
-            }
-          >
+            <Route path="all-doctors" element={<AllDoctors />} />
+            <Route path="admin/login" element={<AdminLogin />} />
+            {/* PATIENT ROUTE */}
             <Route
-              path="dashboard"
+              path="patient"
               element={
-                <PatientProtect user={currUser}>
-                  <PatientDashboard />
-                </PatientProtect>
+                <ProtectedRoutes user={currUser}>
+                  <PatientProfileLayout />
+                </ProtectedRoutes>
               }
+            >
+              <Route
+                path="dashboard"
+                element={
+                  <PatientProtect user={currUser}>
+                    <PatientDashboard />
+                  </PatientProtect>
+                }
+              />
+              <Route
+                path="change-pass"
+                element={
+                  <PatientProtect user={currUser}>
+                    <PatientChangePass />
+                  </PatientProtect>
+                }
+              />
+              <Route
+                path="update-acc"
+                element={
+                  <PatientProtect user={currUser}>
+                    <PatientAccount />
+                  </PatientProtect>
+                }
+              />
+            </Route>
+            <Route
+              path="patient/login"
+              element={<PatientLogin user={currUser} />}
             />
             <Route
-              path="change-pass"
-              element={
-                <PatientProtect user={currUser}>
-                  <PatientChangePass />
-                </PatientProtect>
-              }
+              path="patient/register"
+              element={<PatientRegister user={currUser} />}
             />
+
             <Route
-              path="update-acc"
-              element={
-                <PatientProtect user={currUser}>
-                  <PatientAccount />
-                </PatientProtect>
-              }
+              path="patient/create-appointment"
+              element={<PatientCreateAppt />}
             />
-          </Route>
-          <Route
-            path="patient/login"
-            element={<PatientLogin user={currUser} />}
-          />
-          <Route
-            path="patient/register"
-            element={<PatientRegister user={currUser} />}
-          />
 
-          <Route
-            path="patient/create-appointment"
-            element={<PatientCreateAppt />}
-          />
-
-          {/* DOCTOR ROUTE */}
-          <Route
-            path="doctor"
-            element={
-              <ProtectedRoutes user={currUser}>
-                <DoctorProfileLayout />
-              </ProtectedRoutes>
-            }
-          >
+            {/* DOCTOR ROUTE */}
             <Route
-              path="dashboard"
+              path="doctor"
+              element={
+                <ProtectedRoutes user={currUser}>
+                  <DoctorProfileLayout />
+                </ProtectedRoutes>
+              }
+            >
+              <Route
+                path="dashboard"
+                element={
+                  <DoctorProtect user={currUser}>
+                    <DoctorDashboard />
+                  </DoctorProtect>
+                }
+              />
+              <Route
+                path="change-pass"
+                element={
+                  <DoctorProtect user={currUser}>
+                    <DoctorChangePass />
+                  </DoctorProtect>
+                }
+              />
+
+              <Route
+                path="update-acc"
+                element={
+                  <DoctorProtect user={currUser}>
+                    <DoctorAccount />
+                  </DoctorProtect>
+                }
+              />
+            </Route>
+
+            <Route
+              path="doctor/confirmation"
               element={
                 <DoctorProtect user={currUser}>
-                  <DoctorDashboard />
+                  <DoctorWaiting />
                 </DoctorProtect>
               }
             />
+
             <Route
-              path="change-pass"
-              element={
-                <DoctorProtect user={currUser}>
-                  <DoctorChangePass />
-                </DoctorProtect>
-              }
+              path="doctor/login"
+              element={<DoctorLogin user={currUser} />}
             />
 
             <Route
-              path="update-acc"
-              element={
-                <DoctorProtect user={currUser}>
-                  <DoctorAccount />
-                </DoctorProtect>
-              }
+              path="doctor/register"
+              element={<DoctorRegister user={currUser} />}
             />
+
+            {/* ADMIN ROUTE */}
+            <Route
+              path="admin"
+              element={
+                <ProtectedRoutes user={currUser}>
+                  <AdminProfileLayout user={currUser} />
+                </ProtectedRoutes>
+              }
+            >
+              <Route
+                path="dashboard"
+                element={
+                  <AdminProtect user={currUser}>
+                    <AdminDashboard />
+                  </AdminProtect>
+                }
+              />
+              <Route
+                path="all-patients"
+                element={
+                  <AdminProtect user={currUser}>
+                    <AdminAllPatients />
+                  </AdminProtect>
+                }
+              />
+              <Route
+                path="all-appts"
+                element={
+                  <AdminProtect user={currUser}>
+                    <AdminAllAppts />
+                  </AdminProtect>
+                }
+              />
+              <Route
+                path="all-doctors"
+                element={
+                  <AdminProtect user={currUser}>
+                    <AdminAllDoctors />
+                  </AdminProtect>
+                }
+              />
+              <Route
+                path="pending-doctors"
+                element={
+                  <AdminProtect user={currUser}>
+                    <AdminPendingDoctors />
+                  </AdminProtect>
+                }
+              />
+              <Route
+                path="change-pass"
+                element={
+                  <AdminProtect user={currUser}>
+                    <AdminChangePass />
+                  </AdminProtect>
+                }
+              />
+              <Route
+                path="update-acc"
+                element={
+                  <AdminProtect user={currUser}>
+                    <AdminAccount />
+                  </AdminProtect>
+                }
+              />
+            </Route>
+
+            <Route path="*" element={<PageNotFOund />} />
           </Route>
 
-          <Route
-            path="doctor/confirmation"
-            element={
-              <DoctorProtect user={currUser}>
-                <DoctorWaiting />
-              </DoctorProtect>
-            }
-          />
-
-          <Route
-            path="doctor/login"
-            element={<DoctorLogin user={currUser} />}
-          />
-
-          <Route
-            path="doctor/register"
-            element={<DoctorRegister user={currUser} />}
-          />
-
-          {/* ADMIN ROUTE */}
-          <Route
-            path="admin"
-            element={
-              <ProtectedRoutes user={currUser}>
-                <AdminProfileLayout user={currUser} />
-              </ProtectedRoutes>
-            }
-          >
-            <Route
-              path="dashboard"
-              element={
-                <AdminProtect user={currUser}>
-                  <AdminDashboard />
-                </AdminProtect>
-              }
-            />
-            <Route
-              path="all-patients"
-              element={
-                <AdminProtect user={currUser}>
-                  <AdminAllPatients />
-                </AdminProtect>
-              }
-            />
-            <Route
-              path="all-appts"
-              element={
-                <AdminProtect user={currUser}>
-                  <AdminAllAppts />
-                </AdminProtect>
-              }
-            />
-            <Route
-              path="all-doctors"
-              element={
-                <AdminProtect user={currUser}>
-                  <AdminAllDoctors />
-                </AdminProtect>
-              }
-            />
-            <Route
-              path="pending-doctors"
-              element={
-                <AdminProtect user={currUser}>
-                  <AdminPendingDoctors />
-                </AdminProtect>
-              }
-            />
-            <Route
-              path="change-pass"
-              element={
-                <AdminProtect user={currUser}>
-                  <AdminChangePass />
-                </AdminProtect>
-              }
-            />
-            <Route
-              path="update-acc"
-              element={
-                <AdminProtect user={currUser}>
-                  <AdminAccount />
-                </AdminProtect>
-              }
-            />
-          </Route>
-        </Route>
-
-        <Route path="/logout" element={<Logout />} />
-        <Route path="*" element={<h1>Page not found</h1>} />
-      </Routes>
+          <Route path="/logout" element={<Logout />} />
+        </Routes>
+      ) : (
+        <ServiceUnavailable />
+      )}
     </BrowserRouter>
   );
 }

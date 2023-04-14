@@ -1,0 +1,42 @@
+@media screen and (min-width: 1200px) {
+  .page_not_found {
+    text-align: center;
+  }
+  .page_not_found_image img {
+    max-width: 100%;
+    height: 700px;
+  }
+
+  .page_not_found .text {
+    margin-top: -90px;
+  }
+
+  .page_not_found .text p {
+    width: 55%;
+    margin: 0 auto;
+    font-family: gelion_bold;
+    font-size: 20px;
+    color: var(--black);
+    margin-bottom: 20px;
+  }
+
+  .page_not_found .text a {
+    margin-top: 40px !important;
+    z-index: 1000 !important;
+    background-color: var(--red);
+    width: 400px;
+    padding: 7px;
+    font-family: gelion_bold;
+    font-size: 20px;
+    color: var(--white);
+    border-radius: 8px;
+    margin: 0 auto;
+    display: block;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .page_not_found .text a:hover {
+    background: var(--hover-red);
+  }
+}
