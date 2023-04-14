@@ -48,23 +48,25 @@ function App() {
   const [isOnline, setIsOnline] = useState(true);
 
   useEffect(() => {
-    const handleOnline = () => setIsOnline(true);
-    window.addEventListener("online", handleOnline);
+    window.addEventListener("online", handleConnectionChange);
+    window.addEventListener("offline", handleConnectionChange);
+
     return () => {
-      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("online", handleConnectionChange);
+      window.removeEventListener("offline", handleConnectionChange);
     };
   }, []);
 
-  useEffect(() => {
-    const handleOnline = () => setIsOnline(true);
-    const handleOffline = () => setIsOnline(false);
-    window.addEventListener("online", handleOnline);
-    window.addEventListener("offline", handleOffline);
-    return () => {
-      window.removeEventListener("online", handleOnline);
-      window.removeEventListener("offline", handleOffline);
-    };
-  }, []);
+  const handleConnectionChange = () => {
+    const { online } = navigator;
+    if (online) {
+      setIsOnline(true);
+      toast.success("Connection was Restored!", {});
+    } else {
+      setIsOnline(false);
+      toast.warning("Connection was Lost!", {});
+    }
+  };
 
   return (
     <BrowserRouter>
