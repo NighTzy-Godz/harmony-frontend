@@ -30,7 +30,7 @@ const PatientProfileLayout = () => {
 
   return (
     <div className="settings">
-      <div className="settings_container">
+      <div className="container">
         <div className="settings_left">
           <ProfileBar user={user} profile_links={profile_links} />
         </div>

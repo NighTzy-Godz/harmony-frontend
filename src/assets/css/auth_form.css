@@ -1,7 +1,29 @@
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
+  .form_other_auth::before {
+    content: "";
+    width: 20%;
+    padding: 0.5px;
+    background-color: var(--black);
+    position: absolute;
+    left: 0;
+    top: 10px;
+  }
+
+  .form_other_auth::after {
+    content: "";
+    width: 20%;
+    padding: 0.5px;
+    position: absolute;
+    background-color: var(--black);
+    right: 0;
+    top: 10px;
+  }
+}
+
+@media screen and (min-width: 991px) {
   .form {
     display: flex;
-    min-height: 92vh;
+    height: 100%;
   }
   .form_left {
     background-size: cover !important;
@@ -11,8 +33,9 @@
 
   .form_right {
     flex: 0.5 1;
-    /* height: 90vh; */
-    min-height: 550px;
+    padding: 80px 0px;
+    /* height: 100%;
+    min-height: 650px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,7 +44,7 @@
 
   .form_right_container {
     padding: 25px 0px;
-    width: 45%;
+    width: 55%;
     margin: 0 auto;
   }
 
@@ -130,25 +153,6 @@
     text-align: center;
     margin-bottom: 20px;
   }
-  .form_other_auth::before {
-    content: "";
-    width: 100px;
-    padding: 0.5px;
-    background-color: var(--black);
-    position: absolute;
-    left: 0;
-    top: 10px;
-  }
-
-  .form_other_auth::after {
-    content: "";
-    width: 100px;
-    padding: 0.5px;
-    background-color: var(--black);
-    position: absolute;
-    right: 0;
-    top: 10px;
-  }
 
   .form_auth_choices {
     display: flex;
@@ -181,5 +185,534 @@
     font-family: gelion_reg;
     color: var(--black);
     font-size: 18px;
+  }
+}
+
+@media screen and (767.98px <= width <= 991.98px) {
+  .form_right {
+    padding: 40px 0px;
+    height: 90vh;
+
+    display: grid;
+    place-items: center;
+  }
+
+  .form_right_container {
+    width: 85%;
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    background-color: var(--red);
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  .form_header {
+    margin-bottom: 30px;
+  }
+
+  .form_header h1 {
+    font-family: gelion_bold;
+    font-size: 28px;
+    text-align: center;
+    color: var(--whiter);
+  }
+
+  .form_header p {
+    font-family: gelion_reg;
+    font-size: 16px;
+    text-align: center;
+    color: var(--white);
+  }
+
+  .form_input_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .form_input_container label {
+    font-size: 18px;
+    font-family: gelion_reg;
+    margin-bottom: 5px;
+    color: var(--white);
+  }
+
+  .form select {
+    padding: 10px 12px;
+    border-radius: 5px;
+    background: #f5f6fa;
+    border: 1px solid #e6e9f4;
+    font-family: gelion_reg;
+    font-size: 15px;
+    color: var(--black);
+  }
+
+  .form_input_container input {
+    padding: 12px 9px;
+    background: #f5f6fa;
+    border: 1px solid #e6e9f4;
+    font-family: gelion_reg;
+    color: var(--black);
+    border-radius: 5px;
+  }
+
+  .form_input_container input::placeholder {
+    font-size: 14px;
+  }
+
+  .form_btn {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .form_btn button {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--black);
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    background-color: var(--white);
+    border: 1px solid var(--white);
+    padding: 6px;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s;
+  }
+
+  .form_btn button:hover {
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  .form_question {
+    text-align: center;
+
+    margin-bottom: 20px;
+  }
+
+  .form_question p {
+    color: var(--black);
+    font-size: 14px;
+    font-family: gelion_reg;
+  }
+
+  .form_question span a {
+    margin-left: 8px;
+    color: var(--white);
+  }
+
+  .form_question span:hover {
+    text-decoration: underline;
+  }
+
+  .form_other_auth {
+    position: relative;
+    color: var(--black);
+    font-size: 16px;
+    font-family: gelion_reg;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form_other_auth::before {
+    content: "";
+    width: 200px;
+    padding: 0.5px;
+    background-color: var(--black);
+    position: absolute;
+    left: 0;
+    top: 10px;
+  }
+
+  .form_other_auth::after {
+    content: "";
+    width: 200px;
+    padding: 0.5px;
+    background-color: var(--black);
+    position: absolute;
+    right: 0;
+    top: 10px;
+  }
+
+  .form_auth_choices {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .form_auth_choices_container a {
+    display: block;
+    width: 90px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--black);
+    text-align: center;
+    border-radius: 5px;
+    background-color: var(--red);
+    transition: all 0.2s;
+  }
+
+  .form_auth_choices_container a:hover {
+    background-color: var(--hover-red);
+  }
+
+  .form_auth_choices_container a i {
+    font-size: 16px;
+    color: var(--white);
+  }
+
+  .form_auth_choices_container p {
+    text-align: center;
+    font-family: gelion_reg;
+    color: var(--black);
+    font-size: 16px;
+  }
+}
+
+@media screen and (575.98px <= width <= 767.98px) {
+  .form_right {
+    padding: 35px 0px;
+    height: 90vh;
+    display: grid;
+    place-items: center;
+  }
+
+  .form_right_container {
+    width: 85%;
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    background-color: var(--red);
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  .form_header {
+    margin-bottom: 30px;
+  }
+
+  .form_header h1 {
+    font-family: gelion_bold;
+    font-size: 27px;
+    text-align: center;
+    color: var(--whiter);
+  }
+
+  .form_header p {
+    font-family: gelion_reg;
+    font-size: 15px;
+    text-align: center;
+    color: var(--white);
+  }
+
+  .form_input_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .form_input_container label {
+    font-size: 17px;
+    font-family: gelion_reg;
+    margin-bottom: 5px;
+    color: var(--white);
+  }
+
+  .form select {
+    padding: 9px 12px;
+    border-radius: 5px;
+    background: #f5f6fa;
+    border: 1px solid #e6e9f4;
+    font-family: gelion_reg;
+    font-size: 15px;
+    color: var(--black);
+  }
+
+  .form_input_container input {
+    padding: 11px 9px;
+    background: #f5f6fa;
+    border: 1px solid #e6e9f4;
+    font-family: gelion_reg;
+    color: var(--black);
+    border-radius: 5px;
+  }
+
+  .form_input_container input::placeholder {
+    font-size: 13px;
+  }
+
+  .form_btn {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .form_btn button {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--black);
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    background-color: var(--white);
+    border: 1px solid var(--white);
+    padding: 4px;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s;
+  }
+
+  .form_btn button:hover {
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  .form_question {
+    text-align: center;
+
+    margin-bottom: 20px;
+  }
+
+  .form_question p {
+    color: var(--black);
+    font-size: 14px;
+    font-family: gelion_reg;
+  }
+
+  .form_question span a {
+    margin-left: 8px;
+    color: var(--white);
+  }
+
+  .form_question span:hover {
+    text-decoration: underline;
+  }
+
+  .form_other_auth {
+    position: relative;
+    color: var(--black);
+    font-size: 16px;
+    font-family: gelion_reg;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form_other_auth::before {
+    content: "";
+    width: 120px;
+    padding: 0.5px;
+    background-color: var(--black);
+    position: absolute;
+    left: 0;
+    top: 10px;
+  }
+
+  .form_other_auth::after {
+    content: "";
+    width: 120px;
+    padding: 0.5px;
+    background-color: var(--black);
+    position: absolute;
+    right: 0;
+    top: 10px;
+  }
+
+  .form_auth_choices {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .form_auth_choices_container a {
+    display: block;
+    width: 90px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--black);
+    text-align: center;
+    border-radius: 5px;
+    background-color: var(--red);
+    transition: all 0.2s;
+  }
+
+  .form_auth_choices_container a:hover {
+    background-color: var(--hover-red);
+  }
+
+  .form_auth_choices_container a i {
+    font-size: 16px;
+    color: var(--white);
+  }
+
+  .form_auth_choices_container p {
+    text-align: center;
+    font-family: gelion_reg;
+    color: var(--black);
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .form_right {
+    padding: 30px 0px;
+    height: 90vh;
+
+    /* background-color: aqua; */
+    display: grid;
+    place-items: center;
+  }
+
+  .form_right_container {
+    width: 85%;
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    background-color: var(--red);
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  .form_header {
+    margin-bottom: 30px;
+  }
+
+  .form_header h1 {
+    font-family: gelion_bold;
+    font-size: 26px;
+    text-align: center;
+    color: var(--whiter);
+  }
+
+  .form_header p {
+    font-family: gelion_reg;
+    font-size: 14px;
+    text-align: center;
+    color: var(--white);
+  }
+
+  .form_input_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .form_input_container label {
+    font-size: 18px;
+    font-family: gelion_reg;
+    margin-bottom: 5px;
+    color: var(--white);
+  }
+
+  .form select {
+    padding: 8px 9px;
+    border-radius: 5px;
+    background: #f5f6fa;
+    border: 1px solid #e6e9f4;
+    font-family: gelion_reg;
+    font-size: 15px;
+    color: var(--black);
+  }
+
+  .form_input_container input {
+    padding: 10px 9px;
+    background: #f5f6fa;
+    border: 1px solid #e6e9f4;
+    font-family: gelion_reg;
+    color: var(--black);
+    border-radius: 5px;
+  }
+
+  .form_input_container input::placeholder {
+    font-size: 13px;
+  }
+
+  .form_btn {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .form_btn button {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--black);
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    background-color: var(--white);
+    border: 1px solid var(--white);
+    padding: 4px;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s;
+  }
+
+  .form_btn button:hover {
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  .form_question {
+    text-align: center;
+
+    margin-bottom: 20px;
+  }
+
+  .form_question p {
+    color: var(--black);
+    font-size: 14px;
+    font-family: gelion_reg;
+  }
+
+  .form_question span a {
+    margin-left: 8px;
+    color: var(--white);
+  }
+
+  .form_question span:hover {
+    text-decoration: underline;
+  }
+
+  .form_other_auth {
+    position: relative;
+    color: var(--black);
+    font-size: 16px;
+    font-family: gelion_reg;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form_auth_choices {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .form_auth_choices_container a {
+    display: block;
+    width: 90px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--black);
+    text-align: center;
+    border-radius: 5px;
+    background-color: var(--red);
+    transition: all 0.2s;
+  }
+
+  .form_auth_choices_container a:hover {
+    background-color: var(--hover-red);
+  }
+
+  .form_auth_choices_container a i {
+    font-size: 16px;
+    color: var(--white);
+  }
+
+  .form_auth_choices_container p {
+    text-align: center;
+    font-family: gelion_reg;
+    color: var(--black);
+    font-size: 16px;
   }
 }

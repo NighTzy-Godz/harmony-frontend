@@ -44,7 +44,7 @@ const Home = () => {
           </div>
           <div className="choose_text">
             <h1>
-              Why <span>choose </span> <br /> our Medical Harmony?
+              Why you should <span>choose </span> our Medical Harmony?
             </h1>
             <p>
               We offer a wide range of medical specialties, from cardiology and

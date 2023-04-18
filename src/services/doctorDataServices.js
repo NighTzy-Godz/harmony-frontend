@@ -8,11 +8,14 @@ export function searchDoctor(name) {
 }
 
 export function getAllDoctors() {
-  return http.get(`${BASE_URL}/all-doctors`).catch((err) => {
-    if (err.response && err.response.status >= 500) return;
-    toast.error(err.response.data, { autoClose: 2000 });
-    return err;
-  });
+  return http
+    .get(`${BASE_URL}/all-doctors`)
+
+    .catch((err) => {
+      if (err.response && err.response.status >= 500) return;
+      toast.error(err.response.data, { autoClose: 2000 });
+      return err;
+    });
 }
 
 export function getCurrentDoctorData() {

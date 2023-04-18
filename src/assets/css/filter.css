@@ -1,7 +1,7 @@
 @media screen and (min-width: 1200px) {
   .filter {
     background-color: var(--black);
-    height: 500px;
+    border-radius: 8px;
     padding: 15px 20px;
   }
 
@@ -71,6 +71,350 @@
     width: 15px;
     height: 15px;
     border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: var(--red);
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+  }
+}
+
+@media screen and (991.98px <= width <= 1199.98px) {
+  .filter {
+    background-color: var(--black);
+
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  .filter_header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--white);
+  }
+
+  .filter_header h1 {
+    font-family: gelion_bold;
+    color: var(--pink);
+    font-size: 25px;
+  }
+
+  .filter_categories {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--white);
+  }
+
+  .filter_categories h3 {
+    font-family: gelion_bold;
+    color: var(--pink);
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+
+  .filter_gender h3 {
+    font-family: gelion_bold;
+    color: var(--pink);
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+
+  .filter_radio_container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  .filter_radio_container input {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .filter_radio_container label {
+    font-size: 17px;
+    color: var(--white);
+    cursor: pointer;
+    font-family: gelion_reg;
+  }
+
+  input[type="radio"]:after {
+    width: 14px;
+    height: 14px;
+    border-radius: 14px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: var(--white);
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+  }
+
+  input[type="radio"]:checked:after {
+    width: 14px;
+    height: 14px;
+    border-radius: 14px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: var(--red);
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+  }
+}
+
+@media screen and (767.98px <= width <= 991.98px) {
+  .filter {
+    background-color: var(--black);
+
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  .filter_header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--white);
+  }
+
+  .filter_header h1 {
+    font-family: gelion_bold;
+    color: var(--pink);
+    font-size: 24px;
+  }
+
+  .filter_categories {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--white);
+  }
+
+  .filter_categories h3 {
+    font-family: gelion_bold;
+    color: var(--pink);
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+
+  .filter_gender h3 {
+    font-family: gelion_bold;
+    color: var(--pink);
+    margin-bottom: 5px;
+    font-size: 19px;
+  }
+
+  .filter_radio_container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  .filter_radio_container input {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .filter_radio_container label {
+    font-size: 16px;
+    color: var(--white);
+    cursor: pointer;
+    font-family: gelion_reg;
+  }
+
+  input[type="radio"]:after {
+    width: 13px;
+    height: 13px;
+    border-radius: 13px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: var(--white);
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+  }
+
+  input[type="radio"]:checked:after {
+    width: 13px;
+    height: 13px;
+    border-radius: 13px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: var(--red);
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+  }
+}
+
+@media screen and (575.98px <= width <= 767.98px) {
+  .filter {
+    background-color: var(--black);
+    height: 100%;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  .filter_header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--white);
+  }
+
+  .filter_header h1 {
+    font-family: gelion_bold;
+    color: var(--pink);
+    font-size: 24px;
+  }
+
+  .filter_categories {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--white);
+  }
+
+  .filter_categories h3 {
+    font-family: gelion_bold;
+    color: var(--pink);
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+
+  .filter_gender h3 {
+    font-family: gelion_bold;
+    color: var(--pink);
+    margin-bottom: 5px;
+    font-size: 19px;
+  }
+
+  .filter_radio_container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  .filter_radio_container input {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .filter_radio_container label {
+    font-size: 16px;
+    color: var(--white);
+    cursor: pointer;
+    font-family: gelion_reg;
+  }
+
+  input[type="radio"]:after {
+    width: 13px;
+    height: 13px;
+    border-radius: 13px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: var(--white);
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+  }
+
+  input[type="radio"]:checked:after {
+    width: 13px;
+    height: 13px;
+    border-radius: 13px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: var(--red);
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .filter {
+    background-color: var(--black);
+    height: 100%;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  .filter_header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--white);
+  }
+
+  .filter_header h1 {
+    font-family: gelion_bold;
+    color: var(--pink);
+    font-size: 23px;
+  }
+
+  .filter_categories {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--white);
+  }
+
+  .filter_categories h3 {
+    font-family: gelion_bold;
+    color: var(--pink);
+    margin-bottom: 5px;
+    font-size: 19px;
+  }
+
+  .filter_gender h3 {
+    font-family: gelion_bold;
+    color: var(--pink);
+    margin-bottom: 5px;
+    font-size: 19px;
+  }
+
+  .filter_radio_container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  .filter_radio_container input {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .filter_radio_container label {
+    font-size: 15px;
+    color: var(--white);
+    cursor: pointer;
+    font-family: gelion_reg;
+  }
+
+  input[type="radio"]:after {
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: var(--white);
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+  }
+
+  input[type="radio"]:checked:after {
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
     top: -2px;
     left: -1px;
     position: relative;

@@ -1,4 +1,4 @@
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 992px) {
   .account_update {
     border: 1px solid rgba(0, 0, 0, 0.225);
     padding: 20px;
@@ -11,6 +11,10 @@
     color: var(--black);
     margin-bottom: 20px;
     display: block;
+  }
+
+  .account_update .form_input_container label {
+    color: var(--hover-black);
   }
 
   .account_update .file-upload {
@@ -52,6 +56,246 @@
     padding: 7px;
     font-family: gelion_reg;
     font-size: 1rem;
+    color: var(--white);
+    border: 1px solid var(--red);
+    border-radius: 6px;
+    min-width: 150px;
+    width: 15%;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .account_update .file-upload .file-content label:hover {
+    background-color: #0f77f7;
+  }
+}
+
+@media screen and (767.98px <= width <= 991.98px) {
+  .account_update {
+    border: 1px solid rgba(0, 0, 0, 0.225);
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .account_update h1 {
+    font-size: 23px;
+    font-family: gelion_bold;
+    color: var(--black);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .account_update .form_input_container label {
+    color: var(--hover-black);
+  }
+
+  .account_update label {
+    font-size: 16px;
+  }
+
+  .account_update input {
+    font-size: 15px;
+  }
+
+  .account_update .file-upload {
+    margin: 22px 0px 12px 0px;
+    display: flex;
+    align-items: center;
+  }
+
+  .account_update .file-upload .file-content label {
+    padding: 7px 18px;
+    /* border: 1px solid rgba(0, 0, 0, 0.325); */
+    border-radius: 20px;
+    font-size: 15px;
+    background-color: var(--blue-);
+    color: rgba(255, 255, 255, 0.915);
+    background-color: #4c98f5;
+    font-family: gelion_reg;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .account_update .file-upload .file-content label i {
+    margin-right: 5px;
+  }
+
+  .account_update .file-upload .file-content p {
+    margin-top: 20px;
+    font-size: 12px;
+    font-family: gelion_reg;
+  }
+
+  .account_update .file-content input[type="file"] {
+    appearance: none;
+    display: none;
+  }
+
+  .account_update .btn button {
+    background-color: var(--red);
+    padding: 7px;
+    font-family: gelion_reg;
+    font-size: 15px;
+    color: var(--white);
+    border: 1px solid var(--red);
+    border-radius: 6px;
+    min-width: 150px;
+    width: 15%;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .account_update .file-upload .file-content label:hover {
+    background-color: #0f77f7;
+  }
+}
+
+@media screen and (575.98px <= width <= 767.98px) {
+  .account_update {
+    border: 1px solid rgba(0, 0, 0, 0.225);
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .account_update h1 {
+    font-size: 22px;
+    font-family: gelion_bold;
+    color: var(--black);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .account_update .form_input_container label {
+    color: var(--hover-black);
+  }
+
+  .account_update label {
+    font-size: 16px;
+  }
+
+  .account_update input {
+    font-size: 15px;
+  }
+
+  .account_update .file-upload {
+    margin: 22px 0px 12px 0px;
+    display: flex;
+    align-items: center;
+  }
+
+  .account_update .file-upload .file-content label {
+    padding: 6px 15px;
+    /* border: 1px solid rgba(0, 0, 0, 0.325); */
+    border-radius: 20px;
+    font-size: 15px;
+    background-color: var(--blue-);
+    color: rgba(255, 255, 255, 0.915);
+    background-color: #4c98f5;
+    font-family: gelion_reg;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .account_update .file-upload .file-content label i {
+    margin-right: 5px;
+  }
+
+  .account_update .file-upload .file-content p {
+    margin-top: 20px;
+    font-size: 12px;
+    font-family: gelion_reg;
+  }
+
+  .account_update .file-content input[type="file"] {
+    appearance: none;
+    display: none;
+  }
+
+  .account_update .btn button {
+    background-color: var(--red);
+    padding: 7px;
+    font-family: gelion_reg;
+    font-size: 15px;
+    color: var(--white);
+    border: 1px solid var(--red);
+    border-radius: 6px;
+    min-width: 150px;
+    width: 15%;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .account_update .file-upload .file-content label:hover {
+    background-color: #0f77f7;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .account_update {
+    border: 1px solid rgba(0, 0, 0, 0.225);
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .account_update h1 {
+    font-size: 22px;
+    font-family: gelion_bold;
+    color: var(--black);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .account_update .form_input_container label {
+    color: var(--hover-black);
+  }
+
+  .account_update label {
+    font-size: 16px;
+  }
+
+  .account_update input {
+    font-size: 15px;
+  }
+
+  .account_update .file-upload {
+    margin: 22px 0px 12px 0px;
+    display: flex;
+    align-items: center;
+  }
+
+  .account_update .file-upload .file-content label {
+    padding: 6px 15px;
+    /* border: 1px solid rgba(0, 0, 0, 0.325); */
+    border-radius: 20px;
+    font-size: 15px;
+    background-color: var(--blue-);
+    color: rgba(255, 255, 255, 0.915);
+    background-color: #4c98f5;
+    font-family: gelion_reg;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .account_update .file-upload .file-content label i {
+    margin-right: 5px;
+  }
+
+  .account_update .file-upload .file-content p {
+    margin-top: 20px;
+    font-size: 12px;
+    font-family: gelion_reg;
+  }
+
+  .account_update .file-content input[type="file"] {
+    appearance: none;
+    display: none;
+  }
+
+  .account_update .btn button {
+    background-color: var(--red);
+    padding: 7px;
+    font-family: gelion_reg;
+    font-size: 15px;
     color: var(--white);
     border: 1px solid var(--red);
     border-radius: 6px;

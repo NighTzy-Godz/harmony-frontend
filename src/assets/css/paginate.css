@@ -11,7 +11,62 @@
   }
 
   .paginate ul li {
-    padding: 5px 10px;
+    padding: 6px 12px;
+    font-size: 16 px;
+    font-family: gelion_reg;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 8px;
+    border: 1px solid var(--red);
+  }
+
+  .paginate ul li.active {
+    background: var(--red);
+  }
+}
+
+@media screen and (767.98px <= width <= 1199.98px) {
+  .paginate {
+    /* display: block; */
+
+    margin-top: 10px;
+  }
+  .paginate ul {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .paginate ul li {
+    padding: 5px 12px;
+    font-size: 15px;
+    font-family: gelion_reg;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 8px;
+    border: 1px solid var(--red);
+  }
+
+  .paginate ul li.active {
+    background: var(--red);
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .paginate {
+    /* display: block; */
+
+    margin-top: 10px;
+  }
+  .paginate ul {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .paginate ul li {
+    padding: 4px 10px;
+    font-size: 14px;
     font-family: gelion_reg;
     cursor: pointer;
     transition: all 0.2s;

@@ -22,3 +22,113 @@
     color: var(--hover-black);
   }
 }
+
+@media screen and (991.98px <= width <= 1199.98px) {
+  .dashboard_status {
+    text-align: center;
+  }
+
+  .dashboard_status img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .dashboard_status h3 {
+    font-size: 19px;
+    font-family: gelion_bold;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+
+  .dashboard_status p {
+    font-size: 15px;
+    font-family: gelion_reg;
+    color: var(--hover-black);
+  }
+}
+
+@media screen and (767.98px <= width <= 991.98px) {
+  .dashboard_status {
+    text-align: center;
+  }
+
+  .dashboard_status img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .dashboard_status h3 {
+    font-size: 19px;
+    font-family: gelion_bold;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+
+  .dashboard_status p {
+    font-size: 15px;
+    font-family: gelion_reg;
+    color: var(--hover-black);
+  }
+}
+
+@media screen and (575.98px <= width <= 767.98px) {
+  .dashboard_status {
+    text-align: center;
+  }
+
+  .dashboard_status img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .dashboard_status h3 {
+    font-size: 18px;
+    font-family: gelion_bold;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+
+  .dashboard_status p {
+    font-size: 14px;
+    font-family: gelion_reg;
+    color: var(--hover-black);
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .dashboard_status {
+    text-align: center;
+  }
+
+  .dashboard_status img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .dashboard_status h3 {
+    font-size: 18px;
+    font-family: gelion_bold;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+
+  .dashboard_status p {
+    font-size: 14px;
+    font-family: gelion_reg;
+    color: var(--hover-black);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .dashboard_status img {
+    display: none;
+  }
+}

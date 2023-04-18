@@ -1,33 +1,34 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AllDoctors from "./pages/AllDoctors";
+import useGetUser from "./hooks/useGetUser";
+import { useEffect, useState } from "react";
+
 import Home from "./pages/Home";
 import HomeLayout from "./page_layout/HomeLayout";
-import dc from "./assets/img/503.png";
+import AllDoctors from "./pages/AllDoctors";
+import About from "./pages/About";
+import Logout from "./components/common/Logout";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 import PatientLogin from "./features/Patient/components/PatientLogin";
 import PatientRegister from "./features/Patient/components/PatientRegister";
-import useGetUser from "./hooks/useGetUser";
-import Logout from "./components/common/Logout";
-import DoctorLogin from "./features/Doctor/components/DoctorLogin";
-import DoctorRegister from "./features/Doctor/components/DoctorRegister";
-
 import PatientCreateAppt from "./features/Patient/components/PatientCreateAppt";
 import PatientProfileLayout from "./features/Patient/components/PatientProfileLayout";
 import PatientDashboard from "./features/Patient/components/PatientDashboard";
 import PatientChangePass from "./features/Patient/components/PatientChangePass";
 import PatientAccount from "./features/Patient/components/PatientAccount";
+import PatientProtect from "./components/common/ProtectedRoutes/PatientProtect";
 
 import DoctorProfileLayout from "./features/Doctor/components/DoctorProfileLayout";
-
+import DoctorLogin from "./features/Doctor/components/DoctorLogin";
+import DoctorRegister from "./features/Doctor/components/DoctorRegister";
 import DoctorDashboard from "./features/Doctor/components/DoctorDashboard";
 import DoctorChangePass from "./features/Doctor/components/DoctorChangePass";
 import DoctorAccount from "./features/Doctor/components/DoctorAccount";
-import ProtectedRoutes from "./components/common/ProtectedRoutes/ProtectedRoutes";
-import PatientProtect from "./components/common/ProtectedRoutes/PatientProtect";
 import DoctorProtect from "./components/common/ProtectedRoutes/DoctorProtect";
 import DoctorWaiting from "./features/Doctor/components/DoctorWaiting";
+
 import AdminLogin from "./features/Admin/components/AdminLogin";
 import AdminDashboard from "./features/Admin/components/AdminDashboard";
 import AdminProfileLayout from "./features/Admin/components/AdminProfileLayout";
@@ -38,10 +39,10 @@ import AdminAllPatients from "./features/Admin/components/AdminAllPatients";
 import AdminAllDoctors from "./features/Admin/components/AdminAllDoctors";
 import AdminPendingDoctors from "./features/Admin/components/AdminPendingDoctors";
 import AdminProtect from "./components/common/ProtectedRoutes/AdminProtect";
-import About from "./pages/About";
+
 import PageNotFOund from "./components/common/PageNotFound";
-import { useEffect, useState } from "react";
 import ServiceUnavailable from "./components/common/ServiceUnavailable";
+import ProtectedRoutes from "./components/common/ProtectedRoutes/ProtectedRoutes";
 
 function App() {
   const { currUser } = useGetUser();
@@ -50,11 +51,11 @@ function App() {
 
   useEffect(() => {
     const handleOnline = () => {
-      toast.success("Connection was Restored");
+      toast.success("Connection was Restored", { autoClose: 2000 });
       setIsConnected(true);
     };
     const handleOffline = () => {
-      toast.error("You Lost Your Network Connection");
+      toast.error("You Lost Your Network Connection", { autoClose: 2000 });
       setIsConnected(false);
     };
 

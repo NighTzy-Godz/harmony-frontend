@@ -55,7 +55,7 @@ const DoctorRegister = ({ user }) => {
       <div className="form_right">
         <div className="form_right_container">
           <div className="form_header">
-            <h1>Patient Register</h1>
+            <h1>Doctor Register</h1>
             <p>Register To Have an Account</p>
           </div>
           <div className="form_input_container">

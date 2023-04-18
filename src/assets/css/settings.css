@@ -1,18 +1,16 @@
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 992px) {
   .settings {
     padding: 40px 0;
   }
 
-  .settings .settings_container {
+  .settings .container {
     display: flex;
     gap: 30px;
-    padding: 0px 50px;
-    max-width: 1600px;
-    margin: 0 auto;
   }
 
   .settings_left {
     flex: 0.2 1;
+    width: 20%;
     position: relative;
     /* background-color: antiquewhite; */
   }
@@ -25,6 +23,23 @@
     right: 0;
     background-color: var(--light-red);
   } */
+
+  .settings_right {
+    width: 80%;
+    flex: 0.8 1;
+  }
+}
+
+@media screen and (max-width: 991.98px) {
+  .settings {
+    padding: 40px 0;
+  }
+
+  .settings_left {
+    flex: 0.2 1;
+    position: relative;
+    /* background-color: antiquewhite; */
+  }
 
   .settings_right {
     flex: 0.8 1;

@@ -16,3 +16,43 @@
     text-transform: capitalize;
   }
 }
+
+@media screen and (767.98px <= width <= 1199px) {
+  .admin_all_patients .header {
+    margin-bottom: 40px;
+  }
+
+  .admin_all_patients .header h3 {
+    font-size: 24px;
+    font-family: gelion_bold;
+    color: var(--hover-black);
+    text-transform: capitalize;
+  }
+
+  .admin_all_patients .header p {
+    font-family: gelion_reg;
+    color: var(--black);
+    font-size: 16px;
+    text-transform: capitalize;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .admin_all_patients .header {
+    margin-bottom: 40px;
+  }
+
+  .admin_all_patients .header h3 {
+    font-size: 23px;
+    font-family: gelion_bold;
+    color: var(--hover-black);
+    text-transform: capitalize;
+  }
+
+  .admin_all_patients .header p {
+    font-family: gelion_reg;
+    color: var(--black);
+    font-size: 15px;
+    text-transform: capitalize;
+  }
+}

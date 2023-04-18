@@ -1,10 +1,46 @@
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 767px) {
   .doctor_decide_appt {
     display: flex;
     gap: 10px;
   }
   .doctor_decide_appt button {
     padding: 5px;
+    width: 70px;
+    font-family: gelion_reg;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s;
+  }
+
+  .doctor_decide_appt button:first-child {
+    background: var(--red);
+    border: none;
+    color: var(--white);
+  }
+
+  .doctor_decide_appt button:first-child:hover {
+    background: var(--hover-red);
+  }
+
+  .doctor_decide_appt button:last-child {
+    background: #5bcf78;
+    border: none;
+    color: var(--white);
+  }
+
+  .doctor_decide_appt button:last-child:hover {
+    background: #36b656;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .doctor_decide_appt {
+    display: flex;
+    gap: 10px;
+  }
+  .doctor_decide_appt button {
+    padding: 3px;
     width: 70px;
     font-family: gelion_reg;
     font-size: 14px;

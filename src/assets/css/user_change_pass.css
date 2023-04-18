@@ -1,4 +1,4 @@
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 992px) {
   .user_change_pass {
     border: 1px solid rgba(0, 0, 0, 0.225);
     padding: 20px;
@@ -15,6 +15,7 @@
 
   .user_change_pass label {
     font-size: 17px;
+    color: var(--hover-black);
   }
 
   .user_change_pass input {
@@ -26,6 +27,135 @@
     padding: 7px;
     font-family: gelion_reg;
     font-size: 1rem;
+    color: var(--white);
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    min-width: 150px;
+    width: 15%;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .user_change_pass button:hover {
+    background: var(--hover-red);
+  }
+}
+
+@media screen and (767.98px <= width <= 991.98px) {
+  .user_change_pass {
+    border: 1px solid rgba(0, 0, 0, 0.225);
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .user_change_pass h1 {
+    font-size: 24px;
+    font-family: gelion_bold;
+    color: var(--black);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .user_change_pass label {
+    color: var(--hover-black);
+    font-size: 16px;
+  }
+
+  .user_change_pass input {
+    font-size: 15px;
+  }
+
+  .user_change_pass button {
+    background-color: var(--red);
+    padding: 7px;
+    font-family: gelion_reg;
+    font-size: 15px;
+    color: var(--white);
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    min-width: 150px;
+    width: 15%;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .user_change_pass button:hover {
+    background: var(--hover-red);
+  }
+}
+
+@media screen and (575.98px <= width <= 767.98px) {
+  .user_change_pass {
+    border: 1px solid rgba(0, 0, 0, 0.225);
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .user_change_pass h1 {
+    font-size: 23px;
+    font-family: gelion_bold;
+    color: var(--black);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .user_change_pass label {
+    font-size: 16px;
+    color: var(--hover-black);
+  }
+
+  .user_change_pass input {
+    font-size: 15px;
+  }
+
+  .user_change_pass button {
+    background-color: var(--red);
+    padding: 7px;
+    font-family: gelion_reg;
+    font-size: 15px;
+    color: var(--white);
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    min-width: 150px;
+    width: 15%;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .user_change_pass button:hover {
+    background: var(--hover-red);
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .user_change_pass {
+    border: 1px solid rgba(0, 0, 0, 0.225);
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .user_change_pass h1 {
+    font-size: 22px;
+    font-family: gelion_bold;
+    color: var(--black);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .user_change_pass label {
+    color: var(--hover-black);
+    font-size: 16px;
+  }
+
+  .user_change_pass input {
+    font-size: 15px;
+  }
+
+  .user_change_pass button {
+    background-color: var(--red);
+    padding: 7px;
+    font-family: gelion_reg;
+    font-size: 15px;
     color: var(--white);
     border: 1px solid var(--red);
     border-radius: 8px;

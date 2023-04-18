@@ -22,6 +22,7 @@ body,
   --pink: #f8bcbc;
   --peach: #ffe2e2;
   --white: #f6f6f6e8;
+  --whiter: #f6f6f6;
   --red: #ff9494;
   --black: #696781;
   --blue: #33b5e5;
@@ -41,7 +42,7 @@ body,
 }
 
 .container {
-  max-width: 1600px;
+  max-width: 1350px;
   width: 85vw;
   margin: 0 auto;
 }

@@ -43,3 +43,91 @@
     box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 }
+
+@media screen and (767.98px <= width <= 1199px) {
+  .admin_all_appts .header h3 {
+    font-size: 23px;
+    font-family: gelion_bold;
+    color: var(--hover-black);
+    text-transform: capitalize;
+    margin-bottom: 40px;
+  }
+
+  .admin_all_appts .admin_table_ul {
+    display: flex;
+  }
+
+  .admin_all_appts .admin_table_ul {
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.335);
+  }
+
+  .admin_all_appts .admin_table_ul li {
+    width: 100%;
+    text-align: center;
+    font-family: gelion_reg;
+    font-size: 17px;
+    color: var(--black);
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+    padding: 7px;
+  }
+
+  .admin_all_appts .admin_table_ul li:hover {
+    color: var(--red);
+  }
+
+  .admin_all_appts .admin_table_ul li.active {
+    background-color: var(--red);
+    color: var(--white);
+  }
+
+  .admin_all_appts .admin_table {
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .admin_all_appts .header h3 {
+    font-size: 22px;
+    font-family: gelion_bold;
+    color: var(--hover-black);
+    text-transform: capitalize;
+    margin-bottom: 40px;
+  }
+
+  .admin_all_appts .admin_table_ul {
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.335);
+  }
+
+  .admin_all_appts .admin_table_ul li {
+    width: 100%;
+    text-align: center;
+    font-family: gelion_reg;
+    font-size: 16px;
+    color: var(--black);
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+    padding: 7px;
+  }
+
+  .admin_all_appts .admin_table_ul li:hover {
+    color: var(--red);
+  }
+
+  .admin_all_appts .admin_table_ul li.active {
+    background-color: var(--red);
+    color: var(--white);
+  }
+
+  .admin_all_appts .admin_table {
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+}

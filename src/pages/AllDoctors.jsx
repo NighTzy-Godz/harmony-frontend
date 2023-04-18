@@ -43,6 +43,7 @@ const AllDoctors = ({ step = 1, onStepChange = () => {} }) => {
     });
   }, []);
   const { allDoctors } = useAllDoctors();
+
   const { searchedDoc } = useSearchDoctor(search);
   const user = getUser();
   let doctors = allDoctors;
