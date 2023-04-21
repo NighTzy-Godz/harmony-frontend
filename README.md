@@ -91,10 +91,10 @@ After that, you can now follow the steps below
 ## Credentials
 
 Admin Email
-`harmonyemail@gmail.com`
+* `harmonyemail@gmail.com`
 
 Admin Password
-`test123`
+* `test123`
 
 
 ## Contact
