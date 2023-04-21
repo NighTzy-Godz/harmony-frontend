@@ -88,6 +88,15 @@ After that, you can now follow the steps below
 > **Note**
 > In order to fully run the application, you need to also download the server-side or backend of this web app. [See this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) and connect it to your client-side.
 
+## Credentials
+
+Admin Email
+`harmonyemail@gmail.com`
+
+Admin Password
+`test123`
+
+
 ## Contact
 
 If you have any questions or suggestions, please contact me at ajhubero16@gmail.com. I'll be happy to hear suggestions from you!
