@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
 import http from "./httpService";
 
-const BASE_URL = "http://localhost:8080/admin";
+const BASE_URL = import.meta.env.VITE_ADMIN_URL;
 
 export function getAdminData() {
   return http

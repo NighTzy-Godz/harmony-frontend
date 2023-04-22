@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
 import http from "./httpService";
 
-const BASE_URL = "http://localhost:8080/doctor";
+const BASE_URL = import.meta.env.VITE_DOCTOR_URL;
 
 export function searchDoctor(name) {
   return http.get(`${BASE_URL}/search_doc/${name}`);

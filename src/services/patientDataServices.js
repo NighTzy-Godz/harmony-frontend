@@ -1,7 +1,5 @@
-import formatDate from "../utils/formatDate";
-import formatTime from "../utils/formatTime";
 import http from "./httpService";
-const BASE_URL = "http://localhost:8080/patient";
+const BASE_URL = import.meta.env.VITE_PATIENT_URL;
 import { toast } from "react-toastify";
 
 export function getPatientData() {
